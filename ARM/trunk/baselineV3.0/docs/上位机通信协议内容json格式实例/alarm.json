@@ -1,0 +1,8 @@
+"time": 报警发生时间
+"alarm": 报警信息
+
+
+{
+	"time": "2017-07-27 14:55:23",
+	"alarm": "The light board 1 occur abnormal"
+}

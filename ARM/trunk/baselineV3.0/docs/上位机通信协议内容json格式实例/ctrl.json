@@ -1,0 +1,12 @@
+下发手动黄闪控制,控制时间30s
+{
+	"ctrlMode": 2,
+	"duration": 30
+}
+
+下发手动定周期方案1控制,"duration"为0代表一直执行此控制
+{
+	"ctrlMode": 4,
+	"ctrlId": 1,
+	"duration": 0
+}

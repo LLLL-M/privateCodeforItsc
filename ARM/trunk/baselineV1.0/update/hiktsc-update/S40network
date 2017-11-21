@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# Start the network....
+#
+
+add_default_route()
+{
+	networkcard="eth0 eth1"
+
+	for name in $networkcard
+	do
+		#获取指定网卡的网关
+		gateway=`grep "iface[ \t]*${name}" -A4 /etc/network/interfaces | awk '{if($1=="gateway") printf $2}'`
+
+		route add default gw $gateway
+	done
+}
+
+
+case "$1" in
+  start)
+ 	echo "Starting network..."
+	fileName="/etc/network/interfaces"
+
+	if test -s $fileName; then
+		echo "compress interfaces to /home/interfaces.tar.gz"
+		tar zcvf /home/interfaces.tar.gz -C /etc/network interfaces
+	else
+        	echo "uncompress /home/interfaces.tar.gz to /etc/network/"
+		tar zxvf /home/interfaces.tar.gz -C /etc/network/
+	fi
+
+	/sbin/ifup -a
+	add_default_route
+	;;
+  stop)
+	echo -n "Stopping network..."
+	/sbin/ifdown -a
+	;;
+  restart|reload)
+	killall -9 wpa_supplicant
+	"$0" stop
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
+

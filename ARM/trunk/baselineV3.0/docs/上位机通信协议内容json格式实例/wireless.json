@@ -1,0 +1,24 @@
+{
+	"custom": false,
+	"enable": true,
+	"key": [
+		{
+			"keyid": 1,
+			"desc": null,
+			"ctrl": {
+				"ctrlMode": 14,
+				"duration": 30,
+				"lock": [1,2,3,0,0,0,0,0,0]
+			}
+		},
+		{
+			"keyid": 2,
+			"desc": null,
+			"ctrl": {
+				"ctrlMode": 14,
+				"duration": 30,
+				"lock": [1,2,3,0,0,0,0,0,0]
+			}
+		}
+	]
+}

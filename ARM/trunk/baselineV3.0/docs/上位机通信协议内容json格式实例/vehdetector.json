@@ -1,0 +1,28 @@
+[
+	{
+		"id": 1,
+		"type":1,
+		"desc": "西向东",
+		"coilLen": 2,
+		"gap": 5,
+		"noResponse": 0,
+		"maxContinuous": 0,
+		"maxVehcileNum": 0,
+		"minTimeGap": 2,
+		"maxTimeGap": 6,
+		"minQueueLen": 20,
+		"maxQueueLen": 50,
+		"occupyJam": 5
+	},
+	{
+		"id": 2,
+		"type":1,
+		"desc": "西向东",
+		"noResponse": 0,
+		"maxContinuous": 0,
+		"maxVehcileNum": 0,
+		"minTimeGap": 2,
+		"maxTimeGap": 6,
+		"occupyJam": 5
+	}
+]

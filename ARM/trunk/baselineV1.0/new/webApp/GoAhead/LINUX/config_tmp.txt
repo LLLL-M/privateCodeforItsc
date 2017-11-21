@@ -1,0 +1,6 @@
+[UnitPara]
+nBootYellowLightTime=0
+nBootAllRedTime=0
+byFluxCollectCycle=0
+byTransCycle=0
+byCollectCycleUnit=0

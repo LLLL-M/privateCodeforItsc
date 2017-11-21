@@ -1,0 +1,14 @@
+[
+	{
+		"id": 1,
+		"mode": 0,
+		"pulseGreen": 0,
+		"pulseRed": 0
+	},
+	{
+		"id": 2,
+		"mode": 2,
+		"pulseGreen": 6,
+		"pulseRed": 6
+	}
+]

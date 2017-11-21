@@ -1,0 +1,46 @@
+"ctrlType": 控制类型
+"ctrlMode": 控制模式
+"ctrlId": 控制编号
+"desc": 方案或是其他控制的描述
+"start": 周期开始放行的系统时间
+"cycle": 周期时间
+"total": 本周期总共过车数
+"phase": 相位的放行与过车数据
+"id": 相位编号
+"min": 相位最小绿灯时间
+"max": 相位最大绿灯时间
+"ext": 相位延长时间
+"actual": 相位实际绿灯时间
+"lost": 相位绿损时间
+"flow": 相位放行时间内通过的车辆数
+
+
+{
+	"start": "2017-07-27 14:55:23",
+	"ctrlType": 0,
+	"ctrlMode": 4,
+	"ctrlId": 1,
+	"desc": "定周期",
+	"cycle": 100,
+	"total": 60,
+	"phase": [
+		{
+			"id": 1,
+			"min": 10,
+			"max": 30,
+			"ext": 10,
+			"actual": 20,
+			"lost": 3,
+			"flow": 8
+		},
+		{
+			"id": 2,
+			"min": 10,
+			"max": 30,
+			"ext": 5,
+			"actual": 15,
+			"lost": 2,
+			"flow": 6
+		}
+	]
+}

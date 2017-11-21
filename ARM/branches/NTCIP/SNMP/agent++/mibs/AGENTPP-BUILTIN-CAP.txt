@@ -1,0 +1,263 @@
+AGENTPP-BUILTIN-CAP DEFINITIONS ::= BEGIN
+
+IMPORTS
+	AGENT-CAPABILITIES
+		FROM SNMPv2-CONF
+	agentppCaps
+		FROM AGENTPP-GLOBAL-REG
+	MODULE-IDENTITY
+		FROM SNMPv2-SMI;
+
+agentppCapMIB MODULE-IDENTITY
+	LAST-UPDATED "200312030154Z"	-- Dec 3, 2003 1:54:00 AM
+	ORGANIZATION "AGENT++"
+	CONTACT-INFO
+		"Frank Fock
+		Email: fock@agentpp.com"
+	DESCRIPTION
+		"MIB module for AGENT++ agent built-in capabilities."
+	REVISION "200312030154Z"	-- Dec 3, 2003 1:54:00 AM
+	DESCRIPTION
+		"Added v3.5.14 agent capabilities."
+	REVISION "0007140000Z"	-- Jul 14, 1900 12:00:00 AM
+	DESCRIPTION
+		"The initial version."
+ -- 1.3.6.1.4.1.4976.4.1 --  ::= { agentppCaps 1 }
+
+
+
+agentppBuiltInCaps AGENT-CAPABILITIES
+
+	PRODUCT-RELEASE
+		"AGENT++ v3.4"
+	STATUS current
+	DESCRIPTION
+		"AGENT++ built-in capabilities"
+
+
+	SUPPORTS SNMPv2-MIB
+	INCLUDES {
+		systemGroup,
+		snmpGroup,
+		snmpSetGroup,
+		snmpBasicNotificationsGroup,
+		snmpCommunityGroup }
+
+	VARIATION coldStart
+	  DESCRIPTION
+		"A coldStart trap is generated on all
+		reboots."
+
+	SUPPORTS SNMP-TARGET-MIB
+	INCLUDES {
+		snmpTargetBasicGroup,
+		snmpTargetResponseGroup }
+
+
+	SUPPORTS SNMP-NOTIFICATION-MIB
+	INCLUDES {
+		snmpNotifyGroup,
+		snmpNotifyFilterGroup }
+
+
+	SUPPORTS SNMP-COMMUNITY-MIB
+	INCLUDES {
+		snmpCommunityGroup }
+
+
+	SUPPORTS SNMP-MPD-MIB
+	INCLUDES {
+		snmpMPDGroup }
+
+
+	SUPPORTS SNMP-USER-BASED-SM-MIB
+	INCLUDES {
+		usmMIBBasicGroup }
+
+
+	SUPPORTS SNMP-VIEW-BASED-ACM-MIB
+	INCLUDES {
+		vacmBasicGroup }
+
+
+	SUPPORTS SNMP-PROXY-MIB
+	INCLUDES {
+		snmpProxyGroup }
+
+
+	SUPPORTS SNMP-FRAMEWORK-MIB
+	INCLUDES {
+		snmpEngineGroup }
+
+
+	SUPPORTS AGENTPP-SIMULATION-MIB
+	INCLUDES {
+		agentppSimBasicGroup }
+
+ -- 1.3.6.1.4.1.4976.4.1.1 --  ::= { agentppCapMIB 1 }
+
+
+agentppBuiltInCaps347 AGENT-CAPABILITIES
+
+	PRODUCT-RELEASE
+		"AGENT++ v3.4.7"
+	STATUS current
+	DESCRIPTION
+		"AGENT++ built-in capabilities for the 3.4.7 release."
+
+
+	SUPPORTS SNMPv2-MIB
+	INCLUDES {
+		systemGroup,
+		snmpGroup,
+		snmpSetGroup,
+		snmpBasicNotificationsGroup,
+		snmpCommunityGroup }
+
+	VARIATION coldStart
+	  DESCRIPTION
+		"A coldStart trap is generated on all
+		reboots."
+
+	SUPPORTS SNMP-TARGET-MIB
+	INCLUDES {
+		snmpTargetBasicGroup,
+		snmpTargetResponseGroup }
+
+
+	SUPPORTS SNMP-NOTIFICATION-MIB
+	INCLUDES {
+		snmpNotifyGroup,
+		snmpNotifyFilterGroup }
+
+
+	SUPPORTS SNMP-COMMUNITY-MIB
+	INCLUDES {
+		snmpCommunityGroup }
+
+
+	SUPPORTS SNMP-MPD-MIB
+	INCLUDES {
+		snmpMPDGroup }
+
+
+	SUPPORTS SNMP-USER-BASED-SM-MIB
+	INCLUDES {
+		usmMIBBasicGroup }
+
+
+	SUPPORTS SNMP-VIEW-BASED-ACM-MIB
+	INCLUDES {
+		vacmBasicGroup }
+
+
+	SUPPORTS SNMP-PROXY-MIB
+	INCLUDES {
+		snmpProxyGroup }
+
+
+	SUPPORTS SNMP-FRAMEWORK-MIB
+	INCLUDES {
+		snmpEngineGroup }
+
+
+	SUPPORTS AGENTPP-SIMULATION-MIB
+	INCLUDES {
+		agentppSimBasicGroup }
+
+
+	SUPPORTS NOTIFICATION-LOG-MIB
+	INCLUDES {
+		notificationLogConfigGroup,
+		notificationLogStatsGroup,
+		notificationLogLogGroup,
+		notificationLogDateGroup }
+
+ -- 1.3.6.1.4.1.4976.4.1.2 --  ::= { agentppCapMIB 2 }
+
+
+agentppBuiltInCaps3514 AGENT-CAPABILITIES
+
+	PRODUCT-RELEASE
+		"AGENT++ v3.5.14"
+	STATUS current
+	DESCRIPTION
+		"AGENT++ built-in capabilities for the 3.5.14 release."
+
+
+	SUPPORTS SNMPv2-MIB
+	INCLUDES {
+		systemGroup,
+		snmpGroup,
+		snmpSetGroup,
+		snmpBasicNotificationsGroup,
+		snmpCommunityGroup }
+
+	VARIATION coldStart
+	  DESCRIPTION
+		"A coldStart trap is generated on all
+		reboots."
+
+	SUPPORTS SNMP-TARGET-MIB
+	INCLUDES {
+		snmpTargetBasicGroup,
+		snmpTargetResponseGroup }
+
+
+	SUPPORTS SNMP-NOTIFICATION-MIB
+	INCLUDES {
+		snmpNotifyGroup,
+		snmpNotifyFilterGroup }
+
+
+	SUPPORTS SNMP-COMMUNITY-MIB
+	INCLUDES {
+		snmpCommunityGroup }
+
+
+	SUPPORTS SNMP-MPD-MIB
+	INCLUDES {
+		snmpMPDGroup }
+
+
+	SUPPORTS SNMP-USER-BASED-SM-MIB
+	INCLUDES {
+		usmMIBBasicGroup }
+
+
+	SUPPORTS SNMP-VIEW-BASED-ACM-MIB
+	INCLUDES {
+		vacmBasicGroup }
+
+
+	SUPPORTS SNMP-PROXY-MIB
+	INCLUDES {
+		snmpProxyGroup }
+
+
+	SUPPORTS SNMP-FRAMEWORK-MIB
+	INCLUDES {
+		snmpEngineGroup }
+
+
+	SUPPORTS AGENTPP-SIMULATION-MIB
+	INCLUDES {
+		agentppSimBasicGroup }
+
+
+	SUPPORTS NOTIFICATION-LOG-MIB
+	INCLUDES {
+		notificationLogConfigGroup,
+		notificationLogStatsGroup,
+		notificationLogLogGroup,
+		notificationLogDateGroup }
+
+
+	SUPPORTS AGENTPP-CONFIG-MIB
+	INCLUDES {
+		agentppCfgBasicGroupLogging,
+		agentppCfgBasicGroupSecurity }
+
+ -- 1.3.6.1.4.1.4976.4.1.3 --  ::= { agentppCapMIB 3 }
+
+END

@@ -1,0 +1,43 @@
+#/home/hikconfig.db兼容处理时需要提供该文件，如有改变，建议在此文件的基础上在进行修改。
+
+#单元
+stUnitPara (id INTEGER PRIMARY KEY, nBootYellowLightTime integer, nBootAllRedTime integer, byTransCycle integer, byFlashFrequency integer, byFluxCollectCycle integer, byCollectCycleUnit integer, pedkeydelaytime integer, pedmaxwaittime integer, pedkeypassgap integer);
+#相位
+stPhase (id INTEGER PRIMARY KEY, phaseTableNo integer, nPhaseID integer, nPedestrianPassTime integer, nPedestrianClearTime integer, nMinGreen integer, nUnitExtendGreen integer, nMaxGreen_1 integer, nMaxGreen_2 integer, nYellowTime integer, nAllRedTime integer, wPhaseOptions integer, nCircleID integer, byPhaseConcurrency varchar(64), nGreenLightTime integer);
+#相序
+stPhaseTurn (id INTEGER PRIMARY KEY, nPhaseTurnID integer, nCircleID integer, nTurnArray varchar(64));
+#绿信比
+stGreenSignalRation (id INTEGER PRIMARY KEY, nGreenSignalRationID integer, nPhaseID integer, nGreenSignalRationTime integer, nType integer, nIsCoordinate integer);
+#通道
+stChannel (id INTEGER PRIMARY KEY, channelTableNO integer, nChannelID integer, nControllerID integer, nControllerType integer);
+#方案
+stScheme (id INTEGER PRIMARY KEY, nSchemeID integer, nCycleTime integer, nOffset integer, nGreenSignalRatioID integer, nPhaseTurnID integer);
+#动作
+stAction (id INTEGER PRIMARY KEY, nActionID integer, nSchemeID integer, nPhaseTableID integer, nChannelTableID integer);
+#时段
+stTimeInterval (id INTEGER PRIMARY KEY, nTimeIntervalID integer, nTimeID integer, cStartTimeHour integer, cStartTimeMinute integer, nActionID integer);
+#调度
+stPlanSchedule (id INTEGER PRIMARY KEY, nScheduleID integer, month integer, week integer, day integer, nTimeIntervalID integer);
+#车辆检测器
+AscVehicleDetectorTable (id INTEGER PRIMARY KEY, byVehicleDetectorNumber integer, byVehicleDetectorCallPhase integer,byVehicleDetectorQueueLimit integer, byVehicleDetectorNoActivity integer, byVehicleDetectorMaxPresence integer, byVehicleDetectorErraticCounts integer, byVehicleDetectorFailTime integer);
+#跟随相位
+stFollowPhase (id INTEGER PRIMARY KEY, followPhaseTableNo integer, nFollowPhaseID integer, nArrayMotherPhase varchar(64));
+#行人检测器
+AscPedestrianDetectorTable (id INTEGER PRIMARY KEY, byPedestrianDetectorNumber integer, byPedestrianDetectorCallPhase integer);
+
+
+#sqlite> pragma table_info(config_sys_infos);
+#0|id|INTEGER|0||1
+#1|cSSID|varchar(32)|0||0
+#2|cPSK|varchar(32)|0||0
+#3|cName|varchar(32)|0||0
+#4|cPasswd|varchar(32)|0||0
+#5|uDevID|integer|0||0
+#6|cDevDesc|varchar(64)|0||0
+#7|iRGSignalSwitch|integer|0||0
+#8|cMcastAddr|varchar(16)|0||0
+#9|uMcastPort|integer|0||0
+#10|cCarDetectorType|integer|0||0
+#11|stVedioDetIP_address|varchar(16)|0||0
+#12|stVedioDetIP_subnetMask|varchar(16)|0||0
+#13|stVedioDetIP_gateway|varchar(16)|0||0

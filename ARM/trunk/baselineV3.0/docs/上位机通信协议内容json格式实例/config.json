@@ -1,0 +1,229 @@
+{
+	"unit": {
+		"area": 1,
+		"road": 1,
+		"bootFlash": 6,
+		"bootAllRed": 6,
+		"collect": 300,
+		"transition": 2,
+		"GPS": true,
+		"watchdog": false,
+		"voltCheck": false,
+		"curCheck": false,
+		"faultFlash": false,
+		"takeover": true
+	},
+	"channel": [
+		{
+			"id": 1,
+			"type": 1,
+			"status": 0,
+			"conflictBits": 0,
+			"countdown": 1,
+			"detectorBits": 1,
+			"rfidBits": 1,
+			"direction": 1
+		},
+		{
+			"id": 2,
+			"type": 1,
+			"status": 1,
+			"conflictBits": 0,
+			"countdown": 2,
+			"detectorBits": 2,
+			"rfidBits": 2,
+			"direction": 2
+		},
+		{
+			"id": 3,
+			"action": 1
+		}
+	],
+	"phase": [
+		{
+			"id": 1,
+			"greenFlash": 5,
+			"yellow": 3,
+			"allred": 2,
+			"redyellow": 6,
+			"pedClear": 10,
+			"pedResponse": 10,
+			"minGreen": 10,
+			"maxGreen": 30,
+			"maxGreen2": 50,
+			"unitExtend": 3,
+			"checkTime": 3,
+			"channelBits": 257,
+			"autoReq": true
+		},
+		{
+			"id": 2,
+			"greenFlash": 5,
+			"yellow": 3,
+			"allred": 2,
+			"redyellow": 6,
+			"pedClear": 10,
+			"pedResponse": 10,
+			"minGreen": 10,
+			"maxGreen": 30,
+			"maxGreen2": 50,
+			"unitExtend": 3,
+			"checkTime": 3,
+			"channelBits": 257,
+			"autoReq": true
+		},
+		{
+			"id": 3,
+			"action": 1
+		}
+	],
+	"scheme": [
+		{
+			"id": 1,
+			"desc": "双环方案1",
+			"cycle": 60,
+			"offset": 0,
+			"coordinatePhase": 1,
+			"ring": [
+				[
+					{
+						"phase": 1,
+						"time": 15,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 2,
+						"time": 15,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 3,
+						"time": 12,
+						"status": 0,
+						"barrier": 2
+					},
+					{
+						"phase": 4,
+						"time": 18,
+						"status": 0,
+						"barrier": 2
+					}
+				],
+				[
+					{
+						"phase": 5,
+						"time": 10,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 6,
+						"time": 20,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 7,
+						"time": 15,
+						"status": 0,
+						"barrier": 2
+					},
+					{
+						"phase": 8,
+						"time": 15,
+						"status": 0,
+						"barrier": 2
+					}
+				]
+			]
+		},
+		{
+			"id": 2,
+			"desc": "单环方案2",
+			"cycle": 100,
+			"offset": 0,
+			"coordinatePhase": 1,
+			"ring": [
+				[
+					{
+						"phase": 1,
+						"time": 20,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 2,
+						"time": 30,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 3,
+						"time": 20,
+						"status": 0,
+						"barrier": 1
+					},
+					{
+						"phase": 4,
+						"time": 30,
+						"status": 0,
+						"barrier": 1
+					}
+				]
+			]
+		}
+	],
+	"timeinterval": [
+		{
+			"id": 1,
+			"timeinterval": [
+				{
+					"hour": 0,
+					"minute": 0,
+					"mode": 2,
+					"scheme": 0
+				},
+				{
+					"hour": 7,
+					"minute": 0,
+					"mode": 4,
+					"scheme": 1
+				},
+				{
+					"hour": 10,
+					"minute": 0,
+					"mode": 6,
+					"scheme": 1
+				}
+			]
+		}
+	],
+	"schedule": [
+		{
+			"id": 1,
+			"date": [
+				{
+					"year": 2016,
+					"month": 9,
+					"day": 3
+				},
+				{
+					"month": 5,
+					"day": 7
+				},
+				{
+					"month": 10,
+					"day": 127
+				}
+			],
+			"week": 1,
+			"timeinterval": 1
+		},
+		{
+			"id": 2,
+			"action": 1
+		}
+	]
+}

@@ -1,0 +1,28 @@
+绿灯延长或红灯早断(就是公交优先,控制类型为本地控制)
+直接跳转步进(控制类型为优先控制)
+直接通道锁定(控制类型为优先控制)
+
+[
+	{
+		"id": 1,
+		"label": "苏FLG086",
+		"reader": "3e3tdt3",
+		"channel": 1,
+		"ctrl": {
+			"ctrlMode": 14,
+			"duration": 30,
+			"status": [1,2,3,0,0,0,0,0,0]
+		}
+	},
+	{
+		"id": 2,
+		"label": "鄂F210G1",
+		"reader": "ffdgfet",
+		"channel": 2,
+		"ctrl": {
+			"ctrlMode": 14,
+			"duration": 30,
+			"status": [1,2,3,0,0,0,0,0,0]
+		}
+	}
+]

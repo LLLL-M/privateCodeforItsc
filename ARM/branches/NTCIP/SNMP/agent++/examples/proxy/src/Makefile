@@ -1,0 +1,1 @@
+arm-wrs-linux-gnueabi-armv6jel_vfp-uclibc_small-g++ -g -o snmp_proxy snmp_proxy.cpp -lpthread -lsnmp++ -lagent++ -ldes -ldl  -L. -I.

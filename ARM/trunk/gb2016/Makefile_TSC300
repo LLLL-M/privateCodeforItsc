@@ -1,0 +1,29 @@
+ifeq "$(origin ARCH)" "undefined"
+$(warning "You can run make ARCH=pc or ARCH=arm")
+ARCH=arm
+endif
+
+#ARCH=pc
+
+TARGET=hikTSC300
+CXXFLAGS=--std=c++11 -DHARDWARE_MODEL=300
+CXXFLAGS+=-DTAKEOVER
+LIBS=-latomic -lsqlite3 -lrt -lpthread
+
+OBJS = main.o its.o tscdb.o tsc.o frame.o camera.o cycle.o can.o gpio.o log.o detector.o faultcheck.o
+
+ifeq ($(ARCH),arm)
+CXX=arm-none-linux-gnueabi-g++
+OBJS += libsocketcan.a
+else
+CXX=g++
+endif
+
+all: clean $(TARGET)
+	$(RM) *.o
+
+$(TARGET): $(OBJS)
+	$(CXX) $^ -o $@ $(LIBS)
+
+clean:
+	$(RM) *.o $(TARGET)

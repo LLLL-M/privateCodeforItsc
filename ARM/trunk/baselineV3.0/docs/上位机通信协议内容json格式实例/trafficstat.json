@@ -1,0 +1,27 @@
+{
+	"seq": 1,
+	"junction": 1,
+	"start": "2017-05-10T16:26:00:335Z",
+	"sec": 60,
+	"send": "2017-05-10T16:26:01:335Z",
+	"info": [
+		{
+			"lane": 1,
+			"flow": 100,
+			"occupancy": 50,
+			"speed": 40,
+			"headway": 10,
+			"maxQueueLen": 20,
+			"vehLen": 5
+		},
+		{
+			"lane": 2,
+			"flow": 100,
+			"occupancy": 50,
+			"speed": 40,
+			"headway": 10,
+			"maxQueueLen": 20,
+			"vehLen": 5
+		}
+	]
+}

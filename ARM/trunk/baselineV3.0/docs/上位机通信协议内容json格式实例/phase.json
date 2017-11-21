@@ -1,0 +1,67 @@
+下载整个相位表
+[
+    {
+        "id": 1,
+        "desc":"南北相位",
+        "greenFlash": 5,
+        "yellow": 3,
+        "allred": 2,
+        "redyellow": 6,
+        "pedClear": 10,
+        "minGreen": 10,
+        "maxGreen": 30,
+        "maxGreen2": 50,
+        "unitExtend": 3,
+        "checkTime": 5,
+        "channelBits": 33410,
+        "autoReq": true
+    },
+    {
+        "id": 2,
+        "desc":"东西相位",
+        "greenFlash": 5,
+        "yellow": 3,
+        "allred": 2,
+        "redyellow": 6,
+        "pedClear": 10,
+        "minGreen": 10,
+        "maxGreen": 30,
+        "maxGreen2": 50,
+        "unitExtend": 3,
+        "checkTime": 5,
+        "channelBits": 257,
+        "autoReq": true
+    },
+    {
+        "id": 3,
+        "desc":"南相位",
+        "greenFlash": 5,
+        "yellow": 3,
+        "allred": 2,
+        "redyellow": 6,
+        "pedClear": 10,
+        "minGreen": 10,
+        "maxGreen": 30,
+        "maxGreen2": 50,
+        "unitExtend": 3,
+        "checkTime": 5,
+        "channelBits": 10280,
+        "autoReq": true
+    },
+    {
+        "id": 4,
+        "desc":"西相位",
+        "greenFlash": 5,
+        "yellow": 3,
+        "allred": 2,
+        "redyellow": 6,
+        "pedClear": 10,
+        "minGreen": 10,
+        "maxGreen": 30,
+        "maxGreen2": 50,
+        "unitExtend": 3,
+        "checkTime": 5,
+        "channelBits": 4112,
+        "autoReq": true
+    }
+]

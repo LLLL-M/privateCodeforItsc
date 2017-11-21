@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# Start mdev....
+#
+
+
+case "$1" in
+  start)
+	echo "Starting mdev..."
+	mount -n -o mode=0755 -t tmpfs mdev /dev
+	mkdir /dev/pts
+	mkdir /dev/shm
+        mount -n -t devpts devpts /dev/pts
+	mount -t sysfs sysfs /sys
+
+	echo /sbin/mdev > /proc/sys/kernel/hotplug
+	/sbin/mdev -s
+        echo "Starting mdev OK"
+	watchdog -t 1 -T 3 /dev/watchdog
+	insmod /root/CPLD.ko
+	mknod /dev/CPLD_IO c 234 0
+	insmod /root/8188eu.ko
+	insmod /root/8192cu.ko
+	
+	echo "Check updating" 
+
+	################≈–∂œ/opt/hiktsc-update.tar.gz «∑Ò¥Ê‘⁄######################
+	if [ -f "/opt/hiktsc-update.tar.gz" ];  then
+		echo "hiktsc-update.tar.gz existed,updating..."
+		cd /opt
+		tar -zxvf hiktsc-update.tar.gz
+		sleep 10
+		cd hiktsc-update
+		sh update.sh
+		sleep 5
+		rm -rf /opt/hiktsc-update.tar.gz
+	else 
+		echo "No need to update!"
+	fi
+	echo "Update check finished!"
+
+	/root/hikTSC&
+	#/root/hikTSC500&
+	#/root/RTSC_sadp&
+	vsftpd&
+	;;
+  stop)
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

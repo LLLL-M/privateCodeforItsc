@@ -1,0 +1,22 @@
+{
+	"custom": false,
+	"key": [
+		{
+			"keyid": 1,
+			"desc": null,
+			"ctrl": {
+				"ctrlMode": 14,
+				"duration": 30,
+				"status": [1,2,3,0,0,0,0,0,0]
+			}
+		},
+		{
+			"keyid": 2,
+			"desc": null,
+			"ctrl": {
+				"ctrlMode": 1,
+				"duration": 30
+			}
+		}
+	]
+}

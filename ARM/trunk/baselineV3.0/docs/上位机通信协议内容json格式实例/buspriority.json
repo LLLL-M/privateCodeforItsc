@@ -1,0 +1,26 @@
+[
+	{
+		"seq": 1,
+		"label": "苏FLG086",
+		"reader": "3e3tdt3",
+		"phasectrl": {
+			"id": 1,
+			"operate": 1,
+			"sec": 5
+		}
+	},
+	{
+		"seq": 2,
+		"label": "鄂F210G1",
+		"reader": "ffdgfet",
+		"phasectrl": {
+			"id": 1,
+			"operate": 2,
+			"sec": 5
+		}
+	},
+	{
+		"seq": 3,
+		"action": 1
+	}
+]

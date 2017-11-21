@@ -1,0 +1,142 @@
+* 
+{
+    margin:0px;
+    padding:0px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif; 
+}
+html 
+{
+    width:100%;
+	height:100%;
+}
+body 
+{ 
+    width:100%;
+	height:100%;
+	overflow:hidden; 
+	background:#aaaaaa;
+	z-index:0;
+}
+
+.ellipsis 
+{
+	white-space:nowrap;
+	color:#000;
+	line-height:20px;
+	width:180px;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+#mainContent /*login.asp*/
+{ 
+    width:100%; 
+    height:100%; 
+    background:#aaaaaa;
+}
+#content_left /*preview.asp*/
+{ 
+	float:left;
+	width:200px; 
+	height:100%; 
+	overflow-x:auto; 
+	overflow-y:auto;
+	z-index:0;
+	background-color:#dbdbdb;
+}
+#content_right /*preview.asp*/
+{ 
+    float:right; 
+	width:199px !important;
+	width:201px; 
+	height:100%;
+	background:#dcdcdc;
+	padding-left:2px;
+	z-index:0;
+}
+#content /*preview.asp*/
+{ 
+    margin:0 201px 0 200px; 
+	height:100%; 
+	background:#000;
+	z-index:0;
+}
+.pluginLink
+{
+	color: #FFF;
+	font-size:16px;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.pluginLinkSel
+{
+	color: #0FF;
+	font-size:16px;
+	text-decoration:underline;	
+	cursor:pointer;
+}
+.imageslider1 
+{ 
+    margin:0px;
+	padding:0px; 
+	height:13px; 
+	width:100%; 
+	background-image:url("../images/ptz/scrollvol.png"); 
+    background-repeat:repeat-x;
+}
+.imageSlider2 
+{ 
+    margin:0;
+	padding:0; 
+	height:20px; 
+	width:100%;
+	background-image:url("../images/ptz/slider_bar.png"); 
+	background-repeat:repeat-x; 
+}
+.imageBar1    
+{   
+    margin:0;
+	padding:0; 
+	height:20px; 
+	width:13px; 
+	background-image:url("../images/ptz/slider_speed.png"); 
+	background-repeat:no-repeat;
+}
+.imageBar2    
+{ 
+    margin:0;
+	padding:0; 
+	height:13px; 
+	width:10px; 
+	background-image:url("../images/ptz/speedvol.png"); 
+	background-repeat:no-repeat;
+}
+/* Overlay 背景*/
+#simplemodal-overlay {filter:Alpha(opacity=30);background-color:#D2D2D2; cursor:auto; width:800px;}
+
+/* Container */
+#simplemodal-container 
+{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	height:100%;
+	width:100%;
+}
+.loginbtn
+{
+    background-image:url("../images/login/input_normal.png");
+	cursor:pointer;
+	width:200px;
+	height:28px;
+	background-repeat:no-repeat;
+}
+.selectloginbtn
+{
+    background-image:url("../images/login/inputButton_select.png");
+	cursor:pointer;
+	width:200px;
+	height:28px;
+	background-repeat:no-repeat;
+}

@@ -1,0 +1,18 @@
+"ip": 联机者ip地址
+"source": 联机源
+"time": 联机时间
+
+
+{
+	"ip": "10.13.2.110",
+	"source": "tool",
+	"time": "2017-07-27 19:54:32"
+}
+
+"software":连接成功返回软件版本号
+"hardware":连接陈宫返回硬件版本号
+
+{
+   "software":"2017-10.09-Rev-alpha",
+   "hardware":"TSC300"
+}

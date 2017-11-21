@@ -1,0 +1,10 @@
+# 
+# This file was created by an SNMP++v3 application,
+# it is used to store the snmpEngineBoots counters.
+# 
+# Lines starting with '#' are comments.
+# The snmpEngineBoots counters are stored as
+# <encoded snmpEngineId> <bootCounter>
+# 
+H@@@ACG@@ECAC@BNCAC@C@BNCDC@BNCACFCF@@@@ 1
+H@@@ACG@@ECAC@BNCAC@C@BNCDC@BNCACFCF@@JA 10

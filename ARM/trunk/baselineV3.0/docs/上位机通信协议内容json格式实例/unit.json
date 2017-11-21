@@ -1,0 +1,14 @@
+{
+	"area": 1,
+	"junction": 1,
+	"bootFlash": 6,
+	"bootAllRed": 6,
+	"collect": 300,
+	"transition": 2,
+	"GPS": true,
+	"watchdog": true,
+	"voltCheck": false,
+	"curCheck": false,
+	"faultFlash": false,
+	"takeover": true
+}

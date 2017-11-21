@@ -1,0 +1,356 @@
+@charset "utf-8";
+* 
+{
+    margin:0;
+    padding:0;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif; 
+}
+html 
+{
+    width:100%;
+	height:100%;
+}
+body 
+{ 
+    width:100%;
+	height:100%;
+	overflow:hidden; 
+	background:#aaaaaa;
+}
+#maincontent 
+{ 
+    width:100%; 
+	height:100%;
+	background:#dbdbdb;
+}
+#logleft
+{
+	float:left;
+	width:200px;
+	height:100%;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#logcontent
+{
+	position:absolute;
+	left:200px;
+	right:0px;
+	
+	height:100%;
+	/*_width: expression((document.documentElement.clientWidth||document.body.clientWidth)-210);*/
+	
+	padding: 0 0 0 2px;
+	overflow:auto;
+	/*_margin-right:20px;
+	_right:210;*/
+}
+
+#paramfloatSpan{
+	float: right;
+}
+#EditAreaTitle
+{
+	width:100%;
+	height:22px;
+	padding-left:400px;
+	color:#000000;
+	font-weight:600;
+	font-size:14px;
+}
+#recordplanCanvas
+{
+
+	
+}
+#EditAreaContent
+{
+	width:100%;
+	padding-top:5px;
+	padding-bottom:20px;
+}
+#ContentFoot
+{
+	width:76%;
+	height:38px;
+	padding-top:7px;
+}
+#configtree
+{
+	padding-left:10px;
+	padding-top:0px;
+	height:100%;
+	color:#000000;
+}
+.SaveBtnConfig 
+{
+	width:88px;
+	height:24px;
+	vertical-align:middle;
+	border:0px;
+	color:#000000;
+	background-image:url(../images/config/Button.png);
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.formtips 
+{
+    color:#457735;
+}
+.edittableNo 
+{
+	line-height:30px;
+	table-layout:fixed;
+	word-wrap:break-word;
+	overflow:hidden;
+	font-size:12px;
+	color:#000000;
+}
+.inputwidth 
+{
+	width:200px;
+	padding-left:0px;
+	vertical-align:middle;
+}
+.selectwidth
+{
+  	width:200px;
+	padding-left:0px;
+	vertical-align:middle; 
+}
+
+.tdpaddingleft {
+	padding-left:10px;
+}
+/* Overlay */
+#simplemodal-overlay {filter:Alpha(opacity=30);background-color:#D2D2D2; cursor:auto; width:800px;}
+
+/* Container */
+#simplemodal-container 
+{
+   width:820px;
+   /*height:538px;*/
+   height:540px;
+   overflow:auto;
+
+}
+
+#simplemodal-container{padding:0px;}
+
+#SingleSADPDialog {padding:0px;}
+
+#ConfigDivFrame 
+{
+	display:none;
+	padding:0px;
+}
+#WindowsDialogRoot 
+{
+  display:none;
+  padding:0px;
+}
+.dialogtitle
+{
+	height:30px;
+	background-color:#e6e6e6;
+	color:#000;
+}
+.dialogbody
+{
+	font-size:12px;
+}
+.dialogfoot
+{
+	height:30px;
+	background-color:#dbdbdb;
+}
+.dialogfootbg
+{
+	background-color:#C2D8E5;
+}
+.closeleft
+{ 
+  padding:5px 0 0 5px;
+  float:left;
+}
+.closeright
+{ 
+  float:right;
+  color: #CCC;width:20px; 
+  font-size:16px; 
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.daytongsel
+{ 
+  /*background:url(../images/config/ScheduleTab_select.png) no-repeat;*/
+  background-color:#e4e4e4;
+  color:red; 
+  cursor:pointer; 
+  width:93px;
+  height:28px;
+}
+.daytongnormal
+{ 
+  /*background:url(../images/config/ScheduleTab_normal.png) no-repeat; */
+  background-color:#b7b7b7;
+  cursor:pointer; 
+  width:93px;
+  height:28px;
+}
+.TabButton {
+	width:118px;
+	height:28px;
+	background:url(../images/config/tab_normal.png) no-repeat; 
+	cursor:pointer;
+	color:#000000;
+	line-height:28px;
+}
+.TabButtonSel {
+	width:118px;
+	height:28px;
+	background:url(../images/config/tab_select.png) no-repeat;
+	cursor:pointer;
+	color:#FF0000;
+	line-height:28px;
+}
+.tabbody
+{
+	width:100%;
+	height:100%;
+	border-top:0px;
+	padding-top:10px;
+}
+.ModulesTitColor{ color: #50A3DF;}
+.StartMapButton 
+{
+	width:30px;
+	height:32px;
+	vertical-align:middle;
+	border:0px;
+	color:#000000;
+	background-image:url(../images/config/DrawArea.png);
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.DelMapBtnConfig 
+{
+	width:30px;
+	height:32px;
+	vertical-align:middle;
+	border:0px;
+	color:#000000;
+	background-image:url(../images/config/DelArea.png);
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.imageslider1 
+{ 
+    margin:0px;
+    padding:0px; 
+    height:13px; 
+    width:100%; 
+    background-image:url(../images/config/scrollvol.png); 
+    background-repeat:repeat-x;
+}
+.imageBar2    
+{   
+    margin:0;
+    padding:0; 
+    height:20px; 
+    width:10px; 
+    background-image:url(../images/config/Scrollvol1.png); 
+    background-repeat:no-repeat;
+}
+.ptzlinkedit{ width:100px; vertical-align:middle;}
+.pluginLink
+{
+	color: #457735;
+	font-size:12px;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.pluginLinkSel
+{
+	color: #0FF;
+	font-size:12px;
+	text-decoration:underline;	
+	cursor:pointer;
+}
+.picAndtext
+{
+	vertical-align:middle;
+}
+
+/*********SNMP*****************/
+#snmp div div
+{
+	height:30px;
+}
+#snmp div span
+{
+	display:inline-block;
+	width:200px;
+	padding-left:10px;
+}
+#snmp span.rowfirst
+{
+	width:170px;
+	/*padding-left:10px;*/
+}
+#snmp .inputWidth
+{
+	width:200px;
+}
+#trapCommunityArea 
+{
+	display:none;
+}
+#snmp .radio
+{
+	margin-right:2px;
+	margin-left:5px;
+}
+
+div.lightStatus{
+	width: 40px;
+	height: 40px;
+	background-color:transparent;
+}
+
+div.red {
+	background-image:url(../images/lightStatusPics/red.png); 
+    background-repeat:no-repeat;
+}
+
+div.green {
+	background-image:url(../images/lightStatusPics/green.png); 
+    background-repeat:no-repeat;
+}
+
+div.yellow{
+	background-image:url(../images/lightStatusPics/yellow.png); 
+    background-repeat:no-repeat;
+}
+div.off{
+	background-image:url(../images/lightStatusPics/off.png); 
+    background-repeat:no-repeat;
+}
+
+div.left{
+	background-image:url(../images/lightStatusPics/left.png); 
+    background-repeat:no-repeat;
+}
+
+div.right{
+	background-image:url(../images/lightStatusPics/right.png); 
+    background-repeat:no-repeat;
+}
+
+div.straight{
+	background-image:url(../images/lightStatusPics/straight.png); 
+    background-repeat:no-repeat;
+}

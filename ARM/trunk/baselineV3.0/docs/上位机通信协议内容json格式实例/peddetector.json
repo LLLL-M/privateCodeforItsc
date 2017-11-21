@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"delayPass": 10,
+		"maxWait": 100
+	},
+	{
+		"id": 2,
+		"delayPass": 10,
+		"maxWait": 100
+	},
+	{
+		"id": 3,
+		"action": 1
+	}
+]

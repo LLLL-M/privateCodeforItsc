@@ -1,0 +1,24 @@
+
+README SNMP++
+=============
+
+
+Requirements for AGENT++v3.4 supporting SNMPv1/v2c
+--------------------------------------------------
+ 
+* Linux, True64 Unix (>=3.0), Solaris (>=2.6), WinNT 4.0
+* SNMP++v2.8
+
+  
+Requirements for AGENT++v3.4 supporting SNMPv1/v2c/v3
+-----------------------------------------------------
+
+* Linux, True64 Unix (>=3.0), Solaris (>=2.6), WinNT 4.0
+* SNMP++v3.0c
+* RSAEURO library
+
+
+In order to use AGENT++v3.4 without SNMPv3 support
+undefine _SNMPv3 in the agent++.h header file.
+
+ 

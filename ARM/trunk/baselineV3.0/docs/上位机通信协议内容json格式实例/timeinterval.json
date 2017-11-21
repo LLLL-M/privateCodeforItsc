@@ -1,0 +1,54 @@
+下载整个时段表1
+[
+	{
+		"id": 1,
+		"timeinterval": [
+			{
+				"hour": 0,
+				"minute": 0,
+				"mode": 2,
+				"scheme": 1
+			},
+			{
+				"hour": 7,
+				"minute": 0,
+				"mode": 4,
+				"scheme": 1
+			},
+			{
+				"hour": 23,
+				"minute": 0,
+				"mode": 1,
+				"scheme": 1
+			}
+		]
+	}
+]
+
+单个修改时段表1中第2个时段
+[
+	{
+		"id": 1,
+		"seq": 2,
+		"hour": 7,
+		"minute": 0,
+		"mode": 4,
+		"scheme": 2
+	}
+]
+
+删除整个时段表1
+[
+	{
+		"id": 1,
+		"action": 1
+	}
+]
+
+单个删除时段表1中的第2个时段
+[
+	{
+		"id": 1,
+		"delseq": 2
+	}
+]

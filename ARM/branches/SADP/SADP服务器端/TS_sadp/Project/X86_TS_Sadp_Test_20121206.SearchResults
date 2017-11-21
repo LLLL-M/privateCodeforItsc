@@ -1,0 +1,8 @@
+---- hdisk_cnt Matches (10 in 4 files) ----
+Sadp.c (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp\sadplib):	unsigned int		hdisk_cnt;
+Sadp.c (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp\sadplib):	g_sadpInst.hdisk_cnt = info->hdisk_cnt;	
+Sadp.c (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp\sadplib):    g_sadpInst.hdisk_cnt = info->hdisk_cnt;
+Sadp.c (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp\sadplib):	info->hdisk_cnt = htonl(g_sadpInst.hdisk_cnt); 
+Sadp.h (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp\sadplib):	unsigned int		hdisk_cnt;
+TS_sadp.c (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp):    info.hdisk_cnt = 1;
+TS_sadp.h (d:\交通信号机\sadp信号机\x86_ts_sadp\ts_sadp):	unsigned int		hdisk_cnt;

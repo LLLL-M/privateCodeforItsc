@@ -1,0 +1,11 @@
+PC-lint for C/C++ (NT) Vers. 9.00j, Copyright Gimpel Software 1985-2012
+C:\lint\options.lnt(7) : Warning 686: Option '-wlib(0)' is suspicious because
+    of 'the likelihood of causing meaningless output'; receiving a syntax error
+    in a library file most likely means something is wrong with your Lint
+    confinguration
+
+--- Module:   E:\backup\信号机\stmf\stmf.cpp (C++)
+
+--- Module:   E:\backup\信号机\stmf\ntcip.cpp (C++)
+
+--- Module:   E:\backup\信号机\stmf\transfer.cpp (C++)

@@ -1,0 +1,32 @@
+1. 在信号机/root/下新建一个文件名为countdown.ini的配置文件，可以通过winSCP这个工具先在windows上编辑好，然后再拷贝到信号机上或者使用 vi countdown.ini命令;
+2. 配置文件的格式如下：
+[Device_N]						N表示倒计时的ID，这个ID通过实际倒计时牌的拨码开关来设置，N从0开始。
+cControllerID=M					M表示该倒计时需要显示的相位号，相位号从1开始，该相位号对应于通过
+									配置工具中实际配置的相位号。					
+cControllerType=T				T表示该相位的类型，2表示机动车类型、3表示行人类型、4表示跟随类型。
+3. 配置文件实际内容举例如下：
+[Device_0]
+cControllerID=1
+cControllerType=2
+
+[Device_1]
+cControllerID=2
+cControllerType=4
+
+[Device_2]
+cControllerID=3,4
+cControllerType=2
+
+[Device_3]
+cControllerID=5
+cControllerType=2
+
+4. 使用vi命令的话，可以保存退出，退出命令是按键ESC然后:wq!。
+
+5. 再执行转换工具./BinaryTextConvert countdown.ini，即可生成配置。
+
+# ./BinaryTextConvert countdown.ini 
+convert from ini to binary, source fileName countdown.ini
+[WriteBinaryFile] write file /home/countdown.dat success .
+
+

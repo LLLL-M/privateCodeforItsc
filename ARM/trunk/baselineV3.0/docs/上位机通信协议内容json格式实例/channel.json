@@ -1,0 +1,190 @@
+整个通道表的配置(配置了通道1和通道2的属性，同时删除通道3的属性配置)
+[
+	{
+		"id": 1,
+		"type": 1,
+		"status": 0,
+		"conflictBits": 0,
+		"countdown": 1,
+		"vehBits": 1,
+		"pedBits": 1,
+		"desc": "东方向直行"
+	},
+	{
+		"id": 2,
+		"type": 1,
+		"status": 1,
+		"conflictBits": 0,
+		"countdown": 2,
+		"vehBits": 2,
+		"pedBits": 2,
+		"desc": "西方向直行"
+	},
+	{
+		"id": 3,
+		"action": 1
+	}
+]
+
+[
+    {
+        "id": 1,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "东方向左转"
+    },
+    {
+        "id": 2,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "东方向直行"
+    },
+    {
+        "id": 3,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "东方向右转"
+    },
+    {
+        "id": 4,
+        "type": 2,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "东方向行人"
+    },
+    {
+        "id": 5,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "南方向左转"
+    },
+    {
+        "id": 6,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "南方向直行"
+    },
+    {
+        "id": 7,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "南方向右转"
+    },
+    {
+        "id": 8,
+        "type": 2,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "南方向行人"
+    },
+    {
+        "id": 9,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "西方向左转"
+    },
+    {
+        "id": 10,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "西方向直行"
+    },
+    {
+        "id": 11,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "西方向右转"
+    },
+    {
+        "id": 12,
+        "type": 2,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "西方向行人"
+    },
+    {
+        "id": 13,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "北方向左转"
+    },
+    {
+        "id": 14,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "北方向直行"
+    },
+    {
+        "id": 15,
+        "type": 1,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "北方向右转"
+    },
+    {
+        "id": 16,
+        "type": 2,
+        "status": 0,
+        "conflictBits": 0,
+        "countdown": 0,
+        "vehBits": 0,
+        "pedBits": 0,
+        "desc": "北方向行人"
+    }
+]

@@ -1,0 +1,206 @@
+下载双环方案1配置和单环方案2配置
+[
+	{
+		"id": 1,
+		"desc": "双环方案1",
+		"cycle": 60,
+		"offset": 0,
+		"coordPhase": 1,
+		"timing": [
+			{
+				"phase": 1,
+				"time": 15,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 2,
+				"time": 15,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 3,
+				"time": 12,
+				"status": 0,
+				"barrier": 2
+			},
+			{
+				"phase": 4,
+				"time": 18,
+				"status": 0,
+				"barrier": 2
+			},
+			{
+				"phase": 5,
+				"time": 10,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 6,
+				"time": 20,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 7,
+				"time": 15,
+				"status": 0,
+				"barrier": 2
+			},
+			{
+				"phase": 8,
+				"time": 15,
+				"status": 0,
+				"barrier": 2
+			}
+		],
+		"turn": [
+			[1,2,3,4],
+			[5,6,7,8]
+		]
+	},
+	{
+		"id": 2,
+		"desc": "单环方案2",
+		"cycle": 100,
+		"offset": 0,
+		"coordPhase": 1,
+		"timing": [
+			{
+				"phase": 1,
+				"time": 20,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 2,
+				"time": 30,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 3,
+				"time": 20,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 4,
+				"time": 30,
+				"status": 0,
+				"barrier": 1
+			}
+		],
+		"turn": [
+			[1,2,3,4]
+		]
+	}
+]
+
+
+修改方案1的相位差
+[
+	{
+		"id": 1,
+		"offset": 10
+	}
+]
+
+修改方案1中相位的时间
+[
+	{
+		"id": 1,
+		"offset": 10,
+		"timing": [
+			{
+				"phase": 1,
+				"time": 25
+			},
+			{
+				"phase": 5,
+				"time": 20
+			}
+		]
+	}
+]
+
+修改双环方案1中环1和环2的相序
+[
+	{
+		"id": 1,
+		"turn": [
+			[2,1,4,3],
+			[6,5,7,8]
+		]
+	}
+]
+
+修改双环方案1中环2的相序
+[
+	{
+		"id": 1,
+		"turn": [
+			[],
+			[6,5,7,8]
+		]
+	}
+]
+
+修改单环方案2中的相序
+[
+	{
+		"id": 1,
+		"turn": [
+			[2,1,4,3]
+		]
+	}
+]
+
+删除方案2
+[
+	{
+		"id": 2,
+		"action": 1
+	}
+]
+
+[
+	{
+		"id": 1,
+		"desc": "单环定周期方案1",
+		"cycle": 100,
+		"offset": 0,
+		"coordPhase": 1,
+		"timing": [
+			{
+				"phase": 1,
+				"time": 20,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 2,
+				"time": 30,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 3,
+				"time": 20,
+				"status": 0,
+				"barrier": 1
+			},
+			{
+				"phase": 4,
+				"time": 30,
+				"status": 0,
+				"barrier": 1
+			}
+		],
+		"turn": [
+			[1,2,3,4]
+		]
+	}
+]

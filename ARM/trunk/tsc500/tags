@@ -1,0 +1,1068 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+ALLRED	platform.h	/^	ALLRED = 6,$/;"	e	enum:__anon23
+ALTERNATE	HikConfig.h	/^    ALTERNATE = 0,\/\/½»Ìæ$/;"	e	enum:__anon7
+ActionItem	HikConfig.h	/^}ActionItem,*PActionItem;$/;"	t	typeref:struct:__anon14
+AlterPhaseGreenLightTime	platform.c	/^static void AlterPhaseGreenLightTime(PHASE_COUNTING_DOWN_PARAMS *pCountDownParams,unsigned char *pPhaseGreenBlink)$/;"	f	file:
+AscAddress	HikConfig.h	/^    struct STRU_Address                AscAddress;                                             \/\/µØÖ·£¬°üÀ¨´®¿ÚµØÖ·ºÍÍø¿ÚµØÖ·$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_Address
+AscBasicFaultDetect	HikConfig.h	/^    struct STRU_BasicFaultDetect       AscBasicFaultDetect;$/;"	m	struct:STRU_FaultDetectSet	typeref:struct:STRU_FaultDetectSet::STRU_BasicFaultDetect
+AscChannelCurrentRedTable	HikConfig.h	/^    struct STRU_ChannelRedLightCurrent AscChannelCurrentRedTable[NUM_CHANNEL];$/;"	m	struct:STRU_FaultDetectSet	typeref:struct:STRU_FaultDetectSet::STRU_ChannelRedLightCurrent
+AscChannelNotes	HikConfig.h	/^    char						AscChannelNotes[NUM_CHANNEL][40];                 \/\/Í¨µÀ½ÓÏß×¢ÊÍ$/;"	m	struct:__anon18
+AscCoordinationVariable	HikConfig.h	/^    struct STRU_N_CoordinationVariable	AscCoordinationVariable;                                \/\/Ğ­µ÷²ÎÊı$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_CoordinationVariable
+AscCountDownBoardCfg	HikConfig.h	/^    struct STRU_N_CountDownBoard       AscCountDownBoardCfg[MAX_COUNTDOWNBOARD_COUNT];         \/\/µ¹¼ÆÊ±ÅÆ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_CountDownBoard
+AscCountDownCfg	HikConfig.h	/^    struct SCountDownCfg_DEL		    AscCountDownCfg;                                        \/\/µ¹¼ÆÊ±±í$/;"	m	struct:__anon18	typeref:struct:__anon18::SCountDownCfg_DEL
+AscDynPatternSel	HikConfig.h	/^    struct STRU_DynPatternSel          AscDynPatternSel[MAX_DYNPATTERNSEL_COUNT];              \/\/¶¯Ì¬·½°¸Ñ¡Ôñ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_DynPatternSel
+AscEventCfgTable	HikConfig.h	/^    struct STRU_N_EventConfig          AscEventCfgTable[MAX_EVENTCONFIG_COUNT];                \/\/¹ÊÕÏÅäÖÃ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_EventConfig
+AscFaultDectectSet	HikConfig.h	/^    struct STRU_FaultDetectSet         AscFaultDectectSet;                                     \/\/¹ÊÕÏ¼ì²âÉèÖÃ$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_FaultDetectSet
+AscOverlapTableEx	HikConfig.h	/^    struct STRU_N_OverlapTableEx       AscOverlapTableEx[MAX_OVERLAP_COUNT];                   \/\/OverlapÂÌÉÁÉèÖÃ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_OverlapTableEx
+AscPedestrianDetectorTable	HikConfig.h	/^    struct STRU_N_PedestrianDetector	AscPedestrianDetectorTable[MAX_PEDESTRIANDETECTOR_COUNT];\/\/ĞĞÈË¼ì²âÆ÷±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_PedestrianDetector
+AscPhaseEx	HikConfig.h	/^    struct STRU_PhaseEx				AscPhaseEx[NUM_PHASE];                            \/\/¶ÔÏàÎ»±í¸½¼ÓĞ©¹¦ÄÜ£¬$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_PhaseEx
+AscPreemptTable	HikConfig.h	/^    struct STRU_N_Preempt				AscPreemptTable[MAX_PREEMPT_COUNT];                     \/\/ÓÅÏÈ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_Preempt
+AscSignalTransTable	HikConfig.h	/^    struct STRU_SignalTransEntry	    AscSignalTransTable[NUM_PHASE];                   \/\/ĞÅºÅ×ª»»ĞòÁĞ±í,ÆäÖĞ¶¨ÒåÁËÏàÎ»ÂÌÉÁÊ±¼ä$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_SignalTransEntry
+AscSplitPedEx	HikConfig.h	/^    struct STRU_SplitPedEx				AscSplitPedEx[NUM_GREEN_SIGNAL_RATION][NUM_PHASE];        \/\/Ôö¼ÓµÄÂÌĞÅ±ÈÖĞĞĞÈËµÄÊ±¼ä$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_SplitPedEx
+AscTimeBaseVariable	HikConfig.h	/^    struct STRU_N_TimeBaseVariable		AscTimeBaseVariable;                                    \/\/Ê±»ù²ÎÊı$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_TimeBaseVariable
+AscTransIntensityChoiceTable	HikConfig.h	/^    struct STRU_N_TransIntensityChoice AscTransIntensityChoiceTable[MAX_TRANSINTENSITYCHOICE_COUNT];\/\/½»Í¨Ç¿¶ÈÑ¡Ôñ±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_TransIntensityChoice
+AscUnitOptiPara	HikConfig.h	/^    struct STRU_UnitOptiPara			AscUnitOptiPara;                                        \/\/ĞÅºÅ»úµ¥ÔªÓÅ»¯²ÎÊı$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_UnitOptiPara
+AscUnitParamEx	HikConfig.h	/^    struct STRU_UnitParamEx			AscUnitParamEx;                                         \/\/Ôö¼ÓµÄµ¥Ôª²ÎÊıÄÚÈİ$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_UnitParamEx
+AscVehicleDetectorTable	HikConfig.h	/^    struct STRU_N_VehicleDetector		AscVehicleDetectorTable[MAX_VEHICLEDETECTOR_COUNT];     \/\/³µÁ¾¼ì²âÆ÷±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_VehicleDetector
+AscVehicleDetectorTableEx	HikConfig.h	/^    struct STRU_N_VehicleDetectorEx	AscVehicleDetectorTableEx[MAX_VEHICLEDETECTOR_COUNT];   \/\/³µÁ¾¼ì²âÆ÷±í$/;"	m	struct:__anon18	typeref:struct:__anon18::STRU_N_VehicleDetectorEx
+BIT	CPLD.c	701;"	d	file:
+BIT	HikConfig.h	47;"	d
+Bool	parse_ini.h	/^} Bool;$/;"	t	typeref:enum:__anon21
+Boolean	hik.h	/^} Boolean;$/;"	t	typeref:enum:__anon19
+CANCEL_STEP_CTRL_PARAMS	platform.h	/^}CANCEL_STEP_CTRL_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Cancel_Step_Ctrl
+CANCEL_STEP_FEEDBACK_PARAMS	platform.h	/^}CANCEL_STEP_FEEDBACK_PARAMS;   $/;"	t	typeref:struct:STRU_Extra_Param_Cancel_Step_Feedback
+CC	makefile	/^CC = $(CROSS_COMPILE)gcc$/;"	m
+CFG_BAK_NAME	HikConfig.h	45;"	d
+CFG_NAME	HikConfig.h	44;"	d
+CFLAGS	makefile	/^CFLAGS=-Wall -s -unaligned_access -Wno-implicit-function-declaration -Wno-unused-variable -Wno-array-bounds$/;"	m
+CHANGE	HikConfig.c	/^	CHANGE,			\/\/±íÃ÷´ËÊ±Õı´¦ÓÚ¸Ä±ä¿ØÖÆ·½Ê½$/;"	e	enum:__anon1	file:
+CHANNEL_DESC_PARAMS	common.h	/^}CHANNEL_DESC_PARAMS;$/;"	t	typeref:struct:STRU_Extra_Param_Channel
+CHANNEL_LOCK_FEEDBACK_PARAMS	platform.h	/^}CHANNEL_LOCK_FEEDBACK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Channel_Lock_Feedback
+CHANNEL_LOCK_PARAMS	platform.h	/^}CHANNEL_LOCK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Channel_Lock
+CHANNEL_UNLOCK_FEEDBACK_PARAMS	platform.h	/^}CHANNEL_UNLOCK_FEEDBACK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Channel_Unlock_Feedback
+CHANNEL_UNLOCK_PARAMS	platform.h	/^}CHANNEL_UNLOCK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Channel_Unlock
+COL_BLU	hik.h	48;"	d
+COL_DEF	hik.h	45;"	d
+COL_GRE	hik.h	47;"	d
+COL_RED	hik.h	46;"	d
+COL_YEL	hik.h	49;"	d
+COM_PARAMS	common.h	/^}COM_PARAMS;$/;"	t	typeref:struct:STRU_Extra_Param_Com
+CPLD_IO_Init	CPLD.c	/^void CPLD_IO_Init()$/;"	f
+CROSS_COMPILE	makefile	/^CROSS_COMPILE ?= arm-none-linux-gnueabi-$/;"	m
+CURRENT_PARAMS	common.h	/^typedef struct CURRENT_PARAMS$/;"	s
+CURRENT_PARAMS_UDP	common.h	/^typedef struct CURRENT_PARAMS_UDP$/;"	s
+CalCountDownCalledCount	bak.c	/^static UInt8 CalCountDownCalledCount()	\/\/¼ÆËãµ¹¼ÆÊ±½Ó¿Ú×Ü¹²µ÷ÓÃ´ÎÊı$/;"	f	file:
+CalCountDownCalledCount	platform.c	/^static UInt8 CalCountDownCalledCount()	\/\/¼ÆËãµ¹¼ÆÊ±½Ó¿Ú×Ü¹²µ÷ÓÃ´ÎÊı$/;"	f	file:
+CalcCircleTime	platform.c	/^static void CalcCircleTime(PHASE_COUNTING_DOWN_PARAMS *pCountDownParams,PhaseTurnItem *pPhaseTurn)$/;"	f	file:
+CalcGreenSplit	platform.c	/^static void CalcGreenSplit(PHASE_COUNTING_DOWN_PARAMS *pCountDownParams,unsigned char cCircleNo,PhaseTurnItem *pPhaseTurn,unsigned char uIndex)$/;"	f	file:
+CalcPhaseRunTimeAndSplit	bak.c	/^void CalcPhaseRunTimeAndSplit(PHASE_COUNTING_DOWN_FEEDBACK_PARAMS *pCountDownParams,PhaseTurnItem *pPhaseTurn)$/;"	f
+CalcPhaseRunTimeAndSplit	platform.c	/^void CalcPhaseRunTimeAndSplit(PHASE_COUNTING_DOWN_PARAMS *pCountDownParams,PhaseTurnItem *pPhaseTurn,unsigned char *pPhaseGreenBlink)$/;"	f
+ChannelItem	HikConfig.h	/^}ChannelItem,*PChannelItem;$/;"	t	typeref:struct:__anon16
+CollectCountDownParams	bak.c	/^void CollectCountDownParams()$/;"	f
+CollectCountDownParams	platform.c	/^void CollectCountDownParams()$/;"	f
+ControllerType	HikConfig.h	/^}ControllerType;\/\/¿ØÖÆÔ´µÄÀàĞÍ$/;"	t	typeref:enum:__anon6
+CountDownHead	common.h	/^}CountDownHead;$/;"	t	typeref:struct:_Count_Down_Head_
+CountDownOutPed	NGSL_io.c	/^void CountDownOutPed(unsigned char phase, unsigned char color, unsigned char phaseTime)$/;"	f
+CountDownOutVeh	NGSL_io.c	/^void CountDownOutVeh(unsigned char phase, unsigned char color, unsigned char phaseTime)$/;"	f
+CountDownPed	common.h	/^}CountDownPed;$/;"	t	typeref:struct:_Count_Down_Ped_
+CountDownVeh	common.h	/^}CountDownVeh;$/;"	t	typeref:struct:_Count_Down_Veh_
+Count_Down_Params	common.h	/^typedef struct Count_Down_Params$/;"	s
+Count_Down_pulse_All	NGSL_io.c	/^void Count_Down_pulse_All(uint16 *g_nLampStatus)$/;"	f
+Count_Down_pulse_Half	NGSL_io.c	/^void Count_Down_pulse_Half(uint16 *g_nLampStatus)$/;"	f
+CurDetectFreq	NGSL_io.c	/^static int CurDetectFreq = 0;$/;"	v	file:
+DATE_DESC	common.h	/^}DATE_DESC;$/;"	t	typeref:struct:_Date_Desc_
+DATE_NAME_PARAMS	common.h	/^}DATE_NAME_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Date_Name
+DBG	hik.h	63;"	d
+DBG	hik.h	66;"	d
+DBG	hik.h	75;"	d
+DBG	hik.h	78;"	d
+DEVICE_NAME	CPLD.c	29;"	d	file:
+DEVICE_VERSION_PARAMS	common.h	/^}DEVICE_VERSION_PARAMS;$/;"	t	typeref:struct:STRU_Extra_Param_Version
+DestAddressInfo	platform.h	/^} DestAddressInfo;$/;"	t	typeref:struct:__anon22
+DoorCheck	CPLD.c	/^int DoorCheck()$/;"	f
+DoorCheckInput	NGSL_io.c	/^uint16 DoorCheckInput(void)$/;"	f
+DownloadConfig	HikConfig.c	/^void DownloadConfig(int type, void *arg)$/;"	f
+EINVAL	lfq.h	14;"	d
+ERR	hik.h	57;"	d
+ERR	hik.h	69;"	d
+ERROR_BARRIER_CONCURRENT_PHASE	HikConfig.h	/^	ERROR_BARRIER_CONCURRENT_PHASE, 			\/\/²¢·¢ÏàÎ»µÄÆÁÕÏÒ»²àÂÌĞÅ±ÈÊ±¼ä²»ÏàµÈ¡£$/;"	e	enum:__anon2
+ERROR_CHILD_NOT_CONTINUOUS_CONCURRENT_PHASE	HikConfig.h	/^	ERROR_CHILD_NOT_CONTINUOUS_CONCURRENT_PHASE, \/\/²¢·¢ÏàÎ»µÄ×ÓÏàÎ»ÔÚÏàĞò±íÖĞ²»Á¬Ğø¡£$/;"	e	enum:__anon2
+ERROR_CIRCLE_TIME_SCHEME	HikConfig.h	/^	ERROR_CIRCLE_TIME_SCHEME,					\/\/·½°¸±íÖĞÖÜÆÚ³¤²»µÈÓÚµ¥»·ÂÌĞÅ±ÈÖ®ºÍ$/;"	e	enum:__anon2
+ERROR_FATHER_NOT_EXIST_CONCURRENT_PHASE	HikConfig.h	/^	ERROR_FATHER_NOT_EXIST_CONCURRENT_PHASE,	\/\/²¢·¢ÏàÎ»µÄÏàÎ»ºÅ²»´æÔÚÓÚÆä²¢·¢ÏàÎ»µÄ²¢·¢ÏàÎ»Êı×éÖĞ¡£$/;"	e	enum:__anon2
+ERROR_ILLEGAL_SCHME	HikConfig.h	/^	ERROR_ILLEGAL_SCHME,						\/\/·½°¸±íÖĞÏàĞò±í»òÂÌĞÅ±È±íID·Ç·¨¡£$/;"	e	enum:__anon2
+ERROR_NOT_CONFIG_INFORMATION	HikConfig.h	/^	ERROR_NOT_CONFIG_INFORMATION,				\/\/Ã»ÓĞÅäÖÃĞÅÏ¢$/;"	e	enum:__anon2
+ERROR_NOT_CORRECT_PHASE_TURN	HikConfig.h	/^	ERROR_NOT_CORRECT_PHASE_TURN,				\/\/ÏàĞò±íÖĞÏàÎ»µÄĞòºÅºÍ²¢·¢ÏàÎ»²»Æ¥Åä$/;"	e	enum:__anon2
+ERROR_NOT_EQUAL_PHASE_TURN_CIRCLE	HikConfig.h	/^	ERROR_NOT_EQUAL_PHASE_TURN_CIRCLE,			\/\/ÏàĞò±íÖĞ»·ºÅºÍÏàÎ»±íÖĞ¸ÃÏàÎ»µÄ»·ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_ACTION_TIMEINTERVAL	HikConfig.h	/^	ERROR_NOT_EXIST_ACTION_TIMEINTERVAL,		\/\/Ê±¶Î±íÖĞ¶¯×÷±í²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_CONCURRENT_PHASE_PHASE	HikConfig.h	/^	ERROR_NOT_EXIST_CONCURRENT_PHASE_PHASE,	\/\/²¢·¢ÏàÎ»±íÖĞµÄ²¢·¢ÏàÎ»ID²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_CONCURRENT_PHASE_PHASE_2	HikConfig.h	/^	ERROR_NOT_EXIST_CONCURRENT_PHASE_PHASE_2,	\/\/ÏàÎ»±íÖĞÓĞÏàÎ»²»´æÔÚ²¢·¢ÏàÎ»¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_GREEN_SIGNAL_RATION_SCHEME	HikConfig.h	/^	ERROR_NOT_EXIST_GREEN_SIGNAL_RATION_SCHEME,	\/\/·½°¸±íÖĞÂÌĞÅ±È±í²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_MOTHER_PHASE_FOLLOW_PHASE	HikConfig.h	/^	ERROR_NOT_EXIST_MOTHER_PHASE_FOLLOW_PHASE,	\/\/¸úËæ±íÖĞÄ¸ÏàÎ»²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_PHASE_GREEN_SIGNAL_RATION	HikConfig.h	/^	ERROR_NOT_EXIST_PHASE_GREEN_SIGNAL_RATION,	\/\/ÏàÎ»±íÖĞÓĞÏàÎ»²»´æÔÚÓëÂÌĞÅ±È±íÖĞ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_PHASE_TURN_PHASE	HikConfig.h	/^	ERROR_NOT_EXIST_PHASE_TURN_PHASE,			\/\/ÏàĞò±íÖĞÏàÎ»ºÅ²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_PHASE_TURN_PHASE_2	HikConfig.h	/^	ERROR_NOT_EXIST_PHASE_TURN_PHASE_2,			\/\/ÏàÎ»±íÖĞÓĞÏàÎ»²»´æÔÚÓÚÏàĞò±íÖĞ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_PHASE_TURN_SHCEME	HikConfig.h	/^	ERROR_NOT_EXIST_PHASE_TURN_SHCEME,			\/\/·½°¸±íÖĞÏàĞò±í²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_SCHEME_ACTION	HikConfig.h	/^	ERROR_NOT_EXIST_SCHEME_ACTION,				\/\/¶¯×÷±íÖĞ·½°¸±í²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_SOURCE_CHANNEL	HikConfig.h	/^	ERROR_NOT_EXIST_SOURCE_CHANNEL,				\/\/Í¨µÀ±íÖĞ¸ÃÍ¨µÀµÄ¿ØÖÆÔ´ID²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_SOURCE_FOLLOW_CHANNEL	HikConfig.h	/^	ERROR_NOT_EXIST_SOURCE_FOLLOW_CHANNEL,		\/\/Í¨µÀ±íÖĞ¸ÃÍ¨µÀµÄ¸úËæ¿ØÖÆÔ´ID²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_SOURCE_OTHER_CHANNEL	HikConfig.h	/^	ERROR_NOT_EXIST_SOURCE_OTHER_CHANNEL,		\/\/Í¨µÀ±íÖĞ¸ÃÍ¨µÀµÄÆäËû¿ØÖÆÔ´ID²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NOT_EXIST_TIMEINTERVAL_SCHEDULE	HikConfig.h	/^	ERROR_NOT_EXIST_TIMEINTERVAL_SCHEDULE,		\/\/µ÷¶È±íÖĞÊ±¶Î±í²»´æÔÚ¡£$/;"	e	enum:__anon2
+ERROR_NULL_POINTER	HikConfig.h	/^	ERROR_NULL_POINTER = 1,						\/\/pSignalControlparaÖ¸ÕëÎª¿Õ$/;"	e	enum:__anon2
+ERROR_REPEATE_CONCURRENT_PHASE	HikConfig.h	/^	ERROR_REPEATE_CONCURRENT_PHASE,			\/\/Ä³ÏàÎ»µÄ²¢·¢ÏàÎ»Êı×éÓĞÖØ¸´Öµ¡£$/;"	e	enum:__anon2
+ERROR_REPEATE_FOLLOW_PHASE	HikConfig.h	/^	ERROR_REPEATE_FOLLOW_PHASE,				\/\/¸úËæÏàÎ»±íµÄ¸úËæÏàÎ»Êı×éÓĞÖØ¸´Öµ¡£$/;"	e	enum:__anon2
+ERROR_REPEATE_PHASE_TURN	HikConfig.h	/^	ERROR_REPEATE_PHASE_TURN,					\/\/Ä³ÏàĞò±íµÄÏàĞòÊı×éÓĞÖØ¸´Öµ¡£$/;"	e	enum:__anon2
+ERROR_REPEATE_SCHEDULE	HikConfig.h	/^	ERROR_REPEATE_SCHEDULE,						\/\/µ÷¶È±íÖĞÓĞÖØ¸´ÈÕÆÚµ÷¶È$/;"	e	enum:__anon2
+ERROR_SAME_CIRCLE_CONCURRENT_PHASE	HikConfig.h	/^	ERROR_SAME_CIRCLE_CONCURRENT_PHASE,		\/\/²¢·¢ÏàÎ»±íÖĞÏàÎ»ºÅ´æÔÚÓÚ²¢·¢ÏàÎ»Êı×éÖĞ¡£$/;"	e	enum:__anon2
+ERROR_SPLIT_LOW_MOTO_GREEN_SIGNAL_RATION	HikConfig.h	/^	ERROR_SPLIT_LOW_MOTO_GREEN_SIGNAL_RATION,	\/\/ÂÌĞÅ±È±íÖĞÖÜÆÚ³¤±È»ú¶¯³µµÄÂÌÉÁ¡¢»ÆµÆ¡¢È«ºìÖ®ºÍĞ¡$/;"	e	enum:__anon2
+ERROR_SPLIT_LOW_PEDESTRIAN_GREEN_SIGNAL_RATION	HikConfig.h	/^	ERROR_SPLIT_LOW_PEDESTRIAN_GREEN_SIGNAL_RATION,\/\/ÂÌĞÅ±È±íÖĞÖÜÆÚ³¤±ÈĞĞÈËÇå¿Õ¡¢ĞĞÈË·ÅĞĞÊ±¼äÖ®ºÍĞ¡¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_ACTION	HikConfig.h	/^	ERROR_SUBSCRIPT_ACTION,					\/\/¶¯×÷±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼Ê¶¯×÷ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_CHANNEL	HikConfig.h	/^	ERROR_SUBSCRIPT_CHANNEL,					\/\/Í¨µÀ±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÍ¨µÀºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_FOLLOW_PHASE	HikConfig.h	/^	ERROR_SUBSCRIPT_FOLLOW_PHASE,				\/\/¸úËæÏàÎ»±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼Ê¸úËæÏàÎ»ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_GREEN_SIGNAL_RATION	HikConfig.h	/^	ERROR_SUBSCRIPT_GREEN_SIGNAL_RATION,		\/\/ÂÌĞÅ±È±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÂÌĞÅ±È±íºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_GREEN_SIGNAL_RATION_PHASE	HikConfig.h	/^	ERROR_SUBSCRIPT_GREEN_SIGNAL_RATION_PHASE,	\/\/ÂÌĞÅ±È±íµÄÏàÎ»Êı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÏàÎ»ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_PHASE	HikConfig.h	/^	ERROR_SUBSCRIPT_PHASE,				 		\/\/ÏàÎ»Êı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÏàÎ»Öµ²»ÏàÍ¬¡£nPhaseArray[i] != (i+1)$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_PHASE_TURN	HikConfig.h	/^	ERROR_SUBSCRIPT_PHASE_TURN,				    \/\/ÏàĞò±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÏàĞò±íºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_SCHEDULE	HikConfig.h	/^	ERROR_SUBSCRIPT_SCHEDULE,					\/\/µ÷¶È±íµÄÊı×éÏÂ±êÖµ+1Óëµ÷¶È±íºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_SCHEME	HikConfig.h	/^	ERROR_SUBSCRIPT_SCHEME,					\/\/·½°¸±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼Ê·½°¸ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_TIMEINTERVAL	HikConfig.h	/^	ERROR_SUBSCRIPT_TIMEINTERVAL,				\/\/Ê±¶Î±íµÄÊı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÊ±¶Î±íºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUBSCRIPT_TIMEINTERVAL_TIME	HikConfig.h	/^	ERROR_SUBSCRIPT_TIMEINTERVAL_TIME,			\/\/¶¯×÷±íµÄÊ±¶ÎÊı×éÏÂ±êÖµ+1ÓëÊµ¼ÊÊ±¶ÎºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+ERROR_SUSCRIPT_PHASE_TURN_CIRCLE	HikConfig.h	/^	ERROR_SUSCRIPT_PHASE_TURN_CIRCLE,			\/\/ÏàĞò±íµÄ»·ºÅ×éµÄÏÂ±êÖµ+1ÓëÊµ¼Ê»·ºÅ²»ÏàÍ¬¡£$/;"	e	enum:__anon2
+EWOULDBLOCK	lfq.h	13;"	d
+FAILURE_INFO	common.h	/^typedef struct FAILURE_INFO$/;"	s
+FALSE	hik.h	/^	FALSE = 0,$/;"	e	enum:__anon19
+FILE_CUSTOM	inifile.c	34;"	d	file:
+FILE_DESC	inifile.c	33;"	d	file:
+FILE_HIK_CFG	inifile.c	32;"	d	file:
+FOLLOW	HikConfig.h	/^    FOLLOW,\/\/¸úËæÀàĞÍ$/;"	e	enum:__anon6
+False	parse_ini.h	/^	False = 0,$/;"	e	enum:__anon21
+FindNextPhaseIdInPhaseTrun	bak.c	/^static inline void FindNextPhaseIdInPhaseTrun(PhaseTurnItem *phaseTrunTable, UInt8 *nextPhaseIds)$/;"	f	file:
+FindNextPhaseIdInPhaseTrun	platform.c	/^static inline void FindNextPhaseIdInPhaseTrun(PhaseTurnItem *phaseTrunTable, UInt8 *nextPhaseIds)$/;"	f	file:
+FlashLightType	HikConfig.h	/^}FlashLightType;\/\/ÉÁ¹âÄ£Ê½$/;"	t	typeref:enum:__anon7
+FollowPhaseItem	HikConfig.h	/^}FollowPhaseItem,*PFollowPhaseItem;$/;"	t	typeref:struct:__anon17
+GET_DEVICE_TYPE_FEEDBACK_PARAMS	platform.h	/^}GET_DEVICE_TYPE_FEEDBACK_PARAMS; $/;"	t	typeref:struct:STRU_Extra_Param_Get_Device_Type_Feedback
+GET_DEVICE_TYPE_PARAMS	platform.h	/^}GET_DEVICE_TYPE_PARAMS;  $/;"	t	typeref:struct:STRU_Extra_Param_Get_Device_Type
+GET_PHASE_COUNTING_DOWN_PARAMS	platform.h	/^}GET_PHASE_COUNTING_DOWN_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Get_Phase_Counting_Down
+GPSInit	NGSL_io.c	/^void GPSInit()$/;"	f
+GREEN	platform.h	/^	GREEN = 1,$/;"	e	enum:__anon23
+GREEN_BLINK	platform.h	/^	GREEN_BLINK = 4,$/;"	e	enum:__anon23
+GetActionID	HikConfig.c	/^UInt8 GetActionID()$/;"	f
+GetAllRedKeyStatus	CPLD.c	/^int GetAllRedKeyStatus()$/;"	f
+GetAutoKeyStatus	CPLD.c	/^int GetAutoKeyStatus()$/;"	f
+GetConfigFilePath	HikConfig.c	/^static char *GetConfigFilePath(void)$/;"	f	file:
+GetFlashingKeyStatus	CPLD.c	/^int GetFlashingKeyStatus()$/;"	f
+GetManualKeyStatus	CPLD.c	/^int GetManualKeyStatus()$/;"	f
+GetNetparam	udpserver.c	/^int GetNetparam(const char *ifName, char *chIP, char *chMask, char *chGateway)$/;"	f
+GetSchemeId	bak.c	/^static UInt8 GetSchemeId(GreenSignalRationItem *splitTable, PhaseItem *phaseTable, PhaseTurnItem *phaseTrunTable, FollowPhaseItem *followPhaseTable)$/;"	f	file:
+GetSchemeId	platform.c	/^static UInt8 GetSchemeId(GreenSignalRationItem *splitTable, PhaseItem *phaseTable, PhaseTurnItem *phaseTrunTable, FollowPhaseItem *followPhaseTable, UInt8 *greenBlinkTimes)$/;"	f	file:
+GetStepByStepKeyStatus	CPLD.c	/^int GetStepByStepKeyStatus()$/;"	f
+GetTimeIntervalID	HikConfig.c	/^UInt8 GetTimeIntervalID(struct tm *now)$/;"	f
+GreenSignalRationItem	HikConfig.h	/^}GreenSignalRationItem,*PGreenSignalRationItem;$/;"	t	typeref:struct:__anon13
+GreenSignalRationType	HikConfig.h	/^}GreenSignalRationType;\/\/ÂÌĞÅ±ÈÄ£Ê½$/;"	t	typeref:enum:__anon4
+HARDWARE_VERSION_INFO	common.h	12;"	d
+HIKCONFIG_LIB_VERSION	HikConfig.h	42;"	d
+HardflashDogCtrl	CPLD.c	/^void HardflashDogCtrl(int value)$/;"	f
+HardflashDogFlag	NGSL_io.c	/^static int HardflashDogFlag = 0;$/;"	v	file:
+HardflashDogOutput	NGSL_io.c	/^void HardflashDogOutput(void)$/;"	f
+HardwareWatchdogInit	NGSL_io.c	/^void HardwareWatchdogInit()$/;"	f
+HardwareWatchdogKeepAlive	NGSL_io.c	/^unsigned int HardwareWatchdogKeepAlive(int boardNum)$/;"	f
+HardwareWatchdoghd	NGSL_io.c	/^int HardwareWatchdoghd = 0;$/;"	v
+HiktcsRunningFlag	CPLD.c	/^static int HiktcsRunningFlag = 0;$/;"	v	file:
+Hiktsc_Running_Status	CPLD.c	/^void Hiktsc_Running_Status(void)$/;"	f
+HoursToMinutes	HikConfig.c	121;"	d	file:
+IGNORE_Phase	HikConfig.h	/^    IGNORE_Phase\/\/ºöÂÔÏàÎ»$/;"	e	enum:__anon4
+INDUCTIVE_CONTROL_ACTION_ID	bak.c	7;"	d	file:
+INDUCTIVE_CONTROL_ACTION_ID	platform.c	9;"	d	file:
+INDUCTIVE_CONTROL_SCHEME_ID	bak.c	8;"	d	file:
+INDUCTIVE_CONTROL_SCHEME_ID	platform.c	10;"	d	file:
+INFO	hik.h	59;"	d
+INFO	hik.h	71;"	d
+INT16	common.h	/^typedef short INT16;$/;"	t
+INT32	common.h	/^typedef long INT32;$/;"	t
+INT8	common.h	/^typedef char 	INT8;$/;"	t
+INVALID	platform.h	/^	INVALID = 0,$/;"	e	enum:__anon23
+IO_INPUT17_TO_INPUT24	CPLD.c	97;"	d	file:
+IO_INPUT1_TO_INPUT8	CPLD.c	95;"	d	file:
+IO_INPUT25_TO_INPUT32	CPLD.c	98;"	d	file:
+IO_INPUT9_TO_INPUT16	CPLD.c	96;"	d	file:
+IO_OUTPUT10_0	CPLD.c	82;"	d	file:
+IO_OUTPUT10_1	CPLD.c	61;"	d	file:
+IO_OUTPUT11_0	CPLD.c	83;"	d	file:
+IO_OUTPUT11_1	CPLD.c	62;"	d	file:
+IO_OUTPUT12_0	CPLD.c	84;"	d	file:
+IO_OUTPUT12_1	CPLD.c	63;"	d	file:
+IO_OUTPUT13_0	CPLD.c	85;"	d	file:
+IO_OUTPUT13_1	CPLD.c	64;"	d	file:
+IO_OUTPUT14_0	CPLD.c	86;"	d	file:
+IO_OUTPUT14_1	CPLD.c	65;"	d	file:
+IO_OUTPUT15_0	CPLD.c	87;"	d	file:
+IO_OUTPUT15_1	CPLD.c	66;"	d	file:
+IO_OUTPUT16_0	CPLD.c	88;"	d	file:
+IO_OUTPUT16_1	CPLD.c	67;"	d	file:
+IO_OUTPUT17_0	CPLD.c	89;"	d	file:
+IO_OUTPUT17_1	CPLD.c	68;"	d	file:
+IO_OUTPUT18_0	CPLD.c	90;"	d	file:
+IO_OUTPUT18_1	CPLD.c	69;"	d	file:
+IO_OUTPUT19_0	CPLD.c	91;"	d	file:
+IO_OUTPUT19_1	CPLD.c	70;"	d	file:
+IO_OUTPUT1_0	CPLD.c	73;"	d	file:
+IO_OUTPUT1_1	CPLD.c	52;"	d	file:
+IO_OUTPUT20_0	CPLD.c	92;"	d	file:
+IO_OUTPUT20_1	CPLD.c	71;"	d	file:
+IO_OUTPUT2_0	CPLD.c	74;"	d	file:
+IO_OUTPUT2_1	CPLD.c	53;"	d	file:
+IO_OUTPUT3_0	CPLD.c	75;"	d	file:
+IO_OUTPUT3_1	CPLD.c	54;"	d	file:
+IO_OUTPUT4_0	CPLD.c	76;"	d	file:
+IO_OUTPUT4_1	CPLD.c	55;"	d	file:
+IO_OUTPUT5_0	CPLD.c	77;"	d	file:
+IO_OUTPUT5_1	CPLD.c	56;"	d	file:
+IO_OUTPUT6_0	CPLD.c	78;"	d	file:
+IO_OUTPUT6_1	CPLD.c	57;"	d	file:
+IO_OUTPUT7_0	CPLD.c	79;"	d	file:
+IO_OUTPUT7_1	CPLD.c	58;"	d	file:
+IO_OUTPUT8_0	CPLD.c	80;"	d	file:
+IO_OUTPUT8_1	CPLD.c	59;"	d	file:
+IO_OUTPUT9_0	CPLD.c	81;"	d	file:
+IO_OUTPUT9_1	CPLD.c	60;"	d	file:
+InitCountDownParams	bak.c	/^void InitCountDownParams(void)$/;"	f
+InitCountDownParams	platform.c	/^void InitCountDownParams(void)$/;"	f
+InitSetting	HikConfig.h	/^}InitSetting;\/\/³õÊ¼»¯ÉèÖÃ$/;"	t	typeref:enum:__anon3
+InitSetting_ALL_RED	HikConfig.h	/^    InitSetting_ALL_RED,\/\/È«ºì    $/;"	e	enum:__anon3
+InitSetting_GREEN	HikConfig.h	/^    InitSetting_GREEN,\/\/ÂÌµÆ    $/;"	e	enum:__anon3
+InitSetting_OTHER	HikConfig.h	/^	InitSetting_OTHER = 1,$/;"	e	enum:__anon3
+InitSetting_PEDESTRIAN_CLEAR	HikConfig.h	/^    InitSetting_PEDESTRIAN_CLEAR,\/\/ĞĞÈËÇå¿Õ$/;"	e	enum:__anon3
+InitSetting_RED	HikConfig.h	/^    InitSetting_RED,\/\/ºìµÆ$/;"	e	enum:__anon3
+InitSetting_YELLOW	HikConfig.h	/^    InitSetting_YELLOW,\/\/»ÆµÆ    $/;"	e	enum:__anon3
+InitSignalMachineConfig	HikConfig.c	/^void InitSignalMachineConfig(void)$/;"	f
+Int16	hik.h	/^typedef signed short 		Int16;	\/\/Int16	sValue;$/;"	t
+Int32	hik.h	/^typedef signed int			Int32;	\/\/Int32 iValue;$/;"	t
+Int64	hik.h	/^typedef signed long long	Int64;	\/\/Int64	lValue;$/;"	t
+Int8	hik.h	/^typedef signed char 		Int8;	\/\/Int8 	cValue;	ÎªÁË±£³ÖÍ³Ò»£¬½¨Òé²»Ê¹ÓÃchĞŞÊÎ¶ø¸ÄÎªcĞŞÊÎ$/;"	t
+IsDateInControlArea	NGSL_io.c	/^static unsigned char IsDateInControlArea(CHANNEL_LOCK_PARAMS *pChannnelLockedParams)$/;"	f	file:
+IsNextPhaseInFollowPhaseList	bak.c	/^static inline Boolean IsNextPhaseInFollowPhaseList(FollowPhaseItem *followPhaseItem, UInt8 nextPhaseId)$/;"	f	file:
+IsNextPhaseInFollowPhaseList	platform.c	/^static inline Boolean IsNextPhaseInFollowPhaseList(FollowPhaseItem *followPhaseItem, UInt8 nextPhaseId)$/;"	f	file:
+KEYBOARD_INPUT1	CPLD.c	101;"	d	file:
+KEYBOARD_INPUT2	CPLD.c	102;"	d	file:
+KEYBOARD_INPUT3	CPLD.c	103;"	d	file:
+KEYBOARD_INPUT4	CPLD.c	104;"	d	file:
+KEYBOARD_INPUT5	CPLD.c	105;"	d	file:
+KEYBOARD_OUTPUT1_0	CPLD.c	114;"	d	file:
+KEYBOARD_OUTPUT1_1	CPLD.c	108;"	d	file:
+KEYBOARD_OUTPUT2_0	CPLD.c	115;"	d	file:
+KEYBOARD_OUTPUT2_1	CPLD.c	109;"	d	file:
+KEYBOARD_OUTPUT3_0	CPLD.c	116;"	d	file:
+KEYBOARD_OUTPUT3_1	CPLD.c	110;"	d	file:
+KEYBOARD_OUTPUT4_0	CPLD.c	117;"	d	file:
+KEYBOARD_OUTPUT4_1	CPLD.c	111;"	d	file:
+KEYBOARD_OUTPUT5_0	CPLD.c	118;"	d	file:
+KEYBOARD_OUTPUT5_1	CPLD.c	112;"	d	file:
+L0	NGSL_io.c	/^	unsigned short L0:3;$/;"	m	struct:__anon20	file:
+L1	NGSL_io.c	/^	unsigned short L1:3;$/;"	m	struct:__anon20	file:
+L2	NGSL_io.c	/^	unsigned short L2:3;$/;"	m	struct:__anon20	file:
+L3	NGSL_io.c	/^	unsigned short L3:3;$/;"	m	struct:__anon20	file:
+LED_OUTPUT1_0	CPLD.c	45;"	d	file:
+LED_OUTPUT1_1	CPLD.c	39;"	d	file:
+LED_OUTPUT2_0	CPLD.c	46;"	d	file:
+LED_OUTPUT2_1	CPLD.c	40;"	d	file:
+LED_OUTPUT3_0	CPLD.c	47;"	d	file:
+LED_OUTPUT3_1	CPLD.c	41;"	d	file:
+LED_OUTPUT4_0	CPLD.c	48;"	d	file:
+LED_OUTPUT4_1	CPLD.c	42;"	d	file:
+LED_OUTPUT5_0	CPLD.c	49;"	d	file:
+LED_OUTPUT5_1	CPLD.c	43;"	d	file:
+LEFT_BRACE	inifile.c	13;"	d	file:
+LockChannel	NGSL_io.c	/^void LockChannel(CHANNEL_LOCK_PARAMS *pChannnelLockedParams)$/;"	f
+M	NGSL_io.c	77;"	d	file:
+MAX_2BYTE_VALUE	HikConfig.h	91;"	d
+MAX_ALLSTOPPHASE_LIMIT	HikConfig.h	89;"	d
+MAX_BYTE_VALUE	HikConfig.h	90;"	d
+MAX_COUNTDOWNBOARD_COUNT	HikConfig.h	82;"	d
+MAX_COUNTDOWNBOARD_INCLUDEDPHASES	HikConfig.h	83;"	d
+MAX_DYNPATTERNSEL_COUNT	HikConfig.h	86;"	d
+MAX_EVENTCLASS_COUNT	HikConfig.h	76;"	d
+MAX_EVENTCONFIG_COUNT	HikConfig.h	77;"	d
+MAX_EVENTLOG_COUNT	HikConfig.h	75;"	d
+MAX_FILE_SIZE	inifile.c	12;"	d	file:
+MAX_ITSCONCHANNEL_COUNT	HikConfig.h	98;"	d
+MAX_ITSCONIO_COUNT	HikConfig.h	97;"	d
+MAX_ITSCONSERI_COUNT	HikConfig.h	96;"	d
+MAX_MODULE_COUNT	HikConfig.h	72;"	d
+MAX_MODULE_STRING_LENGTH	HikConfig.h	73;"	d
+MAX_MOTO	HikConfig.h	/^    MAX_MOTO,\/\/×î´ó³µÁ¾ÏìÓ¦$/;"	e	enum:__anon4
+MAX_OVERLAP_COUNT	HikConfig.h	68;"	d
+MAX_OVERLAP_STATUS_COUNT	HikConfig.h	71;"	d
+MAX_PEDESTRIANDETECTOR_COUNT	HikConfig.h	64;"	d
+MAX_PEDESTRIANPHASE_COUNT	HikConfig.h	80;"	d
+MAX_PHASE_COUNT_IN_OVERLAP	HikConfig.h	69;"	d
+MAX_PHASE_COUNT_MO_OVERLAP	HikConfig.h	70;"	d
+MAX_PHASE_TYPE_COUNT	HikConfig.h	94;"	d
+MAX_PREEMPT_COUNT	HikConfig.h	79;"	d
+MAX_RS232PORT_COUNT	HikConfig.h	87;"	d
+MAX_SIGNALTRANS_LIMIT	HikConfig.h	88;"	d
+MAX_SPECIALFUNCOUTPUT_COUNT	HikConfig.h	85;"	d
+MAX_STEP_NUM	stepControl.c	7;"	d	file:
+MAX_TIME_GAP	HikConfig.c	122;"	d	file:
+MAX_TRANSINTENSITYCHOICE_COUNT	HikConfig.h	93;"	d
+MAX_VEHICLEDETECTOR_COUNT	HikConfig.h	61;"	d
+MAX_VEHICLEDETECTOR_COUNT_S	HikConfig.h	62;"	d
+MAX_VEHICLEDETECTOR_STATUS_COUNT	HikConfig.h	63;"	d
+MAX_VOLUMEOCCUPANCY_COUNT	HikConfig.h	66;"	d
+MIN_MOTO	HikConfig.h	/^    MIN_MOTO,\/\/×îĞ¡³µÁ¾ÏìÓ¦    $/;"	e	enum:__anon4
+MOTOR	HikConfig.h	/^    MOTOR,\/\/»ú¶¯³µÀàĞÍ$/;"	e	enum:__anon6
+N	NGSL_io.c	76;"	d	file:
+NONE	HikConfig.h	/^    NONE,\/\/ÎŞ$/;"	e	enum:__anon4
+NOUSED	HikConfig.c	/^	NOUSED = 0,		\/\/±íÃ÷Î´Ê¹ÓÃ$/;"	e	enum:__anon1	file:
+NO_VALUE	parse_ini.h	40;"	d
+NUM_ACTION	HikConfig.h	52;"	d
+NUM_CHANNEL	HikConfig.h	54;"	d
+NUM_FOLLOW_PHASE	HikConfig.h	57;"	d
+NUM_GREEN_SIGNAL_RATION	HikConfig.h	55;"	d
+NUM_PHASE	HikConfig.h	56;"	d
+NUM_PHASE_TURN	HikConfig.h	58;"	d
+NUM_RING_COUNT	HikConfig.h	59;"	d
+NUM_SCHEDULE	HikConfig.h	49;"	d
+NUM_SCHEME	HikConfig.h	53;"	d
+NUM_TIME_INTERVAL	HikConfig.h	50;"	d
+NUM_TIME_INTERVAL_ID	HikConfig.h	51;"	d
+OTHER	HikConfig.h	/^    OTHER = 1,\/\/ÆäËûÀàĞÍ$/;"	e	enum:__anon6
+OTHER_TYPE	HikConfig.h	/^    OTHER_TYPE,\/\/ÆäËûÀàĞÍ$/;"	e	enum:__anon4
+PATTERN_NAME_PARAMS	common.h	/^}PATTERN_NAME_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Pattern_Name
+PActionItem	HikConfig.h	/^}ActionItem,*PActionItem;$/;"	t	typeref:struct:__anon14
+PChannelItem	HikConfig.h	/^}ChannelItem,*PChannelItem;$/;"	t	typeref:struct:__anon16
+PEDESTRIAN	HikConfig.h	/^    PEDESTRIAN,\/\/ĞĞÈËÀàĞÍ$/;"	e	enum:__anon6
+PEDESTRIAN_QEQ	HikConfig.h	/^    PEDESTRIAN_QEQ,\/\/×î´ó³µÁ¾\/ĞĞÈËÇëÇó$/;"	e	enum:__anon4
+PEDESTRIAN_RES	HikConfig.h	/^    PEDESTRIAN_RES,\/\/ĞĞÈËÏìÓ¦$/;"	e	enum:__anon4
+PFollowPhaseItem	HikConfig.h	/^}FollowPhaseItem,*PFollowPhaseItem;$/;"	t	typeref:struct:__anon17
+PGreenSignalRationItem	HikConfig.h	/^}GreenSignalRationItem,*PGreenSignalRationItem;$/;"	t	typeref:struct:__anon13
+PHASE_COUNTING_DOWN_FEEDBACK_PARAMS	platform.h	/^}PHASE_COUNTING_DOWN_FEEDBACK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+PHASE_COUNTING_DOWN_PARAMS	common.h	/^}PHASE_COUNTING_DOWN_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Phase_Counting_Down
+PHASE_DESC_PARAMS	common.h	/^}PHASE_DESC_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Phase
+PLAN_NAME_PARAMS	common.h	/^}PLAN_NAME_PARAMS; $/;"	t	typeref:struct:STRU_Extra_Param_Plan_Name
+PPhaseItem	HikConfig.h	/^}PhaseItem,*PPhaseItem;$/;"	t	typeref:struct:__anon8
+PPhaseTurnItem	HikConfig.h	/^}PhaseTurnItem,*PPhaseTurnItem;$/;"	t	typeref:struct:__anon15
+PPlanScheduleItem	HikConfig.h	/^}PlanScheduleItem,*PPlanScheduleItem;$/;"	t	typeref:struct:__anon9
+PSchemeItem	HikConfig.h	/^}SchemeItem,*PSchemeItem;$/;"	t	typeref:struct:__anon12
+PSignalControllerPara	HikConfig.h	/^}SignalControllerPara,*PSignalControllerPara;\/\/ĞÅºÅ»úÅäÖÃ²ÎÊıÖ÷½á¹¹$/;"	t	typeref:struct:__anon18
+PTimeIntervalItem	HikConfig.h	/^}TimeIntervalItem,*PTimeIntervalItem;$/;"	t	typeref:struct:__anon10
+PUnitPara	HikConfig.h	/^}UnitPara,*PUnitPara;$/;"	t	typeref:struct:__anon11
+PedestrianCheck	CPLD.c	/^int PedestrianCheck()$/;"	f
+PedestrianCheckInput	NGSL_io.c	/^uint16 PedestrianCheckInput(void)$/;"	f
+PhaseChannelStatus	platform.h	/^} PhaseChannelStatus;$/;"	t	typeref:enum:__anon23
+PhaseItem	HikConfig.h	/^}PhaseItem,*PPhaseItem;$/;"	t	typeref:struct:__anon8
+PhaseLampCurInput	NGSL_io.c	/^unsigned int PhaseLampCurInput(int boardNum, int pahseNum, int redGreen)$/;"	f
+PhaseLampOutput	NGSL_io.c	/^int PhaseLampOutput(int boardNum, uint16 outLamp)$/;"	f
+PhaseLampVoltInput	NGSL_io.c	/^uint16 PhaseLampVoltInput(int boardNum)$/;"	f
+PhaseTurnItem	HikConfig.h	/^}PhaseTurnItem,*PPhaseTurnItem;$/;"	t	typeref:struct:__anon15
+PhaseType	common.h	/^}PhaseType;$/;"	t	typeref:struct:_Phase_And_Type_Of_Channel_
+PlanScheduleItem	HikConfig.h	/^}PlanScheduleItem,*PPlanScheduleItem;$/;"	t	typeref:struct:__anon9
+PlanTime	HikConfig.h	/^}PlanTime;\/\/¼Æ»®Ê±¼ä$/;"	t	typeref:struct:__anon5
+ProcessKey	NGSL_io.c	/^int ProcessKey(void)$/;"	f
+ProcessKeyBoard	CPLD.c	/^int ProcessKeyBoard()$/;"	f
+ProcessKeyBoardLight	CPLD.c	/^void ProcessKeyBoardLight(void)$/;"	f
+ProgramExit	NGSL_io.c	/^__attribute__((destructor)) void ProgramExit(void)$/;"	f
+RED	platform.h	/^	RED = 2,$/;"	e	enum:__anon23
+REDLIGHT	HikConfig.h	/^    REDLIGHT,\/\/ºìÉÁ$/;"	e	enum:__anon7
+RIGHT_BRACE	inifile.c	14;"	d	file:
+RTC_HW_fc	NGSL_io.c	/^void RTC_HW_fc(void)$/;"	f
+ReadFaultStatus	NGSL_io.c	/^void ReadFaultStatus()$/;"	f
+RedCurrentBase	common.h	/^	int RedCurrentBase;         \/\/»ù×¼Öµ$/;"	m	struct:CURRENT_PARAMS
+RedCurrentDiff	common.h	/^	int RedCurrentDiff;         \/\/²îÖµ$/;"	m	struct:CURRENT_PARAMS
+RedExtinguish	NGSL_io.c	/^void RedExtinguish() \/\/ºìµÆ¸ÃÁÁ¶ø²»ÁÁÔòÎªºìµÆÏ¨Ãğ$/;"	f
+RedgreenCollision	NGSL_io.c	/^void RedgreenCollision(int boardNum, uint16 boardInfo) $/;"	f
+SCountDownCfg_DEL	HikConfig.h	/^struct SCountDownCfg_DEL		\/\/µ¹¼ÆÊ±²ÎÊı£¬ÉèÖÃÏÔÊ¾¿ª¹Ø¡¢²¨ÌØÂÊµÈ²ÎÊı,²»ÔÙÊ¹ÓÃ$/;"	s
+SEND_ACTION_NUM	HikConfig.c	286;"	d	file:
+SEND_ACTION_TIMES	HikConfig.c	285;"	d	file:
+SEND_PHASETURN_NUM	HikConfig.c	240;"	d	file:
+SEND_PHASETURN_TIMES	HikConfig.c	239;"	d	file:
+SEND_PLANSCHEDULE_NUM	HikConfig.c	206;"	d	file:
+SEND_PLANSCHEDULE_TIMES	HikConfig.c	205;"	d	file:
+SEND_SCHEME_NUM	HikConfig.c	272;"	d	file:
+SEND_SCHEME_TIMES	HikConfig.c	271;"	d	file:
+SEND_SPLIT_NUM	HikConfig.c	254;"	d	file:
+SEND_SPLIT_TIMES	HikConfig.c	253;"	d	file:
+SEND_TIMEINTERVAL_NUM	HikConfig.c	184;"	d	file:
+SEND_TIMEINTERVAL_TIMES	HikConfig.c	183;"	d	file:
+SEND_VEHICLEDETECTOR_NUM	HikConfig.c	300;"	d	file:
+SEND_VEHICLEDETECTOR_TIMES	HikConfig.c	299;"	d	file:
+SET_DEVICE_TYPE_FEEDBACK_PARAMS	platform.h	/^}SET_DEVICE_TYPE_FEEDBACK_PARAMS;  $/;"	t	typeref:struct:STRU_Extra_Param_Set_Device_Type_Feedback
+SET_DEVICE_TYPE_PARAMS	platform.h	/^}SET_DEVICE_TYPE_PARAMS;  $/;"	t	typeref:struct:STRU_Extra_Param_Set_Device_Type
+SOFTWARE_VERSION_INFO	common.h	11;"	d
+SPECIAL_CTRL_FEEDBACK_PARAMS	platform.h	/^}SPECIAL_CTRL_FEEDBACK_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Special_Ctrl_Feedback
+SPECIAL_CTRL_PARAMS	platform.h	/^}SPECIAL_CTRL_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Special_Ctrl
+SPECIAL_PARAMS	common.h	/^typedef struct SPECIAL_PARAMS$/;"	s
+STEP_CTRL_FEEDBACK_PARAMS	platform.h	/^}STEP_CTRL_FEEDBACK_PARAMS;$/;"	t	typeref:struct:STRU_Extra_Param_Step_Ctrl_Feedback
+STEP_CTRL_PARAMS	platform.h	/^}STEP_CTRL_PARAMS;    $/;"	t	typeref:struct:STRU_Extra_Param_Step_Ctrl
+STEP_END	stepControl.c	/^	STEP_END,		\/\/²½½ø½áÊø$/;"	e	enum:__anon24	file:
+STEP_EXCUTE	stepControl.c	/^	STEP_EXCUTE,	\/\/²½½øÖ´ĞĞ$/;"	e	enum:__anon24	file:
+STEP_MSG_TYPE	stepControl.c	8;"	d	file:
+STEP_START	stepControl.c	/^	STEP_START = 0,	\/\/²½½ø¿ªÊ¼$/;"	e	enum:__anon24	file:
+STRIP	makefile	/^STRIP=$(CROSS_COMPILE)strip$/;"	m
+STRU_Address	HikConfig.h	/^struct STRU_Address$/;"	s
+STRU_BasicFaultDetect	HikConfig.h	/^struct STRU_BasicFaultDetect$/;"	s
+STRU_CURRENT_PARAMS	common.h	/^}STRU_CURRENT_PARAMS;$/;"	t	typeref:struct:CURRENT_PARAMS
+STRU_CURRENT_PARAMS_UDP	common.h	/^}STRU_CURRENT_PARAMS_UDP;$/;"	t	typeref:struct:CURRENT_PARAMS_UDP
+STRU_ChannelRedLightCurrent	HikConfig.h	/^struct STRU_ChannelRedLightCurrent$/;"	s
+STRU_Count_Down_Params	common.h	/^}STRU_Count_Down_Params;$/;"	t	typeref:struct:Count_Down_Params
+STRU_DynPatternSel	HikConfig.h	/^struct STRU_DynPatternSel$/;"	s
+STRU_Extra_Param_Cancel_Step_Ctrl	platform.h	/^typedef struct STRU_Extra_Param_Cancel_Step_Ctrl$/;"	s
+STRU_Extra_Param_Cancel_Step_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Cancel_Step_Feedback$/;"	s
+STRU_Extra_Param_Channel	common.h	/^typedef struct STRU_Extra_Param_Channel$/;"	s
+STRU_Extra_Param_Channel_Lock	platform.h	/^typedef struct STRU_Extra_Param_Channel_Lock$/;"	s
+STRU_Extra_Param_Channel_Lock_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Channel_Lock_Feedback$/;"	s
+STRU_Extra_Param_Channel_Unlock	platform.h	/^typedef struct STRU_Extra_Param_Channel_Unlock$/;"	s
+STRU_Extra_Param_Channel_Unlock_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Channel_Unlock_Feedback$/;"	s
+STRU_Extra_Param_Com	common.h	/^typedef struct STRU_Extra_Param_Com$/;"	s
+STRU_Extra_Param_Date_Name	common.h	/^typedef struct STRU_Extra_Param_Date_Name$/;"	s
+STRU_Extra_Param_Get_Device_Type	platform.h	/^typedef struct STRU_Extra_Param_Get_Device_Type$/;"	s
+STRU_Extra_Param_Get_Device_Type_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Get_Device_Type_Feedback$/;"	s
+STRU_Extra_Param_Get_Phase_Counting_Down	platform.h	/^typedef struct STRU_Extra_Param_Get_Phase_Counting_Down$/;"	s
+STRU_Extra_Param_Pattern_Name	common.h	/^typedef struct STRU_Extra_Param_Pattern_Name$/;"	s
+STRU_Extra_Param_Phase	common.h	/^typedef struct STRU_Extra_Param_Phase$/;"	s
+STRU_Extra_Param_Phase_Counting_Down	common.h	/^typedef struct STRU_Extra_Param_Phase_Counting_Down$/;"	s
+STRU_Extra_Param_Phase_Counting_Down_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Phase_Counting_Down_Feedback$/;"	s
+STRU_Extra_Param_Plan_Name	common.h	/^typedef struct STRU_Extra_Param_Plan_Name$/;"	s
+STRU_Extra_Param_Set_Device_Type	platform.h	/^typedef struct STRU_Extra_Param_Set_Device_Type$/;"	s
+STRU_Extra_Param_Set_Device_Type_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Set_Device_Type_Feedback$/;"	s
+STRU_Extra_Param_Special_Ctrl	platform.h	/^typedef struct STRU_Extra_Param_Special_Ctrl$/;"	s
+STRU_Extra_Param_Special_Ctrl_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Special_Ctrl_Feedback$/;"	s
+STRU_Extra_Param_Step_Ctrl	platform.h	/^typedef struct STRU_Extra_Param_Step_Ctrl$/;"	s
+STRU_Extra_Param_Step_Ctrl_Feedback	platform.h	/^typedef struct STRU_Extra_Param_Step_Ctrl_Feedback$/;"	s
+STRU_Extra_Param_Version	common.h	/^typedef struct STRU_Extra_Param_Version$/;"	s
+STRU_FAILURE_INFO	common.h	/^}STRU_FAILURE_INFO;$/;"	t	typeref:struct:FAILURE_INFO
+STRU_FaultDetectSet	HikConfig.h	/^struct STRU_FaultDetectSet$/;"	s
+STRU_N_CoordinationVariable	HikConfig.h	/^struct STRU_N_CoordinationVariable$/;"	s
+STRU_N_CountDownBoard	HikConfig.h	/^struct STRU_N_CountDownBoard$/;"	s
+STRU_N_EventConfig	HikConfig.h	/^struct STRU_N_EventConfig	\/\/Õâ¸ö±í°üÀ¨ÊÂ¼şÈÕÖ¾µÄÅäÖÃĞÅÏ¢£¬Õâ¸ö±í¶¨ÒåµÄ²ÎÊıÉè±¸½«½øĞĞ¼àÊÓ²¢²úÉúÊÂ¼ş$/;"	s
+STRU_N_IP_ADDRESS	common.h	/^typedef struct STRU_N_IP_ADDRESS$/;"	s
+STRU_N_OverlapTableEx	HikConfig.h	/^struct STRU_N_OverlapTableEx$/;"	s
+STRU_N_PedestrianDetector	HikConfig.h	/^struct STRU_N_PedestrianDetector$/;"	s
+STRU_N_Preempt	HikConfig.h	/^struct STRU_N_Preempt$/;"	s
+STRU_N_TimeBaseVariable	HikConfig.h	/^struct STRU_N_TimeBaseVariable$/;"	s
+STRU_N_TransIntensityChoice	HikConfig.h	/^struct STRU_N_TransIntensityChoice$/;"	s
+STRU_N_VehicleDetector	HikConfig.h	/^struct STRU_N_VehicleDetector$/;"	s
+STRU_N_VehicleDetectorEx	HikConfig.h	/^struct STRU_N_VehicleDetectorEx$/;"	s
+STRU_PhaseEx	HikConfig.h	/^struct STRU_PhaseEx$/;"	s
+STRU_SPECIAL_PARAMS	common.h	/^}STRU_SPECIAL_PARAMS;$/;"	t	typeref:struct:SPECIAL_PARAMS
+STRU_STRU_N_IP_ADDRESS	common.h	/^}STRU_STRU_N_IP_ADDRESS;	$/;"	t	typeref:struct:STRU_N_IP_ADDRESS
+STRU_SignalTransEntry	HikConfig.h	/^struct STRU_SignalTransEntry$/;"	s
+STRU_SplitPedEx	HikConfig.h	/^struct STRU_SplitPedEx$/;"	s
+STRU_UDP_CUR_VALUE_INFO	common.h	/^}STRU_UDP_CUR_VALUE_INFO;$/;"	t	typeref:struct:UDP_CUR_VALUE_INFO
+STRU_UDP_INFO	common.h	/^}STRU_UDP_INFO;$/;"	t	typeref:struct:UDP_INFO
+STRU_UnitOptiPara	HikConfig.h	/^struct STRU_UnitOptiPara  $/;"	s
+STRU_UnitParamEx	HikConfig.h	/^struct STRU_UnitParamEx$/;"	s
+SaveNetparam	udpserver.c	/^int SaveNetparam(const char *ifName, const char *chIP, const char *chMask, const char *chGateway)$/;"	f
+SchemeItem	HikConfig.h	/^}SchemeItem,*PSchemeItem;$/;"	t	typeref:struct:__anon12
+SendFeedback	bak.c	/^static inline void SendFeedback()$/;"	f	file:
+SendFeedback	platform.c	/^static inline void SendFeedback()$/;"	f	file:
+SetAllRedLight	CPLD.c	/^void SetAllRedLight(int value)$/;"	f
+SetAutoLight	CPLD.c	/^void SetAutoLight(int value)$/;"	f
+SetCountDownParams	bak.c	/^static void SetCountDownParams(UInt8 nSchemeID, GreenSignalRationItem *splitTable, PhaseItem *phaseTable)$/;"	f	file:
+SetCountDownParams	platform.c	/^static void SetCountDownParams(UInt8 nSchemeID, GreenSignalRationItem *splitTable, PhaseItem *phaseTable)$/;"	f	file:
+SetFlashingLight	CPLD.c	/^void SetFlashingLight(int value)$/;"	f
+SetFollowPhaseStatus	bak.c	/^static void SetFollowPhaseStatus(UInt8 *nextPhaseIds, FollowPhaseItem *followPhaseTable)$/;"	f	file:
+SetFollowPhaseStatus	platform.c	/^static void SetFollowPhaseStatus(UInt8 *nextPhaseIds, FollowPhaseItem *followPhaseTable)$/;"	f	file:
+SetFreeGreenTimeSign	NGSL_io.c	/^static int SetFreeGreenTimeSign = 0;\/\/¸ĞÓ¦Ê±¼ä±êÖ¾Î»$/;"	v	file:
+SetManualLight	CPLD.c	/^void SetManualLight(int value)$/;"	f
+SetPhaseStatusByStageNeedRunTime	stepControl.c	/^static void SetPhaseStatusByStageNeedRunTime(UInt8 stageNeedRunTime, UInt8 *phaseSplit, UInt8 *phaseStatus)$/;"	f	file:
+SetStepRunTime	stepControl.c	/^static UInt8 SetStepRunTime(UInt8 cycleTime, UInt8 runTime, UInt8 *phaseSplit, UInt8 *stageNeedRunTime)$/;"	f	file:
+SetStepbyStepLight	CPLD.c	/^void SetStepbyStepLight(int value)$/;"	f
+Set_LED2_OFF	CPLD.c	/^void Set_LED2_OFF()$/;"	f
+SigHandler	NGSL_io.c	/^void SigHandler(int signum) \/\/kill or killall will be called to free memory!$/;"	f
+SignalControllerPara	HikConfig.h	/^}SignalControllerPara,*PSignalControllerPara;\/\/ĞÅºÅ»úÅäÖÃ²ÎÊıÖ÷½á¹¹$/;"	t	typeref:struct:__anon18
+StepInfo	stepControl.c	/^} StepInfo;$/;"	v	typeref:enum:__anon24
+StepProcess	stepControl.c	/^void *StepProcess(void *arg)$/;"	f
+StoreAction	HikConfig.c	/^static inline void StoreAction(void *arg)$/;"	f	file:
+StoreBegin	HikConfig.c	/^static inline void StoreBegin(void *arg)$/;"	f	file:
+StoreChannel	HikConfig.c	/^static inline void StoreChannel(void *arg)$/;"	f	file:
+StoreComplete	HikConfig.c	/^void StoreComplete(void *arg)$/;"	f
+StoreFollowPhase	HikConfig.c	/^static inline void StoreFollowPhase(void *arg)$/;"	f	file:
+StoreOldCountDownData	bak.c	/^void StoreOldCountDownData(PHASE_COUNTING_DOWN_FEEDBACK_PARAMS *pCountDownParams,int *nArray)$/;"	f
+StoreOldCountDownData	platform.c	/^static void StoreOldCountDownData(PHASE_COUNTING_DOWN_PARAMS *pCountDownParams,int *nArray)$/;"	f	file:
+StorePedestrianDetector	HikConfig.c	/^static inline void StorePedestrianDetector(void *arg)$/;"	f	file:
+StorePhase	HikConfig.c	/^static inline void StorePhase(void *arg)$/;"	f	file:
+StorePhaseTurn	HikConfig.c	/^static inline void StorePhaseTurn(void *arg)$/;"	f	file:
+StorePlanSchedule	HikConfig.c	/^static inline void StorePlanSchedule(void *arg)$/;"	f	file:
+StoreScheme	HikConfig.c	/^static inline void StoreScheme(void *arg)$/;"	f	file:
+StoreSplit	HikConfig.c	/^static inline void StoreSplit(void *arg)$/;"	f	file:
+StoreTimeInterval	HikConfig.c	/^static inline void StoreTimeInterval(void *arg)$/;"	f	file:
+StoreTransform	HikConfig.c	/^static inline void StoreTransform(void *arg)$/;"	f	file:
+StoreUnit	HikConfig.c	/^static inline void StoreUnit(void *arg)$/;"	f	file:
+StoreVehicleDetector	HikConfig.c	/^static inline void StoreVehicleDetector(void *arg)$/;"	f	file:
+SubNetMask	HikConfig.h	/^	UInt32          SubNetMask;                      \/\/×ÓÍøÑÚÂë$/;"	m	struct:__anon11
+SubNetMask	HikConfig.h	/^    UInt32 SubNetMask;        \/\/×ÓÍøÑÚÂë$/;"	m	struct:STRU_Address
+TIMEOUT	NGSL_io.c	72;"	d	file:
+TRUE	hik.h	/^	TRUE,$/;"	e	enum:__anon19
+TSC_Para_Error_Num	HikConfig.h	/^}TSC_Para_Error_Num;$/;"	t	typeref:enum:__anon2
+TURN_OFF	platform.h	/^	TURN_OFF = 7,$/;"	e	enum:__anon23
+TimeGap	HikConfig.c	/^static inline int TimeGap(struct timeval *new, struct timeval *old)$/;"	f	file:
+TimeIntervalItem	HikConfig.h	/^}TimeIntervalItem,*PTimeIntervalItem;$/;"	t	typeref:struct:__anon10
+Time_To_Minutes	NGSL_io.c	453;"	d	file:
+True	parse_ini.h	/^	True$/;"	e	enum:__anon21
+UDP_CUR_VALUE_INFO	common.h	/^typedef struct UDP_CUR_VALUE_INFO$/;"	s
+UDP_INFO	common.h	/^typedef struct UDP_INFO$/;"	s
+UINT16	common.h	/^typedef unsigned short UINT16;$/;"	t
+UINT32	common.h	/^typedef unsigned long   UINT32;$/;"	t
+UINT8	common.h	/^typedef unsigned char UINT8;$/;"	t
+UInt16	hik.h	/^typedef unsigned short 		UInt16;	\/\/UInt16 usValue;$/;"	t
+UInt32	hik.h	/^typedef unsigned int		UInt32;	\/\/UInt32 uiValue;$/;"	t
+UInt64	hik.h	/^typedef unsigned long long	UInt64;	\/\/UInt64 ulValue;$/;"	t
+UInt8	hik.h	/^typedef unsigned char 		UInt8;	\/\/UInt8  ucValue;$/;"	t
+UNDEFINEED	HikConfig.h	/^    UNDEFINEED = 0,\/\/Î´¶¨Òå$/;"	e	enum:__anon4
+UNUSEDATTR	parse_ini.h	45;"	d
+UNUSEDATTR	parse_ini.h	48;"	d
+USED	parse_ini.h	41;"	d
+UnitPara	HikConfig.h	/^}UnitPara,*PUnitPara;$/;"	t	typeref:struct:__anon11
+UpdateCountDownTime	bak.c	/^void UpdateCountDownTime(int iDiffValue,unsigned char *pPhaseArray,int *pOldPhaseCountDownVaule,PHASE_COUNTING_DOWN_FEEDBACK_PARAMS *pCountDownParams)$/;"	f
+UpdateCountDownTime	platform.c	/^static void UpdateCountDownTime(int iDiffValue,unsigned char *pPhaseArray,int *pOldPhaseCountDownVaule,PHASE_COUNTING_DOWN_PARAMS *pCountDownParams)$/;"	f	file:
+VehicleCheckFaultInput	NGSL_io.c	/^unsigned char VehicleCheckFaultInput(unsigned char phase)$/;"	f
+VehicleCheckInput	NGSL_io.c	/^uint16 VehicleCheckInput(int boardNum)$/;"	f
+WEAKATTR	parse_ini.h	44;"	d
+WEAKATTR	parse_ini.h	47;"	d
+WriteErrorInfos	NGSL_io.c	/^int WriteErrorInfos(const char *pFile,const char *pchMsg)$/;"	f
+WriteFailureInfos	NGSL_io.c	/^int WriteFailureInfos(const char *pFile,struct FAILURE_INFO s_failure_info)$/;"	f
+WriteFaultStatus	NGSL_io.c	/^void WriteFaultStatus()$/;"	f
+WriteLogInfos	NGSL_io.c	/^int WriteLogInfos(const char *pFile,const char *pchMsg)$/;"	f
+YELLOW	platform.h	/^	YELLOW = 3,$/;"	e	enum:__anon23
+YELLOWBLINKID	HikConfig.c	19;"	d	file:
+YELLOWLIGHT	HikConfig.h	/^    YELLOWLIGHT\/\/»ÆÉÁ$/;"	e	enum:__anon7
+YELLOW_BLINK	platform.h	/^	YELLOW_BLINK = 5,$/;"	e	enum:__anon23
+YELLOW_CONTROL_OUTPUT1_0	CPLD.c	35;"	d	file:
+YELLOW_CONTROL_OUTPUT1_1	CPLD.c	32;"	d	file:
+YELLOW_CONTROL_OUTPUT2_0	CPLD.c	36;"	d	file:
+YELLOW_CONTROL_OUTPUT2_1	CPLD.c	33;"	d	file:
+_Count_Down_Head_	common.h	/^typedef struct _Count_Down_Head_$/;"	s
+_Count_Down_Ped_	common.h	/^typedef struct _Count_Down_Ped_$/;"	s
+_Count_Down_Veh_	common.h	/^typedef struct _Count_Down_Veh_$/;"	s
+_Date_Desc_	common.h	/^typedef struct _Date_Desc_$/;"	s
+_Phase_And_Type_Of_Channel_	common.h	/^typedef struct _Phase_And_Type_Of_Channel_$/;"	s
+_YELLOWFLASH_	NGSL_io.c	73;"	d	file:
+__HIKCONFIG_H__	HikConfig.h	24;"	d
+__HIK_H__	hik.h	22;"	d
+__LFQ_H__	lfq.h	2;"	d
+__PARSE_INI_H__	parse_ini.h	21;"	d
+__PLATFORM_H__	platform.h	2;"	d
+abyDegradePlanSeq	HikConfig.h	/^	UInt8	abyDegradePlanSeq[10];	\/\/½µ¼¶·½°¸ĞòÁĞ$/;"	m	struct:STRU_UnitOptiPara
+abyIncludedPhaseChannel	HikConfig.h	/^	UInt8 abyIncludedPhaseChannel[MAX_COUNTDOWNBOARD_INCLUDEDPHASES];\/\/ÏàÎ»¶ÔÓ¦Í¨µÀºÅ $/;"	m	struct:STRU_N_CountDownBoard
+abyIncludedPhaseNo	HikConfig.h	/^	UInt8 abyIncludedPhaseNo[MAX_COUNTDOWNBOARD_INCLUDEDPHASES];\/\/¶ÔÓ¦ÏàÎ»ºÅ$/;"	m	struct:STRU_N_CountDownBoard
+abyIncludedPhaseType	HikConfig.h	/^	UInt8 abyIncludedPhaseType[MAX_COUNTDOWNBOARD_INCLUDEDPHASES];\/\/Í¨µÀ¶ÔÓ¦ÏàÎ»ÀàĞÍ $/;"	m	struct:STRU_N_CountDownBoard
+abyPreemptCyclingOverlap	HikConfig.h	/^	UInt8	abyPreemptCyclingOverlap[MAX_OVERLAP_COUNT];$/;"	m	struct:STRU_N_Preempt
+abyPreemptCyclingPed	HikConfig.h	/^	UInt8	abyPreemptCyclingPed[MAX_PEDESTRIANPHASE_COUNT];$/;"	m	struct:STRU_N_Preempt
+abyPreemptCyclingPhase	HikConfig.h	/^	UInt8 	abyPreemptCyclingPhase[NUM_PHASE];$/;"	m	struct:STRU_N_Preempt
+abyPreemptDwellOverlap	HikConfig.h	/^	UInt8	abyPreemptDwellOverlap[MAX_OVERLAP_COUNT];$/;"	m	struct:STRU_N_Preempt
+abyPreemptDwellPed	HikConfig.h	/^	UInt8	abyPreemptDwellPed[MAX_PEDESTRIANPHASE_COUNT];$/;"	m	struct:STRU_N_Preempt
+abyPreemptDwellPhase	HikConfig.h	/^	UInt8	abyPreemptDwellPhase[NUM_PHASE];$/;"	m	struct:STRU_N_Preempt
+abyPreemptExitPhase	HikConfig.h	/^	UInt8	abyPreemptExitPhase[NUM_PHASE];$/;"	m	struct:STRU_N_Preempt
+abyPreemptTrackOverlap	HikConfig.h	/^	UInt8	abyPreemptTrackOverlap[MAX_OVERLAP_COUNT];$/;"	m	struct:STRU_N_Preempt
+abyPreemptTrackPhase	HikConfig.h	/^	UInt8	abyPreemptTrackPhase[NUM_PHASE];$/;"	m	struct:STRU_N_Preempt
+acGatwayIp	HikConfig.h	/^	UInt8  acGatwayIp[4];                   \/\/Íø¹Ø$/;"	m	struct:__anon11
+acIpAddr	HikConfig.h	/^	UInt8  acIpAddr[4];                     \/\/IPµØÖ·$/;"	m	struct:__anon11
+addr	platform.h	/^	struct sockaddr addr;$/;"	m	struct:__anon22	typeref:struct:__anon22::sockaddr
+address	common.h	/^	char address[16]; 					\/\/µØÖ·$/;"	m	struct:STRU_N_IP_ADDRESS
+adjustControlType	HikConfig.c	/^void adjustControlType()	\/\/µ÷Õû¿ØÖÆ·½Ê½$/;"	f
+allred_pressed	CPLD.c	/^int allred_pressed = 0;$/;"	v
+auto_pressed	CPLD.c	/^int auto_pressed = 1;$/;"	v
+backup_count	CPLD.c	/^int backup_count = 0;$/;"	v
+byAllStopPhase	HikConfig.h	/^	UInt8	byAllStopPhase;		\/\/¸úËæµÄÍ¬¶ÏµÄÏàÎ»ºÅ$/;"	m	struct:STRU_SignalTransEntry
+byArrOverlapModifierPhases	HikConfig.h	/^    UInt8 byArrOverlapModifierPhases[MAX_PHASE_COUNT_MO_OVERLAP];	\/*2.10.2.4 overlapµÄĞŞÕıÏàÎ»£¬Ã¿×Ö½Ú±íÊ¾Ò»¸öÏàÎ»ºÅ¡£	Èç¹ûÎª¿ÕÖµ£¨null£©£¬overlapTypeÎªnormal£¬Èç¹ûÎª·Ç¿ÕÖµ£¨non-null£©£¬overlapTypeÎªminusGreenYellow¡£*\/$/;"	m	struct:__anon17
+byChannelDim	HikConfig.h	/^	UInt8  	byChannelDim;		            \/*2.9.2.4Í¨µÀ»Ò¶È×´Ì¬$/;"	m	struct:__anon16
+byChannelNumber	HikConfig.h	/^	UInt8  	byChannelNumber;			\/\/Í¨µÀºÅ$/;"	m	struct:STRU_ChannelRedLightCurrent
+byChannelRedCurrentBase	HikConfig.h	/^	UInt8		byChannelRedCurrentBase;	\/\/Í¨µÀµÄºìµÆµçÁ÷»ù×¼Öµ$/;"	m	struct:STRU_ChannelRedLightCurrent
+byChannelRedCurrentDelta	HikConfig.h	/^	UInt8		byChannelRedCurrentDelta;	\/\/Í¨µÀµÄºìµÆµçÁ÷²îÖµ$/;"	m	struct:STRU_ChannelRedLightCurrent
+byClear	HikConfig.h	/^	UInt8 byClear;		\/\/ĞĞÈËÇå¿ÕÊ±¼ä$/;"	m	struct:STRU_SplitPedEx
+byClearMode	HikConfig.h	/^	UInt8 byClearMode;	\/\/ĞĞÈËÇå¿ÕÄ£Ê½£¬1±íÊ¾ºìÉÁ£¬ÆäËû±íÊ¾ÂÌÉÁ$/;"	m	struct:STRU_SplitPedEx
+byCollectCycleMin	HikConfig.h	/^	UInt8 byCollectCycleMin;	\/\/Á÷Á¿²É¼¯µ¥Î»£¬Ãë \/ ·ÖÖÓ$/;"	m	struct:STRU_UnitParamEx
+byCollectCycleUnit	HikConfig.h	/^	UInt8	byCollectCycleUnit;			            \/\/Á÷Á¿²É¼¯µ¥Î»£¬Ãë \/ ·ÖÖÓ ( 0\/1)$/;"	m	struct:__anon11
+byCommOutTime	HikConfig.h	/^	UInt8	byCommOutTime;				            \/\/Í¨ĞÅ³¬Ê±Ê±¼ä$/;"	m	struct:__anon11
+byCommOutTime	HikConfig.h	/^	UInt8 byCommOutTime;		\/\/Í¨ĞÅ³¬Ê±Ê±¼ä$/;"	m	struct:STRU_UnitParamEx
+byConflictCount	HikConfig.h	/^    UInt8 byConflictCount;        \/\/ ÂÌµÆ³åÍ»¼ì²âÂË²¨´ÎÊı£¬Ä¬ÈÏ2$/;"	m	struct:STRU_BasicFaultDetect
+byCongestionOccupancy	HikConfig.h	/^	UInt8 byCongestionOccupancy;\/\/Óµ¶Â´¥·¢Õ¼ÓĞÂÊ£¬Ä¬ÈÏ100$/;"	m	struct:STRU_N_VehicleDetectorEx
+byCoordCorrectionMode	HikConfig.h	/^	UInt8	byCoordCorrectionMode;	\/*2.5.2Ğ­µ÷·½Ê½$/;"	m	struct:STRU_N_CoordinationVariable
+byCoordCorrectionMode	HikConfig.h	/^	UInt8	byCoordCorrectionMode;                  \/\/ 2.5.2Ğ­µ÷·½Ê½$/;"	m	struct:__anon11
+byCoordForceMode	HikConfig.h	/^	UInt8	byCoordForceMode;			\/*2.5.4 PatternÇ¿ÖÆÄ£Ê½$/;"	m	struct:STRU_N_CoordinationVariable
+byCoordForceMode	HikConfig.h	/^	UInt8	byCoordForceMode;		                \/\/ 2.5.4 PatternÇ¿ÖÆÄ£Ê½$/;"	m	struct:__anon11
+byCoordMaximumMode	HikConfig.h	/^	UInt8	byCoordMaximumMode;		\/*2.5.3 Ğ­µ÷µÄ×î´óµÄ·½Ê½$/;"	m	struct:STRU_N_CoordinationVariable
+byCoordMaximumMode	HikConfig.h	/^	UInt8	byCoordMaximumMode;	                    \/\/ 2.5.3 Ğ­µ÷µÄ×î´óµÄ·½Ê½$/;"	m	struct:__anon11
+byCoordOperationalMode	HikConfig.h	/^	UInt8	byCoordOperationalMode;		\/*2.5.1Ğ­µ÷µÄ²Ù×÷·½Ê½$/;"	m	struct:STRU_N_CoordinationVariable
+byCoordOperationalMode	HikConfig.h	/^	UInt8  	byCoordOperationalMode;                 \/\/ 2.5.1Ğ­µ÷µÄ²Ù×÷·½Ê½Automatic£¨0£©£º×Ô¶¯·½Ê½£¬¿ÉÒÔÎªĞ­µ÷£¬¸ĞÓ¦£¬ÉÁ¹âµÈ¿ÉÒÔ$/;"	m	struct:__anon11
+byCoordPatternStatus	HikConfig.h	/^	UInt8	byCoordPatternStatus;		\/*2.5.10 Ğ­µ÷·½°¸×´Ì¬$/;"	m	struct:STRU_N_CoordinationVariable
+byCorPhaseSatTimeOccupancy	HikConfig.h	/^	UInt8 byCorPhaseSatTimeOccupancy; \/*80.60.1.4 ¶ÔÓ¦ÏàÎ»±¥ºÍÊ±¼äÕ¼ÓĞÂÊ (0-100)*\/ $/;"	m	struct:STRU_N_VehicleDetectorEx
+byCorPhaseSatVolume	HikConfig.h	/^	UInt16 byCorPhaseSatVolume;        \/*80.60.1.5 ¶ÔÓ¦ÏàÎ»±¥ºÍÁ÷Á¿ (1500-1800)*\/ $/;"	m	struct:STRU_N_VehicleDetectorEx
+byCountdownNo	HikConfig.h	/^	UInt8 byCountdownNo; \/\/µ¹¼ÆÊ±ÅÆºÅ$/;"	m	struct:STRU_N_CountDownBoard
+byCriticalGreen	HikConfig.h	/^	UInt8 byCriticalGreen;	\/\/ÁÙ½çÂÌµÆ$/;"	m	struct:STRU_SplitPedEx
+byCycleTime	HikConfig.h	/^	UInt8 byCycleTime;     \/*80.62.1.4 ÖÜÆÚ*\/$/;"	m	struct:STRU_N_TransIntensityChoice
+byDayPlanStatus	HikConfig.h	/^	UInt8  	byDayPlanStatus;			    \/*2£®4£®4£®4±íÊ¾»î¶¯Ê±¶Î±íµÄ±àºÅ¡£0±íÊ¾Ã»ÓĞ»î¶¯µÄÊ±¶Î±í*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+byDecDyFrequency	HikConfig.h	/^	UInt8	byDecDyFrequency;	\/\/¹ö¶¯Õ¼ÓĞÂÊ²É¼¯ÆµÂÊ(1~255s)£¬Ä¬ÈÏÎª1s$/;"	m	struct:STRU_UnitOptiPara
+byDecInternalTime	HikConfig.h	/^	UInt8	byDecInternalTime;	\/\/¹ö¶¯Õ¼ÓĞÂÊ²É¼¯¼ä¸ô(1~60s)£¬Ä¬ÈÏÎª10s $/;"	m	struct:STRU_UnitOptiPara
+byDriverFlag	HikConfig.h	/^	UInt8	byDriverFlag;			\/\/ĞÅºÅ»úÇı¶¯µ¹¼ÆÊ±ÅÆ±êÖ¾$/;"	m	struct:SCountDownCfg_DEL
+byDynPatternNo	HikConfig.h	/^	UInt8	byDynPatternNo;		\/\/·½°¸ºÅ$/;"	m	struct:STRU_DynPatternSel
+byDynSn	HikConfig.h	/^	UInt8  	byDynSn;			\/\/Ë÷ÒıºÅ$/;"	m	struct:STRU_DynPatternSel
+byDynUpperLimit	HikConfig.h	/^	UInt8	byDynUpperLimit;	\/\/·§Öµ$/;"	m	struct:STRU_DynPatternSel
+byEventConfigAction	HikConfig.h	/^	UInt8 byEventConfigAction;			\/\/ÊÂ¼ş¶¯×÷£¬±íÃ÷¼ÍÂ¼Óë·ñ$/;"	m	struct:STRU_N_EventConfig
+byEventConfigClass	HikConfig.h	/^	UInt8 byEventConfigClass;			\/\/ÊÂ¼şºÅ$/;"	m	struct:STRU_N_EventConfig
+byEventConfigMode	HikConfig.h	/^	UInt8 byEventConfigMode;			\/\/ÊÂ¼şÄ£Ê½£¬Ö÷Òª¸ù¾İÕâ¸ö²ÎÊı½øĞĞÊÂ¼şµÄÉèÖÃºÍ²úÉú$/;"	m	struct:STRU_N_EventConfig
+byFlashFrequency	HikConfig.h	/^	UInt8	byFlashFrequency;			            \/\/ÉÁ¹âÆµÂÊ(UInt8)			$/;"	m	struct:__anon11
+byFluxCollectCycle	HikConfig.h	/^	UInt8	byFluxCollectCycle;			            \/\/Á÷Á¿²É¼¯ÖÜÆÚ(UInt8)$/;"	m	struct:__anon11
+byGlobalDaylightSaving	HikConfig.h	/^	UInt8	byGlobalDaylightSaving;	        \/*2.4.2ÏÄÁîÊ±$/;"	m	struct:STRU_N_TimeBaseVariable
+byGreenTime	HikConfig.h	/^	UInt8	byGreenTime;		\/\/µÚÒ»ÖÜÆÚÂÌµÆ$/;"	m	struct:STRU_SignalTransEntry
+byGreenTime	HikConfig.h	/^	UInt8 byGreenTime;	\/\/µÚÒ»ÖÜÆÚÂÌµÆ·ÅĞĞÊ±¼ä$/;"	m	struct:STRU_PhaseEx
+byIncludedPhaseNum	HikConfig.h	/^	UInt8 byIncludedPhaseNum;\/\/µ¹¼ÆÊ±ÅÆ¶ÔÓ¦µÄÏàÎ»Êı $/;"	m	struct:STRU_N_CountDownBoard
+byIndexNumber	HikConfig.h	/^	UInt8 byIndexNumber;   \/*80.62.1.1 Ë÷Òı*\/$/;"	m	struct:STRU_N_TransIntensityChoice
+byKeyPhase	HikConfig.h	/^	UInt8 byKeyPhase;      \/*80.62.1.2 ¹Ø¼üÏàÎ»Êı*\/$/;"	m	struct:STRU_N_TransIntensityChoice
+byLocalFreeStatus	HikConfig.h	/^	UInt8	byLocalFreeStatus;		\/*2.5.11 Free¿ØÖÆ×´Ì¬$/;"	m	struct:STRU_N_CoordinationVariable
+byManualKeyCount	HikConfig.h	/^    UInt8 byManualKeyCount;       \/\/ ÊÖ¶¯Ãæ°å°´¼ü¼ì²âÂË²¨´ÎÊı£¬Ä¬ÈÏ5$/;"	m	struct:STRU_BasicFaultDetect
+byOption	HikConfig.h	/^	UInt8	byOption;		                        \/\/Ñ¡Ïî²ÎÊı£¬°´Î»È¡Öµ$/;"	m	struct:__anon11
+byOption	HikConfig.h	/^	UInt8 byOption;		    \/\/Ñ¡Ïî²ÎÊı£¬°´Î»È¡Öµ$/;"	m	struct:STRU_UnitParamEx
+byOverlapGreenFlash	HikConfig.h	/^	UInt8 byOverlapGreenFlash;\/*80.61.1.1 *\/$/;"	m	struct:STRU_N_OverlapTableEx
+byOverlapType	HikConfig.h	/^    UInt8 byOverlapType;                     \/*2.10.2.2 overlap²Ù×÷ÀàĞÍ£¬Ã¶¾ÙÈçÏÂ£º$/;"	m	struct:__anon17
+byPatternTableType	HikConfig.h	/^	UInt8	byPatternTableType;		\/*2.5.6¶¨Òå·½°¸±íÖĞĞèÒªµÄÌØÊâ×éÖ¯½á¹¹$/;"	m	struct:STRU_N_CoordinationVariable
+byPedestrianDetectorCallPhase	HikConfig.h	/^	UInt8  byPedestrianDetectorCallPhase;	\/*2.3.7.2ĞĞÈË¼ì²âÆ÷¶ÔÓ¦µÄÇëÇóÏàÎ»*\/$/;"	m	struct:STRU_N_PedestrianDetector
+byPedestrianDetectorErraticCounts	HikConfig.h	/^	UInt8  byPedestrianDetectorErraticCounts;\/*2.3.7.5 Ã¿·ÖÖÓ0-255´Î£¬Èç¹ûĞĞÈË¼ì²âÆ÷·¢³öµÄ¸ĞÓ¦ĞÅÏ¢µÄÆµÂÊ³¬¹ıÕâ¸öÖµ£¬Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_PedestrianDetector
+byPedestrianDetectorMaxPresence	HikConfig.h	/^	UInt8  byPedestrianDetectorMaxPresence;	\/*2.3.7.4  0-255·ÖÖÓ£¬ÔÚÕâ¶ÎÊ±¼äÄÚ£¬ĞĞÈË¼ì²âÆ÷³ÖĞø·¢³ö¸ĞÓ¦ĞÅÏ¢£¬Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_PedestrianDetector
+byPedestrianDetectorNoActivity	HikConfig.h	/^	UInt8  byPedestrianDetectorNoActivity;	\/*2.3.7.3 0-255·ÖÖÓ£¬ÔÚÕâ¶ÎÖ¸¶¨µÄÊ±¼äÖĞĞĞÈË¼ì²âÆ÷Ã»ÓĞ·¢³ö¸ĞÓ¦ĞÅÏ¢Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_PedestrianDetector
+byPedestrianDetectorNumber	HikConfig.h	/^	UInt8  byPedestrianDetectorNumber;		\/*2.3.7.1ĞĞÈË¼ì²âÆ÷ĞĞºÅ*\/$/;"	m	struct:STRU_N_PedestrianDetector
+byPhaseAddedInitial	HikConfig.h	/^	UInt8  byPhaseAddedInitial;		        \/*2.2.2.11ÏàÎ»Ôö¼Ó³õÊ¼Öµ*\/$/;"	m	struct:__anon8
+byPhaseCarsBeforeReduction	HikConfig.h	/^	UInt8  byPhaseCarsBeforeReduction;       \/*2.2.2.14 gapµİ¼õÖ®Ç°Í¨¹ıµÄ³µÁ¾Êı*\/$/;"	m	struct:__anon8
+byPhaseConcurrency	HikConfig.h	/^    UInt8  byPhaseConcurrency[NUM_PHASE];		\/*2.2.2.23¿ÉÒÔ²¢·¢µÄÏàÎ»£¬Ã¿¸ö×Ö½Ú´ú±íÒ»¸ö¿É²¢·¢µÄÏàÎ»ºÅ*\/$/;"	m	struct:__anon8
+byPhaseDirectionProperty	HikConfig.h	/^	UInt8 	byPhaseDirectionProperty;		\/\/ÏàÎ»µÄ·½ÏòÊôĞÔ£¬°´Î»±êÖ¾·½Ïò$/;"	m	struct:STRU_SignalTransEntry
+byPhaseDynamicMaxLimit	HikConfig.h	/^	UInt8  byPhaseDynamicMaxLimit;	        \/*2.2.2.18ÔËĞĞMAXµÄÏŞ¶¨Öµ¡£µ±Ğ¡ÓÚ´ËÖµÊ±£¬ÔËĞĞMAX1£¬·´Ö®ÔËĞĞMAX2*\/$/;"	m	struct:__anon8
+byPhaseDynamicMaxStep	HikConfig.h	/^	UInt8  byPhaseDynamicMaxStep;	        \/*2.2.2.19¶¯Ì¬µ÷Õû²½³¤*\/    $/;"	m	struct:__anon8
+byPhaseLaneProperty	HikConfig.h	/^	UInt8 	byPhaseLaneProperty;			\/\/ÏàÎ»µÄ·½Ïò³µµÀÊôĞÔ£¬°´Î»±íÊ¾³µµÀ$/;"	m	struct:STRU_SignalTransEntry
+byPhaseMaximumInitial	HikConfig.h	/^	UInt8  byPhaseMaximumInitial;	        \/*2.2.2.12ÏàÎ»×î´ó³õÊ¼Öµ*\/$/;"	m	struct:__anon8
+byPhaseMinimumGap	HikConfig.h	/^	UInt8  byPhaseMinimumGap;		        \/*2.2.2.17¿ÉÒÔµİ¼õµ½µÄ×îĞ¡gap£¬Ó¦¸ÃºÍphaseTimeToReduce×ÛºÏÊ¹ÓÃ*\/$/;"	m	struct:__anon8
+byPhaseNumber	HikConfig.h	/^	UInt8  	byPhaseNumber;		\/\/ÏàÎ»ºÅ$/;"	m	struct:STRU_SignalTransEntry
+byPhaseReduceBy	HikConfig.h	/^	UInt8  byPhaseReduceBy;			        \/*2.2.2.16µ¥Î»µİ¼õÂÊ£¬Óë2.2.2.15ºÍ16ÈÎÑ¡Ò»¸ö*\/$/;"	m	struct:__anon8
+byPhaseStartup	HikConfig.h	/^	UInt8  byPhaseStartup;			        \/*2.2.2.20ÏàÎ»³õÊ¼»¯ÉèÖÃ$/;"	m	struct:__anon8
+byPhaseTimeBeforeReduction	HikConfig.h	/^	UInt8  byPhaseTimeBeforeReduction;       \/*2.2.2.13 gapµİ¼õÖ®Ç°µÄÊ±¼äÓë2.2.2.14×ÛºÏÊ¹ÓÃ*\/$/;"	m	struct:__anon8
+byPhaseTimeToReduce	HikConfig.h	/^	UInt8  byPhaseTimeToReduce;		        \/*2.2.2.15 gapµİ¼õµ½minigapµÄÊ±¼ä*\/$/;"	m	struct:__anon8
+byPort	HikConfig.h	/^	UInt8           byPort;                          \/\/¶Ë¿ÚºÅ$/;"	m	struct:__anon11
+byPort	HikConfig.h	/^    UInt8  byPort;            \/\/¶Ë¿ÚºÅ$/;"	m	struct:STRU_Address
+byPreemptControl	HikConfig.h	/^	UInt8	byPreemptControl;$/;"	m	struct:STRU_N_Preempt
+byPreemptCyclingOverlapLen	HikConfig.h	/^	UInt8	byPreemptCyclingOverlapLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptCyclingPedLen	HikConfig.h	/^	UInt8	byPreemptCyclingPedLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptCyclingPhaseLen	HikConfig.h	/^	UInt8	byPreemptCyclingPhaseLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptDwellGreen	HikConfig.h	/^	UInt8	byPreemptDwellGreen;$/;"	m	struct:STRU_N_Preempt
+byPreemptDwellOverlapLen	HikConfig.h	/^	UInt8	byPreemptDwellOverlapLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptDwellPedLen	HikConfig.h	/^	UInt8	byPreemptDwellPedLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptDwellPhaseLen	HikConfig.h	/^	UInt8	byPreemptDwellPhaseLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptEnterPedClear	HikConfig.h	/^	UInt8	byPreemptEnterPedClear;$/;"	m	struct:STRU_N_Preempt
+byPreemptEnterRedClear	HikConfig.h	/^	UInt8 	byPreemptEnterRedClear;$/;"	m	struct:STRU_N_Preempt
+byPreemptEnterYellowChange	HikConfig.h	/^	UInt8	byPreemptEnterYellowChange;$/;"	m	struct:STRU_N_Preempt
+byPreemptExitPhaseLen	HikConfig.h	/^	UInt8	byPreemptExitPhaseLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptLink	HikConfig.h	/^	UInt8	byPreemptLink;$/;"	m	struct:STRU_N_Preempt
+byPreemptMinimumGreen	HikConfig.h	/^	UInt8	byPreemptMinimumGreen;$/;"	m	struct:STRU_N_Preempt
+byPreemptMinimumWalk	HikConfig.h	/^	UInt8	byPreemptMinimumWalk;$/;"	m	struct:STRU_N_Preempt
+byPreemptNumber	HikConfig.h	/^	UInt8	byPreemptNumber;$/;"	m	struct:STRU_N_Preempt
+byPreemptState	HikConfig.h	/^	UInt8	byPreemptState;$/;"	m	struct:STRU_N_Preempt
+byPreemptTrackGreen	HikConfig.h	/^	UInt8 	byPreemptTrackGreen;$/;"	m	struct:STRU_N_Preempt
+byPreemptTrackOverlapLen	HikConfig.h	/^	UInt8	byPreemptTrackOverlapLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptTrackPhaseLen	HikConfig.h	/^	UInt8	byPreemptTrackPhaseLen;$/;"	m	struct:STRU_N_Preempt
+byPreemptTrackRedClear	HikConfig.h	/^	UInt8	byPreemptTrackRedClear;$/;"	m	struct:STRU_N_Preempt
+byPreemptTrackYellowChange	HikConfig.h	/^	UInt8	byPreemptTrackYellowChange;$/;"	m	struct:STRU_N_Preempt
+byRedFaultSwitch	HikConfig.h	/^	UInt8 byRedFaultSwitch;	     \/\/ ¼ì²â¿ª¹Ø,bit0----¹ÊÕÏ¼ì²â×Ü¿ª¹Ø£¬Ä¬ÈÏÎª1$/;"	m	struct:STRU_BasicFaultDetect
+byRedOffCount	HikConfig.h	/^    UInt8 byRedOffCount;          \/\/ ºìµÆÏ¨Ãğ¼ì²âÂË²¨´ÎÊı£¬Ä¬ÈÏ4$/;"	m	struct:STRU_BasicFaultDetect
+byRedYellow	HikConfig.h	/^	UInt8	byRedYellow;		\/\/ĞÅºÅ×ª»»ĞòÁĞÖĞµÄºì»ÆÊ±¼ä$/;"	m	struct:STRU_SignalTransEntry
+byReserved1	HikConfig.h	/^	UInt8 byReserved1;	\/\/ÒÔÏÂ²ÎÊı±£Áô$/;"	m	struct:STRU_PhaseEx
+byReserved10	HikConfig.h	/^	UInt8 byReserved10;$/;"	m	struct:STRU_UnitParamEx
+byReserved11	HikConfig.h	/^	UInt8 byReserved11;$/;"	m	struct:STRU_UnitParamEx
+byReserved12	HikConfig.h	/^	UInt8 byReserved12;$/;"	m	struct:STRU_UnitParamEx
+byReserved13	HikConfig.h	/^	UInt8 byReserved13;$/;"	m	struct:STRU_UnitParamEx
+byReserved14	HikConfig.h	/^	UInt8 byReserved14;$/;"	m	struct:STRU_UnitParamEx
+byReserved2	HikConfig.h	/^	UInt8 byReserved2;$/;"	m	struct:STRU_PhaseEx
+byReserved2	HikConfig.h	/^	UInt8 byReserved2;$/;"	m	struct:STRU_UnitParamEx
+byReserved3	HikConfig.h	/^	UInt8 byReserved3;$/;"	m	struct:STRU_PhaseEx
+byReserved3	HikConfig.h	/^	UInt8 byReserved3;$/;"	m	struct:STRU_UnitParamEx
+byReserved4	HikConfig.h	/^	UInt8 byReserved4;$/;"	m	struct:STRU_PhaseEx
+byReserved4	HikConfig.h	/^	UInt8 byReserved4;$/;"	m	struct:STRU_UnitParamEx
+byReserved5	HikConfig.h	/^	UInt8 byReserved5;$/;"	m	struct:STRU_PhaseEx
+byReserved5	HikConfig.h	/^	UInt8 byReserved5;$/;"	m	struct:STRU_UnitParamEx
+byReserved6	HikConfig.h	/^	UInt8 byReserved6;$/;"	m	struct:STRU_PhaseEx
+byReserved6	HikConfig.h	/^	UInt8 byReserved6;$/;"	m	struct:STRU_UnitParamEx
+byReserved7	HikConfig.h	/^	UInt8 byReserved7;$/;"	m	struct:STRU_PhaseEx
+byReserved7	HikConfig.h	/^	UInt8 byReserved7;$/;"	m	struct:STRU_UnitParamEx
+byReserved8	HikConfig.h	/^	UInt8 byReserved8;$/;"	m	struct:STRU_UnitParamEx
+byReserved9	HikConfig.h	/^	UInt8 byReserved9;$/;"	m	struct:STRU_UnitParamEx
+byRs232DataBits	HikConfig.h	/^	UInt8  	byRs232DataBits;		\/\/Êı¾İÎ»											$/;"	m	struct:SCountDownCfg_DEL
+byRs232ParityBits	HikConfig.h	/^	UInt8  	byRs232ParityBits;		\/\/ÆæÅ¼Ğ£ÑéÎ»$/;"	m	struct:SCountDownCfg_DEL
+byRs232StopBits	HikConfig.h	/^	UInt8  	byRs232StopBits;		\/\/Í£Ö¹Î»	$/;"	m	struct:SCountDownCfg_DEL
+bySafeRed	HikConfig.h	/^	UInt8	bySafeRed;			\/\/ĞÅºÅ×ª»»ĞòÁĞÖĞµÄ°²È«ºìµÆÊ±¼ä$/;"	m	struct:STRU_SignalTransEntry
+bySecondTimeDiff	HikConfig.h	/^	UInt8    bySecondTimeDiff;			            \/\/¶ş´Î¹ı½ÖÄæÏòĞ­µ÷²ÎÊı$/;"	m	struct:__anon11
+byStartAllRedTime	HikConfig.h	/^	UInt8 byStartAllRedTime;	\/\/Æô¶¯È«ºìÊ±¼ä$/;"	m	struct:STRU_UnitParamEx
+bySysMaxCycle	HikConfig.h	/^	UInt8	bySysMaxCycle;		\/\/×î´óÖÜÆÚ³¤£¨0¡«255s£©£¬ÓÅ»¯Ê¹ÓÃ£¨ÏµÍ³¡¢µ¥µã£©$/;"	m	struct:STRU_UnitOptiPara
+bySysMaxIntensity	HikConfig.h	/^	UInt8	bySysMaxIntensity;	\/\/×î´ó½»Í¨Ç¿¶È£¨0¡«100£¬Êµ¼ÊÖµ·Å´ó100±¶£¬Ä¬ÈÏ0.8£©$/;"	m	struct:STRU_UnitOptiPara
+bySysMinCycle	HikConfig.h	/^	UInt8	bySysMinCycle;		\/\/×îĞ¡ÖÜÆÚ³¤£¨0¡«255s£©£¬ÓÅ»¯Ê¹ÓÃ£¨ÏµÍ³¡¢µ¥µã£©$/;"	m	struct:STRU_UnitOptiPara
+bySysMinIntensity	HikConfig.h	/^	UInt8	bySysMinIntensity;		\/\/×îĞ¡½»Í¨Ç¿¶È£¨0¡«100£¬Êµ¼ÊÖµ·Å´ó100±¶£¬Ä¬ÈÏ0.3£©$/;"	m	struct:STRU_UnitOptiPara
+bySysOptiPara_a	HikConfig.h	/^	UInt8	bySysOptiPara_a;		\/\/ÖÜÆÚ¼ÆËã¹«Ê½²ÎÊıa£¨0¡«max£¬Ä¬ÈÏÎª1£©$/;"	m	struct:STRU_UnitOptiPara
+bySysOptiPara_b	HikConfig.h	/^	UInt8	bySysOptiPara_b;		\/\/ÖÜÆÚ¼ÆËã¹«Ê½²ÎÊıb£¨0¡«max£¬Ä¬ÈÏÎª1£©$/;"	m	struct:STRU_UnitOptiPara
+bySystemPatternControl	HikConfig.h	/^	UInt8 	bySystemPatternControl;	\/*2.5.14ÏµÍ³·½°¸¿ØÖÆ$/;"	m	struct:STRU_N_CoordinationVariable
+bySystemSyncControl	HikConfig.h	/^	UInt8	bySystemSyncControl;		\/*2.5.14 ½¨Á¢ÏµÍ³Í¬²½»ù×¼µã*\/$/;"	m	struct:STRU_N_CoordinationVariable
+byTeleKeyCount	HikConfig.h	/^    UInt8 byTeleKeyCount;         \/\/ Ò£¿ØÆ÷°´¼ü¼ì²âÂË²¨´ÎÊı£¬Ä¬ÈÏ50$/;"	m	struct:STRU_BasicFaultDetect
+byThroughStreetTimeGap	HikConfig.h	/^	UInt8	byThroughStreetTimeGap;		            \/\/¶ş´Î¹ı½ÖÊ±²î(UInt8)$/;"	m	struct:__anon11
+byTimebaseAscActionStatus	HikConfig.h	/^	UInt8	byTimebaseAscActionStatus;      \/*2.6.4 Õâ¸ö¶ÔÏó±íÃ÷µ±Ç°ÓÃµ½µÄÊ±»ù±íºÅ¡£*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+byTransCycle	HikConfig.h	/^	UInt8	byTransCycle;				            \/\/Æ½»¬¹ı¶ÉÖÜÆÚ$/;"	m	struct:__anon11
+byTransCycle	HikConfig.h	/^	UInt8 byTransCycle;		\/\/Æ½»¬¹ı¶ÉÖÜÆÚ$/;"	m	struct:STRU_UnitParamEx
+byTransIntensityCalCo	HikConfig.h	/^	UInt8 byTransIntensityCalCo;		\/\/½»Í¨Ç¿¶È¼ÆËãÏµÊı$/;"	m	struct:STRU_UnitParamEx
+byTransIntensityLower	HikConfig.h	/^	UInt8 byTransIntensityLower; \/*80.62.1.3 ½»Í¨Ç¿¶ÈÏÂÏŞ*\/$/;"	m	struct:STRU_N_TransIntensityChoice
+byUnitControl	HikConfig.h	/^	UInt8	byUnitControl;							\/\/ .10 ÔÊĞíÔ¶³Ì¿ØÖÆÊµÌå¼¤»îĞÅºÅ»úµÄÄ³Ğ©¹¦ÄÜ( 0 = False \/ Disabled, 1 = True \/ Enabled)£º$/;"	m	struct:__anon11
+byUnitRedRevert	HikConfig.h	/^	UInt8	byUnitRedRevert;						\/\/ 2.4.4×îĞ¡ºìµÆÊ±¼ä¡£´Ë²ÎÊıÎªËùÓĞµÄÏàÎ»Ìá¹©×îĞ¡ºìµÆÊ±¼ä£¨Èç£ºÈç¹û´ËÖµ´óÓÚÒ»¸öÏàÎ»µÄºìµÆÊ±¼ä£¬ÔòÕâ¸öÏàÎ»µÄºìµÆÊ±¼äÓÃÕâ¸ö²ÎÊıÀ´´úÌæ£©¡£Õâ¸ö¶ÔÏóÎª»ÆµÆÖ®ºóºÍÏÂÒ»¸öÂÌµÆÖ®Ç°Ìá¹©Õâ¶ÎÊ±¼äÌá¹©Ò»¸ö×îĞ¡Ö¸Ê¾¡£$/;"	m	struct:__anon11
+byUnitTransIntensityCalCo	HikConfig.h	/^	UInt8    byUnitTransIntensityCalCo;              \/\/½»Í¨Ç¿¶È¼ÆËãÏµÊı$/;"	m	struct:__anon11
+byUseStartOrder	HikConfig.h	/^	UInt8	byUseStartOrder;			            \/\/ÆôÓÃÆô¶¯µÆĞò$/;"	m	struct:__anon11
+byUseStartOrder	HikConfig.h	/^	UInt8 byUseStartOrder;	\/\/ÆôÓÃÆô¶¯µÆĞò$/;"	m	struct:STRU_UnitParamEx
+byVehicleDetectorAlarms	HikConfig.h	/^	UInt8  byVehicleDetectorAlarms;	        \/*2.3.2.12 ¼ì²âÆ÷¸æ¾¯$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorCallPhase	HikConfig.h	/^	UInt8  byVehicleDetectorCallPhase;       \/*2.3.2.3¸Ã¼ì²âÆ÷¶ÔÓ¦µÄÇëÇóÏàÎ»*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorDelay	HikConfig.h	/^	UInt16  byVehicleDetectorDelay;	        \/*2.3.2.5µ±assigned phase²»ÊÇÂÌµÆÊ±£¬¼ì²âÆ÷µÄÊäÈë½«±»ÑÓ³ÙÒ»¶ÎÊ±¼ä£¨00-999Ãë£©¡£Ò»µ©·¢ÉúÁËÑÓ³Ù£¬ÄÇ÷áÖ®ºó·¢ÉúµÄÑÓ³Ù½«±»ÀÛ¼Æ*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorErraticCounts	HikConfig.h	/^	UInt8  byVehicleDetectorErraticCounts;	\/*2.3.2.10Ã¿·ÖÖÓ0-255´Î£¬Èç¹û¼ì²âÆ÷·¢³öµÄ¸ĞÓ¦ĞÅÏ¢µÄÆµÂÊ³¬¹ıÕâ¸öÖµ£¬Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorExtend	HikConfig.h	/^	UInt8  byVehicleDetectorExtend;          \/*2.3.2.6µ±assigned phaseÊÇÂÌµÆÊ±£¬¼ì²âÆ÷µÄÃ¿´ÎÊäÈë£¬ÏàÎ»¶¼½«ÔÚÂÌµÆµÄÖÕÖ¹µã±»ÑÓ³¤Ò»¶ÎÊ±¼ä£¨00-999Ãë£©*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorFailTime	HikConfig.h	/^	UInt8  byVehicleDetectorFailTime;        \/*2.3.2.11 ¼ì²âÆ÷Ê§°ÜÊ±¼ä£¬µ¥Î»£ºÃë*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorMaxPresence	HikConfig.h	/^	UInt8  byVehicleDetectorMaxPresence;     \/*2.3.2.9 0-255·ÖÖÓ£¬ÔÚÕâ¶ÎÊ±¼äÄÚ£¬¼ì²âÆ÷³ÖĞø·¢³ö¸ĞÓ¦ĞÅÏ¢£¬Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorNoActivity	HikConfig.h	/^	UInt8  byVehicleDetectorNoActivity;      \/*2.3.2.8 0-255·ÖÖÓ£¬ÔÚÕâ¶ÎÖ¸¶¨µÄÊ±¼äÖĞ¼ì²âÆ÷Ã»ÓĞ·¢³ö¸ĞÓ¦ĞÅÏ¢Ôò±»ÅĞ¶ÏÎªÒ»¸ö´íÎó£¬Èç¹ûÖµÎª0£¬Ôò²»»á±»ÅĞ¶Ï*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorNumber	HikConfig.h	/^	UInt8  byVehicleDetectorNumber;          \/*2.3.2.1³µÁ¾¼ì²âÆ÷ĞòÁĞºÅ¡£(1..48)*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorOptionEx	HikConfig.h	/^	UInt8 	byVehicleDetectorOptionEx;\/\/¼ì²âÆ÷Ñ¡Ïî£¬×îµÍÎ»±êÖ¾¼ì²âÆ÷ÊôĞÔÎªÓµ¶Â¼ì²âÆ÷£¬ÆäËûÎ»±£Áô£¬Ä¬ÈÏ0$/;"	m	struct:STRU_N_VehicleDetectorEx
+byVehicleDetectorOptions	HikConfig.h	/^	UInt8  byVehicleDetectorOptions;	        \/*2.3.2.2³µÁ¾¼ì²âÆ÷Ñ¡Ïî$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorPasstime	HikConfig.h	/^	UInt8 byVehicleDetectorPasstime; \/*80.60.1.1 ³µÁ¾Í¨¹ıÏßÈ¦ÖÁÍ£³µÏß¼äµÄÊ±¼ä (0-255)*\/$/;"	m	struct:STRU_N_VehicleDetectorEx
+byVehicleDetectorPriority	HikConfig.h	/^	UInt8 byVehicleDetectorPriority; \/*80.60.1.3 ¼ì²âÆ÷ÓÅÏÈ¼¶ (0-255)*\/$/;"	m	struct:STRU_N_VehicleDetectorEx
+byVehicleDetectorQueueLimit	HikConfig.h	/^	UInt8  byVehicleDetectorQueueLimit;      \/*2.3.2.7¼ì²âÆ÷ÅÅ¶Ó³¤¶ÈÏŞÖÆ£¬µ±³¬¹ıÕâÒ»ÏŞÖÆÊ±£¬µ½´ïµÄ³µÁ¾²»ÔÙÓĞĞ§*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorReportedAlarms	HikConfig.h	/^	UInt8  byVehicleDetectorReportedAlarms; \/*2.3.2.12¼ì²âÆ÷±¨¸æ$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorReset	HikConfig.h	/^	UInt8  byVehicleDetectorReset;	\/*2.3.2.13 µ±¸Ã¶ÔÏó±»ÉèÖÃÎª·ÇÁãÊ±£¬½«ÒıÆğcuÃüÁî¼ì²âÆ÷ÖØÆô¡£ÔÚcu·¢³öÖØÆôÃüÁîÖ®ºó¸Ã¶ÔÏó±»×Ô¶¯ÉèÖÃÎª0*\/$/;"	m	struct:STRU_N_VehicleDetector
+byVehicleDetectorStopNum	HikConfig.h	/^	UInt8 byVehicleDetectorStopNum;  \/*80.60.1.2 ÏßÈ¦ÖÁÍ£³µÏß¼äÍ£·Å³µÁ¾Êı (0-255)*\/$/;"	m	struct:STRU_N_VehicleDetectorEx
+byVehicleDetectorSwitchPhase	HikConfig.h	/^	UInt8  byVehicleDetectorSwitchPhase;     \/*2.3.2.4ÊÇ¸öÏàÎ»ºÅ,¸ÃÏàÎ»¿É½ÓÊÕ¸Ã³µÁ¾¼ì²âÆ÷µÄÇëÇó£¬µ±assigned phase ÎªºìµÆ»ò»ÆµÆÊ±²¢ÇÒthe Switch PhaseÊ±ÂÌµÆÊ±£¬¸ÃÏàÎ»±»×ª»»*\/$/;"	m	struct:STRU_N_VehicleDetector
+byWalk	HikConfig.h	/^	UInt8 byWalk;		\/\/ĞĞÈË·ÅĞĞÊ±¼ä$/;"	m	struct:STRU_SplitPedEx
+cAuxiliary	HikConfig.h	/^    UInt8  cAuxiliary;                       \/* 2.6.3.3¸ĞÓ¦¿ØÖÆÊ±½øĞĞ¸¨Öú¹¦ÄÜÑ¡Ôñ¡£$/;"	m	struct:__anon14
+cIsPedestrianAutoClear	HikConfig.h	/^	UInt8 	cIsPedestrianAutoClear;	                \/\/ 2.4.2ĞĞÈË×Ô¶¯Çå¿Õ²ÎÊı£¨1 = False\/Disable 2=True\/Enable£©¡£	µ±ÉèÖÃÎª1²¢ÇÒÊÖ¶¯²Ù×÷ÓĞĞ§Ê±£¬ĞÅºÅ»ú±ã·ÅĞĞĞĞÈË×Ô¶¯Çå¿ÕÊ±¼ä£¬ÒÔ·ÀÖ¹ĞĞÈËÇå¿ÕÊ±¼ä±»Ô¤ÏÈÉèÖÃµÄÊ±¼äÖÕÖ¹¡£$/;"	m	struct:__anon11
+cSpecialFun	HikConfig.h	/^    UInt8   cSpecialFun;                     \/* 2.6.3.4ÌØÊâ¹¦ÄÜ$/;"	m	struct:__anon14
+cStartTimeHour	HikConfig.h	/^    UInt8   cStartTimeHour;                  \/*¿ªÊ¼Ö´ĞĞÊ±¿ÌµÄÕûµãÊı£¬ÓÃÊ±¼ä£¨24Ê±ÖÆ£©¡£*\/$/;"	m	struct:__anon10
+cStartTimeMinute	HikConfig.h	/^    UInt8   cStartTimeMinute;                \/*¿ªÊ¼Ö´ĞĞµÄÕû·ÖÊı*\/$/;"	m	struct:__anon10
+channel_desc_params	inifile.c	/^CHANNEL_DESC_PARAMS channel_desc_params;   \/\/Í¨µÀÃèÊö$/;"	v
+com_params	inifile.c	/^COM_PARAMS com_params;                     \/\/´®¿ÚÉèÖÃ²ÎÊı$/;"	v
+configLock	HikConfig.c	/^pthread_rwlock_t configLock = PTHREAD_RWLOCK_INITIALIZER;	\/\/Ö÷Òª±£»¤¶àÏß³Ì·ÃÎÊÈ«¾ÖÅäÖÃ$/;"	v
+container_of	hik.h	83;"	d
+countDownLock	bak.c	/^pthread_rwlock_t countDownLock = PTHREAD_RWLOCK_INITIALIZER;	\/\/Ö÷Òª±£»¤¶àÏß³Ì·ÃÎÊÈ«¾ÖÅäÖÃ$/;"	v
+countDownLock	platform.c	/^pthread_rwlock_t countDownLock = PTHREAD_RWLOCK_INITIALIZER;	\/\/Ö÷Òª±£»¤¶àÏß³Ì·ÃÎÊÈ«¾ÖÅäÖÃ$/;"	v
+count_down_interface	countDown.c	/^void  count_down_interface(void)$/;"	f
+count_down_thread_create	countDown.c	/^int count_down_thread_create()$/;"	f
+countdown_ped	countDown.c	/^CountDownPed countdown_ped[17];$/;"	v
+countdown_veh	countDown.c	/^CountDownVeh countdown_veh[17];$/;"	v
+current_params_udp_info	udpserver.c	/^struct CURRENT_PARAMS_UDP current_params_udp_info;$/;"	v	typeref:struct:CURRENT_PARAMS_UDP
+data	lfq.h	/^	char data[1];$/;"	m	struct:lfq_t
+dateName	common.h	/^	unsigned char dateName[64];      \/\/ÈÕÆÚ¶ÔÓ¦Ãû³Æ$/;"	m	struct:_Date_Desc_
+dateType	common.h	/^	int  dateType;                   \/\/ÈÕÆÚÀàĞÍ£º0£ºÆÕÍ¨ÈÕÆÚ£¬1£ºÌØÊâÈÕÆÚ$/;"	m	struct:_Date_Desc_
+date_name_params	inifile.c	/^DATE_NAME_PARAMS date_name_params;		   \/\/ÈÕÆÚÃèÊö$/;"	v
+day	HikConfig.h	/^	UInt32  day;		                        \/* 2.4.3.2.4 bit1-bit31£¬Ã¿Î»±íÊ¾Ò»ÔÂÖĞµÄÒ»Ìì¡£ÖÃ1±íÊ¾ÔÊĞí¶ÔÓ¦¼Æ»®ÔÚ¸ÃÌìÖ´ĞĞ¡£(0..4294967295)*\/$/;"	m	struct:__anon9
+day	HikConfig.h	/^    unsigned char day[31];$/;"	m	struct:__anon5
+device_version_params	udpserver.c	/^DEVICE_VERSION_PARAMS device_version_params;           \/\/Éè±¸ÈíÓ²¼şĞÅÏ¢$/;"	v
+dwControllerLocalTime	HikConfig.h	/^	UInt32	dwControllerLocalTime;	        \/*2£®4£®7 ±¾µØÊ±¼ä£¬µÈÓÚ1970\/1\/1 00:00:00ÒÔÀ´µÄÃëÊı*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+dwGlobalTime	HikConfig.h	/^	UInt32	dwGlobalTime;				    \/*2.4.1 UTC£¨»òGMT£©Ê±¼ä£¬´Ó1970\/1\/1 00:00:00ÖÁ½ñµÄÃëÊı*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+element_size	lfq.h	/^	UInt32 element_size;$/;"	m	struct:lfq_t
+fd	CPLD.c	/^int fd = 0;$/;"	v
+flashing_pressed	CPLD.c	/^int flashing_pressed = 0;$/;"	v
+gChannelLockFlag	inifile.c	/^UInt8 gChannelLockFlag = 0;   \/\/0±íÊ¾Î´Ëø¶¨£¬1±íÊ¾Ëø¶¨$/;"	v
+gChannelLockFlag	platform.c	/^UInt8 gChannelLockFlag;   \/\/0±íÊ¾Î´Ëø¶¨£¬1±íÊ¾Ëø¶¨$/;"	v
+gChannelLockedParams	inifile.c	/^CHANNEL_LOCK_PARAMS gChannelLockedParams;$/;"	v
+gConfigPara	HikConfig.c	/^static SignalControllerPara *gConfigPara = NULL;\/\/ĞÅºÅ»úÅäÖÃ²ÎÊı±¸·İ$/;"	v	file:
+gCountDownParams	bak.c	/^PHASE_COUNTING_DOWN_FEEDBACK_PARAMS *gCountDownParams = NULL;       \/\/µ¹¼ÆÊ±½Ó¿ÚĞÅÏ¢$/;"	v
+gCountDownParams	platform.c	/^PHASE_COUNTING_DOWN_FEEDBACK_PARAMS *gCountDownParams = NULL;       \/\/µ¹¼ÆÊ±½Ó¿ÚĞÅÏ¢$/;"	v
+gHandle	bak.c	/^void *gHandle = NULL;	\/\/µ¹¼ÆÊ±Ê¹ÓÃµÄ¶ÓÁĞ¾ä±ú$/;"	v
+gHandle	platform.c	/^void *gHandle = NULL;	\/\/µ¹¼ÆÊ±Ê¹ÓÃµÄ¶ÓÁĞ¾ä±ú$/;"	v
+gHikConfigNum	HikConfig.c	/^static int gHikConfigNum = 0;$/;"	v	file:
+gSignalControlpara	HikConfig.c	/^SignalControllerPara *gSignalControlpara = NULL;$/;"	v
+gSpecialControlSchemeId	platform.c	/^UInt8 gSpecialControlSchemeId;       \/\/ÌØÊâ¿ØÖÆ·½°¸ºÅ$/;"	v
+g_RedCurrentValue	NGSL_io.c	/^unsigned char g_RedCurrentValue[32] = {0};   \/\/32Â·ºìµÆµçÁ÷Öµ$/;"	v
+g_car_detect_switch	inifile.c	/^unsigned int g_car_detect_switch;$/;"	v
+g_com_params	inifile.c	/^COM_PARAMS g_com_params[4];                \/\/È«¾Ö´®¿Ú²ÎÊı$/;"	v
+g_errorstat	NGSL_io.c	/^static int g_errorstat = 0; \/\/¹ÊÕÏ±êÖ¾ :1 :ÓĞ¹ÊÕÏ£» 0:ÎŞ¹ÊÕÏ$/;"	v	file:
+g_failurenumber	inifile.c	/^unsigned int g_failurenumber;                 \/\/¹ÊÕÏÊÂ¼şĞòºÅ$/;"	v
+g_faultstatus	NGSL_io.c	/^static int g_faultstatus[32] = {0}; \/\/Í¨µÀ¹ÊÕÏ¼ÇÂ¼ÓÃÓÚ»Ö¸´$/;"	v	file:
+g_nLampStatus	NGSL_io.c	/^static uint16 g_nLampStatus[8] = {0};$/;"	v	file:
+g_printf_switch	inifile.c	/^unsigned int g_printf_switch;$/;"	v
+g_struCountDown	inifile.c	/^struct Count_Down_Params g_struCountDown;    \/\/µ¹¼ÆÊ±²ÎÊı$/;"	v	typeref:struct:Count_Down_Params
+g_struRecCurrent	inifile.c	/^struct CURRENT_PARAMS g_struRecCurrent[32];   \/\/µçÁ÷²ÎÊı$/;"	v	typeref:struct:CURRENT_PARAMS
+gateway	common.h	/^	char gateway[16];					\/\/Íø¹Ø$/;"	m	struct:STRU_N_IP_ADDRESS
+get_all_params_from_config_file	inifile.c	/^void get_all_params_from_config_file()$/;"	f
+get_custom_params	inifile.c	/^void get_custom_params()$/;"	f
+get_desc_params	inifile.c	/^void get_desc_params()$/;"	f
+get_new_switch_params	inifile.c	/^void get_new_switch_params()$/;"	f
+get_special_params	inifile.c	/^void get_special_params()$/;"	f
+hardVersionInfo	common.h	/^     unsigned char    hardVersionInfo[32];                \/\/Ó²¼ş°æ±¾ĞÅÏ¢$/;"	m	struct:STRU_Extra_Param_Version
+head1	common.h	/^	UINT8 head1;$/;"	m	struct:_Count_Down_Head_
+head2	common.h	/^	UINT8 head2;$/;"	m	struct:_Count_Down_Head_
+hikconfignum	HikConfig.h	/^	int hikconfignum;$/;"	m	struct:__anon18
+iCountDownMode	common.h	/^	int iCountDownMode;				  \/\/ µ¹¼ÆÊ±Ä£Ê½$/;"	m	struct:Count_Down_Params
+iCurrentAlarmAndProcessSwitch	common.h	/^	int iCurrentAlarmAndProcessSwitch;				\/\/µçÁ÷±¨¾¯²¢´¦Àí¿ª¹Ø$/;"	m	struct:SPECIAL_PARAMS
+iCurrentAlarmSwitch	common.h	/^	int iCurrentAlarmSwitch;						\/\/µçÁ÷¼ì²â¿ª¹Ø£¬±¨¾¯²»´¦Àí$/;"	m	struct:SPECIAL_PARAMS
+iErrorDetectSwitch	common.h	/^	int iErrorDetectSwitch;                         \/\/¹ÊÕÏ¼ì²â¿ª¹Ø$/;"	m	struct:SPECIAL_PARAMS
+iFreeGreenTime	common.h	/^	int iFreeGreenTime;                         \/\/¸ĞÓ¦¼ì²âÊ±¼ä£¬È±Ê¡ÖµÎª3$/;"	m	struct:Count_Down_Params
+iGpsSwitch	common.h	/^	int iGpsSwitch;									\/\/GPS¿ª¹Ø$/;"	m	struct:SPECIAL_PARAMS
+iHead	common.h	/^	int iHead;                      $/;"	m	struct:CURRENT_PARAMS_UDP
+iHead	common.h	/^	int iHead;                      \/\/ÏûÏ¢Í·£¬Ä¬ÈÏÎª0x6e6e$/;"	m	struct:UDP_CUR_VALUE_INFO
+iHead	common.h	/^	int iHead;                      \/\/ÏûÏ¢Í·£¬Ä¬ÈÏÎª0x6e6e$/;"	m	struct:UDP_INFO
+iPhaseOfChannel	common.h	/^	PhaseType iPhaseOfChannel[32];                \/\/Í¨µÀ¶ÔÓ¦µÄÏàÎ»(Ä¿Ç°×î´óÖ§³Ö32¸öÍ¨µÀ)$/;"	m	struct:Count_Down_Params
+iPulseGreenTime	common.h	/^	int iPulseGreenTime;				  \/\/Âö³åÂÌµÆµ¹¼ÆÊ±Ê±¼ä$/;"	m	struct:Count_Down_Params
+iPulseRedTime	common.h	/^	int iPulseRedTime;				 \/\/Âö³åºìµÆµ¹¼ÆÊ±Ê±¼ä$/;"	m	struct:Count_Down_Params
+iType	common.h	/^	int  iType;\/\/Í¨µÀ¶ÔÓ¦ÀàĞÍ£¬0:»ú¶¯³µ,1:ĞĞÈË(ÆúÓÃ)$/;"	m	struct:_Phase_And_Type_Of_Channel_
+iType	common.h	/^	int iType;						\/\/ÏûÏ¢ÀàĞÍ£¬0x94 - ÏÂÔØ¼ì²â²ÎÊı | 0x88 - ¹ÊÕÏÇå³ı | 0x15b - ÉÏÔØ¹ÊÕÏĞÅÏ¢ | 0x97 - ÉÏÔØºìµÆµçÁ÷ | 0x93 - ÉÏÔØ¼ì²â²ÎÊı $/;"	m	struct:UDP_CUR_VALUE_INFO
+iType	common.h	/^	int iType;						\/\/ÏûÏ¢ÀàĞÍ£¬0x94 - ÏÂÔØ¼ì²â²ÎÊı | 0x88 - ¹ÊÕÏÇå³ı | 0x15b - ÉÏÔØ¹ÊÕÏĞÅÏ¢ | 0x97 - ÉÏÔØºìµÆµçÁ÷ | 0x93 - ÉÏÔØ¼ì²â²ÎÊı $/;"	m	struct:UDP_INFO
+iType	common.h	/^	int iType;	$/;"	m	struct:CURRENT_PARAMS_UDP
+iValue	common.h	/^	int iValue[16*64];						\/\/$/;"	m	struct:UDP_INFO
+iVoltageAlarmAndProcessSwitch	common.h	/^	int iVoltageAlarmAndProcessSwitch;				\/\/µçÑ¹±¨¾¯²¢´¦Àí¿ª¹Ø$/;"	m	struct:SPECIAL_PARAMS
+iVoltageAlarmSwitch	common.h	/^	int iVoltageAlarmSwitch;						\/\/µçÑ¹¼ì²â¿ª¹Ø£¬±¨¾¯²»´¦Àí$/;"	m	struct:SPECIAL_PARAMS
+iWatchdogSwitch	common.h	/^	int iWatchdogSwitch;							\/\/Èí¼ş¿´ÃÅ¹·¿ª¹Ø$/;"	m	struct:SPECIAL_PARAMS
+info	stepControl.c	/^	StepInfo info;$/;"	m	struct:msgbuf	file:
+ip_info	udpserver.c	/^struct STRU_N_IP_ADDRESS ip_info;$/;"	v	typeref:struct:STRU_N_IP_ADDRESS
+iphase	common.h	/^	int  iphase;\/\/Í¨µÀ¶ÔÓ¦ÏàÎ»$/;"	m	struct:_Phase_And_Type_Of_Channel_
+is_WatchdogEnabled	NGSL_io.c	/^int is_WatchdogEnabled = 0;$/;"	v
+lamp_t	NGSL_io.c	/^} lamp_t;$/;"	t	typeref:struct:__anon20	file:
+lastRedLight	NGSL_io.c	/^char lastRedLight[16] = {0}; \/\/ºìµÆÉÏÒ»´Î×´Ì¬$/;"	v
+lasttime	CPLD.c	/^time_t lasttime = 0;$/;"	v
+lfq_calc_total_size	lfq.h	/^static inline UInt32 lfq_calc_total_size(UInt32 element_num, $/;"	f
+lfq_commit	lfq.h	/^static inline int lfq_commit(void *handle, int num)$/;"	f
+lfq_element_count	lfq.h	/^static inline int lfq_element_count(void *handle)$/;"	f
+lfq_free_count	lfq.h	/^static inline int lfq_free_count(void* handle)$/;"	f
+lfq_init	lfq.h	/^static inline void* lfq_init(void* handle, $/;"	f
+lfq_read	lfq.h	/^static inline int lfq_read(void* handle, void *data)$/;"	f
+lfq_read_n	lfq.h	/^static inline int lfq_read_n(void *handle, void *data, int num)$/;"	f
+lfq_reinit	lfq.h	/^static inline void* lfq_reinit(void* handle)$/;"	f
+lfq_reserve	lfq.h	/^static inline void* lfq_reserve(void *handle, int *num)$/;"	f
+lfq_t	lfq.h	/^struct lfq_t$/;"	s
+lfq_total_count	lfq.h	/^static inline int lfq_total_count(void* handle)$/;"	f
+lfq_write	lfq.h	/^static inline int lfq_write(void* handle, void* data)$/;"	f
+main	NGSL_io.c	/^int main(int argc, char *argv[])$/;"	f
+manual_pressed	CPLD.c	/^int manual_pressed = 0;$/;"	v
+max	hik.h	93;"	d
+min	hik.h	87;"	d
+month	HikConfig.h	/^	UInt16  month;	                        \/*2.4.3.2.2 bit1-bit12£¬Ã¿Î»±íÊ¾Ò»¸öÔÂ¡£ÖÃ1±íÊ¾ÔÊĞí¶ÔÓ¦¼Æ»®ÔÚ¸ÃÔÂÖ´ĞĞ¡£(0..65535)*\/$/;"	m	struct:__anon9
+month	HikConfig.h	/^    unsigned char month[12];$/;"	m	struct:__anon5
+msgbuf	stepControl.c	/^struct msgbuf$/;"	s	file:
+nActionID	HikConfig.h	/^    UInt8   nActionID;                       \/*ÅäÊ±·½°¸ºÅ*\/$/;"	m	struct:__anon10
+nActionID	HikConfig.h	/^    UInt8  nActionID;                        \/* 2.6.3.1¶¯×÷ºÅ*\/                        $/;"	m	struct:__anon14
+nAllRedTime	HikConfig.h	/^    UInt8  nAllRedTime;			            \/*2.2.2.9 NTCIP³Æ×÷ÏàÎ»ºìµÆÇå¿ÕÊ±¼ä,Ò²¾ÍÊÇÎÒÃÇÍ¨³£ËùËµµÄÈ«ºìÊ±¼ä*\/$/;"	m	struct:__anon8
+nArrayMotherPhase	HikConfig.h	/^    UInt8 nArrayMotherPhase[NUM_PHASE];\/*2.10.2.3 overlap°üº¬µÄÏàÎ»£¬Ã¿×Ö½Ú±íÊ¾Ò»¸öÏàÎ»ºÅ¡£*\/$/;"	m	struct:__anon17
+nBootAllRedTime	HikConfig.h	/^	UInt8	nBootAllRedTime;			            \/\/Æô¶¯È«ºìÊ±¼ä$/;"	m	struct:__anon11
+nBootYellowLightTime	HikConfig.h	/^	UInt8 	nBootYellowLightTime;					\/\/ 2.4.1 Æô¶¯Ê±µÄÉÁ¹â¿ØÖÆÊ±¼ä(Ãë)¡£Æô¶¯Ê±µÄÉÁ¹â¿ØÖÆÔÚµôµç»Ö¸´ºó³öÏÖ¡£µôµç»Ö¸´¾ßÌå°üÀ¨ÄÄĞ©Çé¿öÓÉÉè±¸¶¨Òå¡£ÔÚÕâÆÚ¼ä£¬Ó²¼ş»ÆÉÁºÍĞÅºÅµÆ¼àÊÓÊÇ²»»î¶¯µÄ£¨Èç¹ûÓĞµÄ»°£©¡£$/;"	m	struct:__anon11
+nChannelID	HikConfig.h	/^    UInt8 nChannelID;                        \/*2.9.2.1Í¨µÀºÅ£¬²»ÄÜ´óÓÚmaxChannels¡£(1..32)*\/$/;"	m	struct:__anon16
+nCircleID	HikConfig.h	/^    UInt8 nCircleID;                         \/* 2.8.3.2»·ºÅ*\/$/;"	m	struct:__anon15
+nCircleID	HikConfig.h	/^    UInt8 nCircleID;                     \/*2.2.2.22ÓÃµ½¸ÃÏàÎ»µÄring±íºÅ*\/$/;"	m	struct:__anon8
+nControllerID	HikConfig.h	/^    UInt8 nControllerID;                     \/*Í¨µÀ¿ØÖÆÔ´[ÏàÎ»(phase)»òÕßÖØµş(overlap)]£¬ÓÉchannelControlType¾ö¶¨ÊÇÏàÎ»»òÊÇÖØµş£¬²»ÄÜ´óÓÚ×î´óÏàÎ»ÊıºÍ×î´óÖØµşÊı¡£*\/$/;"	m	struct:__anon16
+nControllerType	HikConfig.h	/^    UInt8 nControllerType;                   \/*2.9.2.2Í¨µÀ¿ØÖÆÀàĞÍ£¬ÓĞËÄ¸öÈ¡Öµ£¬other(1),phaseVehicle (2),phasePedestrian (3),overlap (4)£¬·Ö±ğ±íÊ¾ÆäËûÏàÎ»¿ØÖÆ¡¢»ú¶¯³µÏàÎ»¿ØÖÆ¡¢ĞĞÈËÏàÎ»¿ØÖÆºÍÖØµş¿ØÖÆ¡£*\/$/;"	m	struct:__anon16
+nCycleTime	HikConfig.h	/^    UInt8 nCycleTime;                        \/*2.5.7.2 ·½°¸ÖÜÆÚ³¤,Ò»¸öÎŞ¸ĞÓ¦µÄĞĞÈËÏàÎ»×îĞ¡ĞèÇó°üÀ¨£ºminiGreen£«Walk£«PedClear£«yellow£«Red Ò»¸ö¸ĞÓ¦µÄĞĞÈËÏàÎ»×îĞ¡ĞèÇó°üÀ¨£ºminiGreen+Yellow+Red *\/$/;"	m	struct:__anon12
+nFlashLightType	HikConfig.h	/^    UInt8 nFlashLightType;                   \/*2.9.2.3×Ô¶¯ÉÁ¹â×´Ì¬¡£$/;"	m	struct:__anon16
+nFollowPhaseID	HikConfig.h	/^    UInt8 nFollowPhaseID;                    \/*2.10.2.1 overlapNumber£ºoverlapºÅ£¬	²»³¬¹ımaxOverlaps¡£1 = Overlap A, 2 = Overlap B etc *\/$/;"	m	struct:__anon17
+nGcontrollerStandardTimeZone	HikConfig.h	/^	UInt32  	nGcontrollerStandardTimeZone;	\/*2£®4£®6 ±¾µØ±ê×¼Ê±¼äÓëGMTµÄÊ±²î£¨Ãë£©¡£ÕıÖµ±íÊ¾±¾µØÊ±¼äÔÚ¶«°ëÇò£¬¸ºÖµ±íÊ¾±¾µØÊ±¼äÔÚÎ÷°ëÇò*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+nGlobalLocalTimeDifferential	HikConfig.h	/^	UInt32 	nGlobalLocalTimeDifferential;	\/*2£®4£®5 Ê±²î*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+nGreenLightTime	HikConfig.h	/^	UInt8	nGreenLightTime;		\/\/ĞÅºÅ×ª»»ĞòÁĞÖĞµÄÂÌÉÁÊ±¼ä$/;"	m	struct:STRU_SignalTransEntry
+nGreenSignalRatioID	HikConfig.h	/^    UInt8 nGreenSignalRatioID;               \/*2.5.7.4·½°¸¶ÔÓ¦µÄÂÌĞÅ±È±íºÅ*\/$/;"	m	struct:__anon12
+nGreenSignalRationID	HikConfig.h	/^    UInt8 nGreenSignalRationID;              \/* 2.5.9.1¶¨ÒåÂÌĞÅ±È×éºÅ£¬Ò»¸ö×éÄÚµÄ¸Ã×Ö¶ÎÏàÍ¬*\/$/;"	m	struct:__anon13
+nGreenSignalRationTime	HikConfig.h	/^    UInt8 nGreenSignalRationTime;            \/*2.5.9.3¶ÔÓ¦ÂÌĞÅ±ÈÏàÎ»ÂÌÊ±¼ä*\/$/;"	m	struct:__anon13
+nGreenTime	HikConfig.h	/^    UInt8 nGreenTime;                        \/*2.10.2.5  0-255Ãë£¬	Èç¹û´Ë²ÎÊı´óÓÚ0ÇÒoverlapµÄÂÌµÆÕı³£½áÊø£¬overlapÂÌµÆ½«ÑÓ³¤´Ë²ÎÊıÉè¶¨µÄÃëÊı¡£*\/$/;"	m	struct:__anon17
+nID	common.h	/^	int nID;                \/\/ÏûÏ¢ÀàĞÍID$/;"	m	struct:FAILURE_INFO
+nIsCoordinate	HikConfig.h	/^    UInt8 nIsCoordinate;                     \/*2.5.9.5¶¨ÒåÊÇ·ñ×÷ÎªĞ­µ÷ÏàÎ»´¦Àí*\/$/;"	m	struct:__anon13
+nMaxGreen_1	HikConfig.h	/^    UInt8  nMaxGreen_1;                      \/* 2.2.2.6×î´óÂÌµÆÊ±¼ä1£¬¼ò³Æ×î´óÂÌ1¡£(0..255)*\/$/;"	m	struct:__anon8
+nMaxGreen_2	HikConfig.h	/^    UInt8  nMaxGreen_2;                      \/* 2.2.2.7×î´óÂÌµÆÊ±¼ä2£¬¼ò³Æ×î´óÂÌ2¡£(0..255)*\/$/;"	m	struct:__anon8
+nMinGreen	HikConfig.h	/^    UInt8  nMinGreen;                        \/* 2.2.2.4×îĞ¡ÂÌµÆÊ±¼ä£¬¼ò³Æ×îĞ¡ÂÌ¡£Ò»°ã¸ù¾İÈë¿Ú¼ì²âÆ÷ÓëÍ£³µÏß¼äµÄ³µÁ¾ÅÅ¶ÓÇé¿öÈ·¶¨¡£(0..255)*\/$/;"	m	struct:__anon8
+nNumber	common.h	/^	int nNumber;    		\/\/ĞòÁĞºÅ$/;"	m	struct:FAILURE_INFO
+nOffset	HikConfig.h	/^    UInt8 nOffset;                           \/*2.5.7.3 ÏàÎ»²î´óĞ¡*\/$/;"	m	struct:__anon12
+nPedestrianClearTime	HikConfig.h	/^    UInt8  nPedestrianClearTime;             \/* 2.2.2.3 ĞĞÈËÇå¿ÕÊ±¼ä£¨ĞĞÈËÂÌÉÁÊ±¼ä£©(0..255)*\/$/;"	m	struct:__anon8
+nPedestrianPassTime	HikConfig.h	/^    UInt8  nPedestrianPassTime;              \/*2.2.2.2ĞĞÈË·ÅĞĞÊ±¼ä£¬¿ØÖÆĞĞÈË¹ı½ÖÂÌµÆµÄÃëÊı¡£(0..255),second*\/$/;"	m	struct:__anon8
+nPhaseID	HikConfig.h	/^    UInt8 nPhaseID;                          \/*2.2.2.1 ÏàÎ»ºÅ£¬²»ÄÜ³¬¹ımaxPhasesËù¶¨ÒåµÄÖµ¡£(1..32)*\/$/;"	m	struct:__anon8
+nPhaseID	HikConfig.h	/^    UInt8 nPhaseID;                          \/*2.5.9.2¸ÃĞĞ¶ÔÓ¦µÄÏàÎ»ºÅ*\/$/;"	m	struct:__anon13
+nPhaseTurnID	HikConfig.h	/^    UInt8 nPhaseTurnID;                      \/*2.5.7.5·½°¸¶ÔÓ¦µÄÏàĞò±íºÅ*\/$/;"	m	struct:__anon12
+nPhaseTurnID	HikConfig.h	/^    UInt8 nPhaseTurnID;                      \/*2.8.3.1ÏàĞò±íºÅ*\/$/;"	m	struct:__anon15
+nRedProtectedTime	HikConfig.h	/^    UInt8  nRedProtectedTime;                \/*2.2.2.10±£Ö¤»ÆµÆÒÔºó²»ÄÜÖ±½Ó·µ»ØÂÌµÆ¿ØÖÆµÄºìµÆÊ±¼ä±£»¤*\/$/;"	m	struct:__anon8
+nRedTime	HikConfig.h	/^    UInt8 nRedTime;                          \/*2.10.2.7  0-25.5Ãë¡£Èç¹ûoverlapµÄÂÌµÆ±»ÑÓ³¤	£¨Trailing Green£©£¬´Ë²ÎÊı½«¾ö¶¨overlap Red ClearanceµÄÊ±¼ä¼ä¸ô³¤¶È¡£*\/$/;"	m	struct:__anon17
+nScheduleID	HikConfig.h	/^    UInt16  nScheduleID;                     \/*2.4.3.2.1 µ÷¶È¼Æ»®ºÅ£¬ÓÉtimeBaseScheduleMonth¡¢timeBaseScheduleDate¡¢timeBaseScheduleDate¡¢timeBaseScheduleDayPlanËÄ¸ö²ÎÊı¹²Í¬¾ö¶¨¼Æ»®ÊÇ·ñ¿ÉÒÔÖ´ĞĞ¡£(1..40)*\/$/;"	m	struct:__anon9
+nSchemeID	HikConfig.h	/^    UInt8  nSchemeID;                        \/* 2.6.3.2¸ĞÓ¦·½°¸ºÅ¡£Õâ¸ö²ÎÊı²»ÄÜ³¬¹ımaxPatterns, flash,»òÕßfreeµÄÖµ¡£ÉèÖÃÎª0±íÃ÷Ã»ÓĞ·½°¸±»Ñ¡Ôñ¡£*\/$/;"	m	struct:__anon14
+nSchemeID	HikConfig.h	/^    UInt8 nSchemeID;                         \/*2.5.7.1 ·½°¸±íÖĞ¸ÃĞĞÊôÓÚÄÄ¸ö·½°¸*\/$/;"	m	struct:__anon12
+nTime	common.h	/^	long nTime;        		\/\/·¢ÉúÊ±¼ä$/;"	m	struct:FAILURE_INFO
+nTimeID	HikConfig.h	/^    UInt8   nTimeID;                         \/*Ê±¶Î£¨ÊÂ¼ş£©ºÅ¡£(1..48)£¬Ë÷Òı,¼¸¸ö²»Í¬µÄÊÂ¼ş¿ÉÒÔÔÚÒ»ÌìÖĞµÄ²»Í¬Ê±¶ÎÖ´ĞĞ¡£Èç¹ûÁ½¸öÊÂ¼ş³öÏÖµÄÊ±¶ÎÏàÍ¬£¬ÔòÊ±¶ÎºÅĞ¡µÄÏÈÖ´ĞĞ*\/$/;"	m	struct:__anon10
+nTimeIntervalID	HikConfig.h	/^    UInt8   nTimeIntervalID;                 \/*2.4.3.2.5Ê±¶Î±íºÅ£¬Ö¸ÏòtimeBaseScheduleDayPlan¡£0±íÊ¾±¾ĞĞÎŞĞ§¡£(0..255)*\/$/;"	m	struct:__anon9
+nTimeIntervalID	HikConfig.h	/^    UInt8   nTimeIntervalID;                 \/*Ê±¶Î±íºÅ(1..16)£¬Ë÷Òı*\/$/;"	m	struct:__anon10
+nTurnArray	HikConfig.h	/^    UInt8 nTurnArray[NUM_PHASE];             \/*2.8.3.3 ÏàĞò×é*\/$/;"	m	struct:__anon15
+nType	HikConfig.h	/^    UInt8 nType;                             \/*2.5.9.4¶ÔÓÚ¸ÃÏàÎ»Ó¦ÈçºÎ²Ù×÷$/;"	m	struct:__anon13
+nUnitExtendGreen	HikConfig.h	/^    UInt8  nUnitExtendGreen;                 \/*2.2.2.5µ¥Î»ÂÌµÆÑÓ³¤Ê±¼ä(0-25.5 sec)£¬¼ò³Æµ¥Î»ÑÓ³¤ÂÌ¡£(0..255)*\/$/;"	m	struct:__anon8
+nValue	common.h	/^	int nValue;         	\/\/Ê±¼äÖµ(Í¨µÀºÅ)$/;"	m	struct:FAILURE_INFO
+nYellowTime	HikConfig.h	/^    UInt8  nYellowTime;                      \/*2.2.2.8ÏàÎ»»ÆµÆÊ±¼ä*\/$/;"	m	struct:__anon8
+nYellowTime	HikConfig.h	/^    UInt8 nYellowTime;                       \/*2.10.2.6  3-25.5Ãë¡£Èç¹ûoverlapµÄÂÌµÆ±»ÑÓ³¤	£¨Trailing Green´óÓÚÁã£©£¬´Ë²ÎÊı½«¾ö¶¨overlap Yellow ChangeµÄÊ±¼ä¼ä¸ô³¤¶È¡£*\/$/;"	m	struct:__anon17
+nowRedLight	NGSL_io.c	/^char nowRedLight[16] = {0}; \/\/ºìµÆÏÖÔÚ×´Ì¬$/;"	v
+open_port	countDown.c	/^int open_port(int fd,int comport) $/;"	f
+pattern_name_params	inifile.c	/^PATTERN_NAME_PARAMS pattern_name_params;   \/\/·½°¸ÃèÊö$/;"	v
+ped_color	common.h	/^	unsigned char ped_color;	$/;"	m	struct:_Count_Down_Ped_
+ped_phase	common.h	/^	unsigned char ped_phase;                      $/;"	m	struct:_Count_Down_Ped_
+ped_phaseTime	common.h	/^	unsigned char ped_phaseTime;$/;"	m	struct:_Count_Down_Ped_
+phaseTrunTable	platform.c	/^PhaseTurnItem phaseTrunTable[NUM_RING_COUNT]; \/\/µ±Ç°Ê¹ÓÃµÄÏàĞò$/;"	v
+phase_counting_down_params	udpserver.c	/^PHASE_COUNTING_DOWN_PARAMS phase_counting_down_params; \/\/ÏàÎ»µ¹¼ÆÊ±²ÎÊı$/;"	v
+phase_desc_params	inifile.c	/^PHASE_DESC_PARAMS phase_desc_params;        \/\/ÏàÎ»ÃèÊö  $/;"	v
+plan_name_params	inifile.c	/^PLAN_NAME_PARAMS plan_name_params;         \/\/¼Æ»®ÃèÊö$/;"	v
+print_data	NGSL_io.c	/^void print_data(unsigned int c)    $/;"	f
+put_lamp_value	NGSL_io.c	/^static inline void put_lamp_value(unsigned short *lights, int n, unsigned short value)$/;"	f	file:
+queue_size	lfq.h	/^	UInt32 queue_size;$/;"	m	struct:lfq_t
+rd	lfq.h	/^	volatile UInt32 rd, wr;$/;"	m	struct:lfq_t
+redCurrentValue	common.h	/^	unsigned char redCurrentValue[32];		\/\/32¸öÍ¨µÀµçÁ÷Öµ$/;"	m	struct:UDP_CUR_VALUE_INFO
+reserved1	HikConfig.h	/^    UInt8 reserved1;			\/\/ÒÔÏÂÎª±£Áô×Ö¶Î$/;"	m	struct:STRU_Address
+reserved2	HikConfig.h	/^    UInt8 reserved2;$/;"	m	struct:STRU_Address
+reserved3	HikConfig.h	/^    UInt8 reserved3;$/;"	m	struct:STRU_Address
+reserved4	HikConfig.h	/^    UInt8 reserved4;$/;"	m	struct:STRU_Address
+reserved5	HikConfig.h	/^    UInt8 reserved5;$/;"	m	struct:STRU_Address
+reserved6	HikConfig.h	/^    UInt8 reserved6;$/;"	m	struct:STRU_Address
+reserved7	HikConfig.h	/^    UInt8 reserved7;$/;"	m	struct:STRU_Address
+reserved8	HikConfig.h	/^    UInt8 reserved8;$/;"	m	struct:STRU_Address
+s_failure_info	NGSL_io.c	/^struct FAILURE_INFO s_failure_info;       \/\/¹ÊÕÏĞÅÏ¢½á¹¹Ìå$/;"	v	typeref:struct:FAILURE_INFO
+s_special_params	inifile.c	/^struct SPECIAL_PARAMS s_special_params;       \/\/ÌØÊâ²ÎÊı¶¨Òå$/;"	v	typeref:struct:SPECIAL_PARAMS
+set_custom_params	inifile.c	/^void set_custom_params(STRU_Count_Down_Params *pStruCountDown,COM_PARAMS *pComParams )$/;"	f
+set_desc_params	inifile.c	/^void set_desc_params(PHASE_DESC_PARAMS *pPhaseDescParams, CHANNEL_DESC_PARAMS *pChannelDescParams,PATTERN_NAME_PARAMS *pPatternDescParams,$/;"	f
+set_failure_number	inifile.c	/^void set_failure_number(unsigned int failurenumber)$/;"	f
+set_opt	countDown.c	/^int set_opt(int fd,int nSpeed, int nBits, char nEvent, int nStop) $/;"	f
+set_special_params	inifile.c	/^void set_special_params(STRU_SPECIAL_PARAMS *pSpecial_params,STRU_CURRENT_PARAMS *pstruRecCurrent, int failurenumber)$/;"	f
+sockfd	platform.h	/^	int sockfd;$/;"	m	struct:__anon22
+softVersionInfo	common.h	/^     unsigned char    softVersionInfo[32];                \/\/Èí¼ş°æ±¾ĞÅÏ¢$/;"	m	struct:STRU_Extra_Param_Version
+stAction	HikConfig.h	/^    ActionItem					stAction[NUM_ACTION];                                   \/\/¶¯×÷±í$/;"	m	struct:__anon18
+stChannel	HikConfig.h	/^    ChannelItem					stChannel[NUM_CHANNEL];                                 \/\/Í¨µÀ±í$/;"	m	struct:__anon18
+stChannelDesc	common.h	/^     unsigned char    stChannelDesc[32][64];     		\/\/32¸öÍ¨µÀµÄÃèÊö£¬Ã¿¸öÍ¨µÀ×î¶àÖ§³Ö32¸öÖĞÎÄ     $/;"	m	struct:STRU_Extra_Param_Channel
+stFollowPhase	HikConfig.h	/^    FollowPhaseItem				stFollowPhase[NUM_FOLLOW_PHASE];                        \/\/¸úËæÏàÎ»$/;"	m	struct:__anon18
+stGreenSignalRation	HikConfig.h	/^    GreenSignalRationItem		stGreenSignalRation[NUM_GREEN_SIGNAL_RATION][NUM_PHASE];\/\/ÂÌĞÅ±È±í$/;"	m	struct:__anon18
+stNameDesc	common.h	/^     DATE_DESC        stNameDesc[40];               \/\/$/;"	m	struct:STRU_Extra_Param_Date_Name
+stPatternNameDesc	common.h	/^     unsigned char     stPatternNameDesc[16][64]; $/;"	m	struct:STRU_Extra_Param_Pattern_Name
+stPedPhaseCountingDown	common.h	/^     unsigned int     stPedPhaseCountingDown[16][2];    \/\/16¸öĞĞÈËÏàÎ»µÄµ±Ç°µÆÉ«¼°µ¹¼ÆÊ±$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down
+stPedPhaseCountingDown	platform.h	/^     unsigned char    stPedPhaseCountingDown[16][2];    \/\/16ä¸ªè¡Œäººç›¸ä½çš„å½“å‰ç¯è‰²åŠå€’è®¡æ—¶$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+stPhase	HikConfig.h	/^    PhaseItem					stPhase[NUM_PHASE];                                     \/\/ÏàÎ»±í,ÆäÖĞÒ²¶¨ÒåÁË¿ÉÒÔ²¢·¢µÄÏàÎ»ID$/;"	m	struct:__anon18
+stPhaseDesc	common.h	/^     unsigned char    stPhaseDesc[16][64];     			\/\/16¸öÏàÎ»µÄÏàÎ»·½ÏòÃèÊö£¬Ã¿¸öÏàÎ»×î¶àÖ§³Ö32¸öÖĞÎÄ    $/;"	m	struct:STRU_Extra_Param_Phase
+stPhaseRunningInfo	platform.h	/^     unsigned char    stPhaseRunningInfo[16][2];	\/\/å„ç›¸ä½è¿è¡Œæ—¶é—´å’Œç»¿ä¿¡æ¯”$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+stPhaseTurn	HikConfig.h	/^    PhaseTurnItem				stPhaseTurn[NUM_PHASE_TURN][NUM_RING_COUNT];            \/\/ÏàĞò±í$/;"	m	struct:__anon18
+stPlanNameDesc	common.h	/^     unsigned char     stPlanNameDesc[16][64]; $/;"	m	struct:STRU_Extra_Param_Plan_Name
+stPlanSchedule	HikConfig.h	/^    PlanScheduleItem			stPlanSchedule[NUM_SCHEDULE];                           \/\/µ÷¶È±í$/;"	m	struct:__anon18
+stScheme	HikConfig.h	/^    SchemeItem					stScheme[NUM_SCHEME];                                   \/\/·½°¸±í$/;"	m	struct:__anon18
+stTimeInterval	HikConfig.h	/^    TimeIntervalItem			stTimeInterval[NUM_TIME_INTERVAL][NUM_TIME_INTERVAL_ID];\/\/Ê±¶Î±í$/;"	m	struct:__anon18
+stUnitPara	HikConfig.h	/^    UnitPara 					stUnitPara;                                             \/\/µ¥Ôª²ÎÊı$/;"	m	struct:__anon18
+stVehPhaseCountingDown	common.h	/^     unsigned int     stVehPhaseCountingDown[16][2];    \/\/16¸ö»ú¶¯³µÏàÎ»µÄµ±Ç°µÆÉ«¼°µ¹¼ÆÊ±$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down
+stVehPhaseCountingDown	platform.h	/^     unsigned char    stVehPhaseCountingDown[16][2];    \/\/16ä¸ªæœºåŠ¨è½¦ç›¸ä½çš„å½“å‰ç¯è‰²åŠå€’è®¡æ—¶$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+stagNum	stepControl.c	/^	UInt8 stagNum;$/;"	m	struct:msgbuf	file:
+stayTimes	NGSL_io.c	/^char stayTimes[16] = {0};\/\/ÑÓ³Ù·¢ËÍÂö³åÊ±¼ä$/;"	v
+step_by_step_pressed	CPLD.c	/^int step_by_step_pressed = 0;$/;"	v
+struRecCurrent	common.h	/^	struct CURRENT_PARAMS struRecCurrent[32];$/;"	m	struct:CURRENT_PARAMS_UDP	typeref:struct:CURRENT_PARAMS_UDP::CURRENT_PARAMS
+subnetMask	common.h	/^	char subnetMask[16]; 				\/\/×ÓÍøÑÚÂë$/;"	m	struct:STRU_N_IP_ADDRESS
+system_begin_time	CPLD.c	/^time_t system_begin_time = 0;$/;"	v
+temp_Sign	NGSL_io.c	/^char temp_Sign[16] = {0};\/\/±êÖ¾Î»$/;"	v
+temp_nLampStatus	NGSL_io.c	/^uint16 temp_nLampStatus[8] = {0}; \/\/ÓÃÓÚÂö³åÊ½´¥·¢µ¹¼ÆÊ±ÅÆ$/;"	v
+thread_adjust_control_type	udpserver.c	/^void* thread_adjust_control_type()$/;"	f
+type	stepControl.c	/^	long type;$/;"	m	struct:msgbuf	file:
+ucBeginTimeHour	platform.h	/^     unsigned char    ucBeginTimeHour;			\/\/æ§åˆ¶èµ·æ•ˆæ—¶é—´ï¼šå°æ—¶$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucBeginTimeMin	platform.h	/^     unsigned char    ucBeginTimeMin;			\/\/æ§åˆ¶èµ·æ•ˆæ—¶é—´ï¼šåˆ†é’Ÿ$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucBeginTimeSec	platform.h	/^     unsigned char    ucBeginTimeSec;			\/\/æ§åˆ¶èµ·æ•ˆæ—¶é—´ï¼šç§’$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucChannelLockStatus	platform.h	/^     unsigned char    ucChannelLockStatus;		\/\/é€šé“æ˜¯å¦è¢«é”å®šçŠ¶æ€ï¼Œ1è¡¨ç¤ºé€šé“é”å®šï¼Œ0è¡¨ç¤ºé€šé“æœªé”å®š$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucChannelStatus	platform.h	/^     unsigned char    ucChannelStatus[32];		\/\/32ä¸ªé€šé“çŠ¶æ€ï¼Œ0:ç­ç¯ï¼Œ 1:ç»¿ç¯ï¼Œ2:çº¢ç¯ï¼Œ3:é»„ç¯ï¼Œ4ï¼šç»¿é—ªï¼Œ5ï¼šé»„é—ª, 6ï¼šå…¨çº¢ï¼Œ 7ï¼šå½“å‰é€šé“ä¸èµ·æ•ˆï¼Œ						$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucCurCycleTime	platform.h	/^     unsigned char    ucCurCycleTime;			\/\/å½“å‰è¿è¡Œå‘¨æœŸé•¿$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucCurPlanDsc	platform.h	/^     unsigned char    ucCurPlanDsc[16];			\/\/å½“å‰è¿è¡Œæ–¹æ¡ˆæè¿°$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucCurRunningTime	platform.h	/^     unsigned char    ucCurRunningTime;		\/\/å½“å‰è¿è¡Œæ—¶é—´$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucEndTimeHour	platform.h	/^     unsigned char    ucEndTimeHour;			\/\/æ§åˆ¶ç»“æŸæ—¶é—´ï¼šå°æ—¶$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucEndTimeMin	platform.h	/^     unsigned char    ucEndTimeMin;			\/\/æ§åˆ¶ç»“æŸæ—¶é—´ï¼šåˆ†é’Ÿ$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucEndTimeSec	platform.h	/^     unsigned char    ucEndTimeSec;			\/\/æ§åˆ¶ç»“æŸæ—¶é—´ï¼šç§’$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucGatwayIp	HikConfig.h	/^    UInt8  ucGatwayIp[4];     \/\/Íø¹Ø$/;"	m	struct:STRU_Address
+ucIpAddr	HikConfig.h	/^    UInt8  ucIpAddr[4];       \/\/IPµØÖ·$/;"	m	struct:STRU_Address
+ucMacAddr	HikConfig.h	/^    UInt8  ucMacAddr[6];      \/\/MACµØÖ·$/;"	m	struct:STRU_Address
+ucOverlap	platform.h	/^     unsigned char    ucOverlap[16];                    \/\/è·Ÿéšç›¸ä½çŠ¶æ€ï¼Œ0:ç­ç¯ï¼Œ 1:ç»¿ç¯ï¼Œ2:çº¢ç¯ï¼Œ3:é»„ç¯ï¼Œ4ï¼šç»¿é—ªï¼Œ5ï¼šé»„é—ª$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucPlanNo	platform.h	/^     unsigned char    ucPlanNo;				\/\/å½“å‰è¿è¡Œæ–¹æ¡ˆå·$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucReserved	platform.h	/^     unsigned char    ucReserved;			\/\/é¢„ç•™$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+ucReserved	platform.h	/^     unsigned char    ucReserved[8];			\/\/é¢„ç•™$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+ucWorkingTimeFlag	platform.h	/^     unsigned char    ucWorkingTimeFlag;		\/\/æ—¶é—´æ®µæ§åˆ¶èµ·æ•ˆæ ‡å¿—ï¼Œ1è¡¨ç¤ºä»¥ä¸‹æ—¶é—´æ®µæ§åˆ¶èµ·æ•ˆï¼›0è¡¨ç¤ºå…¨éƒ¨æ—¶é—´å†…èµ·æ•ˆï¼Œåç»­æ—¶é—´å‚æ•°æ— æ•ˆ$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+udp_cur_value_info	udpserver.c	/^struct UDP_CUR_VALUE_INFO udp_cur_value_info;          \/\/ºìµÆµçÁ÷Öµ·µ»ØÊı¾İ°ü$/;"	v	typeref:struct:UDP_CUR_VALUE_INFO
+udp_info	udpserver.c	/^struct UDP_INFO udp_info;       $/;"	v	typeref:struct:UDP_INFO
+udp_send_change_ctrl	HikConfig.c	/^static void udp_send_change_ctrl()$/;"	f	file:
+udp_send_jump_response	HikConfig.c	/^static void udp_send_jump_response()$/;"	f	file:
+udp_send_yellowflash	udpserver.c	/^void udp_send_yellowflash()$/;"	f
+udp_server_init	udpserver.c	/^int udp_server_init()$/;"	f
+udp_server_process	udpserver.c	/^void udp_server_process()$/;"	f
+uint16	NGSL_io.c	/^typedef unsigned short  uint16;$/;"	t	file:
+unBaudRate	common.h	/^     unsigned int     unBaudRate;    \/\/²¨ÌØÂÊ£º2400,4800,9600,115200,460800$/;"	m	struct:STRU_Extra_Param_Com
+unDataBits	common.h	/^     unsigned int     unDataBits; 	\/\/Êı¾İÎ»7,8$/;"	m	struct:STRU_Extra_Param_Com
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;        			\/\/±êÖ¾Í·,0x6e6e$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;           	\/\/±êÖ¾Í·,0x6e6e$/;"	m	struct:STRU_Extra_Param_Phase
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;            		\/\/±êÖ¾Í·,0x6e6e$/;"	m	struct:STRU_Extra_Param_Channel
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;                 \/\/±êÖ¾Í·,0x6e6e$/;"	m	struct:STRU_Extra_Param_Version
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;        $/;"	m	struct:STRU_Extra_Param_Com
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;        $/;"	m	struct:STRU_Extra_Param_Date_Name
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;        $/;"	m	struct:STRU_Extra_Param_Pattern_Name
+unExtraParamHead	common.h	/^     unsigned int     unExtraParamHead;        $/;"	m	struct:STRU_Extra_Param_Plan_Name
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Cancel_Step_Ctrl
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Cancel_Step_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Channel_Lock_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Channel_Unlock
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Channel_Unlock_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Get_Device_Type
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Get_Device_Type_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Get_Phase_Counting_Down
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Set_Device_Type
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Set_Device_Type_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Special_Ctrl
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Special_Ctrl_Feedback
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Step_Ctrl
+unExtraParamHead	platform.h	/^     unsigned int     unExtraParamHead;        		\/\/æ ‡å¿—å¤´,0x6e6e$/;"	m	struct:STRU_Extra_Param_Step_Ctrl_Feedback
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;    			\/\/ÏÂÔØ0xA8,ÉÏÔØ0xA9$/;"	m	struct:STRU_Extra_Param_Date_Name
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;              		\/\/ÀàĞÍ, 0x9C±íÊ¾ÏÂÔØ£¬0x9D±íÊ¾ÉÏÔØ  $/;"	m	struct:STRU_Extra_Param_Channel
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;                	\/\/ÀàĞÍ,0x9E±íÊ¾ÉÏÔØ$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;                   \/\/ÀàĞÍ,0xA1±íÊ¾ÉÏÔØ$/;"	m	struct:STRU_Extra_Param_Version
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;                \/\/ÀàĞÍ, 0x9A±íÊ¾ÏÂÔØ£¬0x9B±íÊ¾ÉÏÔØ$/;"	m	struct:STRU_Extra_Param_Phase
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;                \/\/ÏÂÔØ0xA4,ÉÏÔØ0xA5$/;"	m	struct:STRU_Extra_Param_Pattern_Name
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;               \/\/ÏÂÔØ0xA6,ÉÏÔØ0xA7$/;"	m	struct:STRU_Extra_Param_Plan_Name
+unExtraParamID	common.h	/^     unsigned int     unExtraParamID;      \/\/ÏÂÔØ0xA3,ÉÏÔØ0xA2     $/;"	m	struct:STRU_Extra_Param_Com
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0x9Eè¡¨ç¤ºä¸Šè½½$/;"	m	struct:STRU_Extra_Param_Phase_Counting_Down_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0x9Eè¡¨ç¤ºè·å–å€’è®¡æ—¶æ¥å£$/;"	m	struct:STRU_Extra_Param_Get_Phase_Counting_Down
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xacè¡¨ç¤ºå¼€å¯é€šé“é”å®š$/;"	m	struct:STRU_Extra_Param_Channel_Lock
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xacè¡¨ç¤ºå¼€å¯é€šé“é”å®š$/;"	m	struct:STRU_Extra_Param_Channel_Lock_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xadè¡¨ç¤ºå…³é—­é€šé“é”å®š$/;"	m	struct:STRU_Extra_Param_Channel_Unlock
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xadè¡¨ç¤ºå…³é—­é€šé“é”å®š$/;"	m	struct:STRU_Extra_Param_Channel_Unlock_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xaeè¡¨ç¤ºæ‰‹åŠ¨ç‰¹æ®Šæ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Special_Ctrl
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xaeè¡¨ç¤ºæ‰‹åŠ¨ç‰¹æ®Šæ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Special_Ctrl_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xafè¡¨ç¤ºè®¾ç½®è®¾å¤‡å‹å·$/;"	m	struct:STRU_Extra_Param_Set_Device_Type
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xafè¡¨ç¤ºè®¾ç½®è®¾å¤‡å‹å·$/;"	m	struct:STRU_Extra_Param_Set_Device_Type_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb0è¡¨ç¤ºè·å–è®¾å¤‡å‹å·$/;"	m	struct:STRU_Extra_Param_Get_Device_Type
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb0è¡¨ç¤ºè·å–è®¾å¤‡å‹å·$/;"	m	struct:STRU_Extra_Param_Get_Device_Type_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb1è¡¨ç¤ºæ­¥è¿›æ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Step_Ctrl
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb1è¡¨ç¤ºæ­¥è¿›æ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Step_Ctrl_Feedback
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb2è¡¨ç¤ºå–æ¶ˆæ­¥è¿›æ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Cancel_Step_Ctrl
+unExtraParamID	platform.h	/^     unsigned int     unExtraParamID;                	\/\/ç±»å‹,0xb2è¡¨ç¤ºå–æ¶ˆæ­¥è¿›æ§åˆ¶å‘½ä»¤$/;"	m	struct:STRU_Extra_Param_Cancel_Step_Feedback
+unExtraParamValue	common.h	/^     unsigned int     unExtraParamValue; \/\/1£º232´®¿Ú   2£º485´®¿Ú1   3:485´®¿Ú2    4:422´®¿Ú$/;"	m	struct:STRU_Extra_Param_Com
+unParity	common.h	/^     unsigned int     unParity;     \/\/ÆæÅ¼Ğ£ÑéÎ»£º0£ºNÎŞĞ£Ñé   1£ºOÆæÊıĞ£Ñé  2£ºEÅ¼ÊıĞ£Ñé$/;"	m	struct:STRU_Extra_Param_Com
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è®¾ç½®ç»æµå‹ä¿¡å·æœºç±»å‹,1:DS-TSC300-44,2:DS-TSC300-22$/;"	m	struct:STRU_Extra_Param_Set_Device_Type
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è¿”å›å€¼,0:è®¾ç½®å¤±è´¥    1ï¼šè®¾ç½®æˆåŠŸ$/;"	m	struct:STRU_Extra_Param_Set_Device_Type_Feedback
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è¿”å›å€¼ï¼Œ1è¡¨ç¤ºæˆåŠŸï¼Œ0è¡¨ç¤ºå¤±è´¥$/;"	m	struct:STRU_Extra_Param_Channel_Lock_Feedback
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è¿”å›å€¼ï¼Œ1è¡¨ç¤ºæˆåŠŸï¼Œ0è¡¨ç¤ºå¤±è´¥$/;"	m	struct:STRU_Extra_Param_Channel_Unlock_Feedback
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è¿”å›å€¼ï¼Œ1è¡¨ç¤ºæˆåŠŸï¼Œ0è¡¨ç¤ºå¤±è´¥$/;"	m	struct:STRU_Extra_Param_Special_Ctrl_Feedback
+unResult	platform.h	/^     unsigned int     unResult;				\/\/è¿”å›ç»æµå‹ä¿¡å·æœºç±»å‹,0ï¼šè·å–å¤±è´¥ï¼Œ1:DS-TSC300-44,2:DS-TSC300-22$/;"	m	struct:STRU_Extra_Param_Get_Device_Type_Feedback
+unSpecialCtrlNo	platform.h	/^     unsigned int     unSpecialCtrlNo;			\/\/ç‰¹æ®Šæ§åˆ¶æ–¹å¼ï¼Œ0ï¼šç³»ç»Ÿæ§åˆ¶ï¼Œ255ï¼šé»„é—ªï¼Œ254ï¼šæ„Ÿåº”ï¼Œ252ï¼šå…¨çº¢ï¼Œ251ï¼šå…³ç¯ï¼Œå…¶å®ƒï¼šæ‰‹åŠ¨æ–¹æ¡ˆ$/;"	m	struct:STRU_Extra_Param_Special_Ctrl
+unStepNo	platform.h	/^     unsigned int     unStepNo;				\/\/1è¡¨ç¤ºæ­¥è¿›æˆåŠŸï¼Œ0è¡¨ç¤ºæ­¥è¿›å¤±è´¥$/;"	m	struct:STRU_Extra_Param_Step_Ctrl_Feedback
+unStepNo	platform.h	/^     unsigned int     unStepNo;				\/\/æ­¥è¿›é˜¶æ®µå·ï¼Œè·³è½¬æ­¥è¿›æœ‰æ•ˆèŒƒå›´å€¼ä¸º1-16ï¼Œè¡¨ç¤ºé”å®šåœ¨1-16é˜¶æ®µï¼›0ä¸ºå•æ­¥æ­¥è¿›$/;"	m	struct:STRU_Extra_Param_Step_Ctrl
+unStopBits	common.h	/^	 unsigned int     unStopBits;   \/\/Í£Ö¹Î»£º1,2$/;"	m	struct:STRU_Extra_Param_Com
+unValue	platform.h	/^     unsigned int     unValue;				\/\/1è¡¨ç¤ºå–æ¶ˆæ­¥è¿›æˆåŠŸï¼Œ0è¡¨ç¤ºå–æ¶ˆæ­¥è¿›å¤±è´¥$/;"	m	struct:STRU_Extra_Param_Cancel_Step_Feedback
+unused	NGSL_io.c	/^	unsigned short unused:4;$/;"	m	struct:__anon20	file:
+veh_color	common.h	/^	unsigned char veh_color;	$/;"	m	struct:_Count_Down_Veh_
+veh_phase	common.h	/^	unsigned char veh_phase;                      $/;"	m	struct:_Count_Down_Veh_
+veh_phaseTime	common.h	/^	unsigned char veh_phaseTime;$/;"	m	struct:_Count_Down_Veh_
+wCoordCycleStatus	HikConfig.h	/^	UInt16	wCoordCycleStatus;		\/* 2.5.12 Ğ­µ÷·½°¸µÄÖÜÆÚ×´Ì¬£¨0-510sec£©£¬´ÓÖÜÆÚ³¤Ò»Ö±¼õÉÙµ½0*\/$/;"	m	struct:STRU_N_CoordinationVariable
+wCoordSyncStatus	HikConfig.h	/^	UInt16 	wCoordSyncStatus;			\/*2.5.13Ğ­µ÷Í¬²½×´Ì¬£¨0£­510£©´ÓĞ­µ÷»ù×¼µãµ½Ä¿Ç°ÖÜÆÚµÄÊ±¼ä£¬´Ó0¼ÇÂ¼µ½ÏÂ¸öÖÜÆÚ»ù×¼µã¡£¿ÉÒÔ³¬¹ıÖÜÆÚ³¤*\/$/;"	m	struct:STRU_N_CoordinationVariable
+wEventConfigID	HikConfig.h	/^	UInt16 wEventConfigID;				\/\/ĞĞºÅ$/;"	m	struct:STRU_N_EventConfig
+wGreenDiffValue	HikConfig.h	/^    UInt16 wGreenDiffValue;        \/\/ ÂÌµÆ²îÖµ$/;"	m	struct:STRU_BasicFaultDetect
+wGreenSumValue	HikConfig.h	/^    UInt16 wGreenSumValue;         \/\/ ÂÌµÆµçÁ÷×ÜºÍ$/;"	m	struct:STRU_BasicFaultDetect
+wOverflowVoltageCount	HikConfig.h	/^    UInt16 wOverflowVoltageCount;  \/\/ ¹ıÇ·Ñ¹¼ì²âÂË²¨´ÎÊı£¬Ä¬ÈÏ50$/;"	m	struct:STRU_BasicFaultDetect
+wPhaseOptions	HikConfig.h	/^	UInt16  wPhaseOptions;			        \/*2.2.2.21ÏàÎ»Ñ¡Ïî$/;"	m	struct:__anon8
+wPreemptDelay	HikConfig.h	/^	UInt16	wPreemptDelay;$/;"	m	struct:STRU_N_Preempt
+wPreemptMaximumPresence	HikConfig.h	/^	UInt16	wPreemptMaximumPresence;$/;"	m	struct:STRU_N_Preempt
+wPreemptMinimumDuration	HikConfig.h	/^	UInt16	wPreemptMinimumDuration;$/;"	m	struct:STRU_N_Preempt
+wRs232BaudRate	HikConfig.h	/^	UInt16	wRs232BaudRate;			\/\/²¨ÌØÂÊ$/;"	m	struct:SCountDownCfg_DEL
+wSerialAddr	HikConfig.h	/^    UInt16 wSerialAddr;        \/\/´®¿ÚµØÖ·$/;"	m	struct:STRU_Address
+wSpeedCoef	HikConfig.h	/^	UInt16	wSpeedCoef;					            \/\/ËÙ¶È¼ÆËãÒò×Ó$/;"	m	struct:__anon11
+wSpeedCoef	HikConfig.h	/^	UInt16 wSpeedCoef;		\/\/ËÙ¶È¼ÆËãÒò×Ó$/;"	m	struct:STRU_UnitParamEx
+wTimebaseAscPatternSync	HikConfig.h	/^	UInt16	wTimebaseAscPatternSync;	    \/*2.6.1ÔÚ¾­¹ıÎçÒ¹ºÜ¶ÌÊ±¼äÄÚµÄ·½°¸Í¬²½²Î¿¼¡£ÉèÖÃÎª0XFFFFÊ±£¬ĞÅºÅ¿ØÖÆµ¥Ôª½«°ÑACTION TIME×÷Îª·½°¸µÄÍ¬²½²Î¿¼¡£*\/$/;"	m	struct:STRU_N_TimeBaseVariable
+wUnitBackupTime	HikConfig.h	/^	UInt16	wUnitBackupTime;						\/\/ 2.4.3ĞÅºÅ»úÀëÏßºóµ½½µ¼¶Ç°µÄÊ±¼ä¡£$/;"	m	struct:__anon11
+week	HikConfig.h	/^	UInt8   week;		                    \/*2.4.3.2.3 bit1-bit7£¬Ã¿Î»±íÊ¾Ò»ÖÜÖĞµÄÒ»Ìì¡£ÖÃ1±íÊ¾ÔÊĞí¶ÔÓ¦¼Æ»®ÔÚ¸ÃÌìÖ´ĞĞ¡£(0..255)*\/$/;"	m	struct:__anon9
+week	HikConfig.h	/^    unsigned char week[7];$/;"	m	struct:__anon5
+wireless_allred_pressed	CPLD.c	/^static int wireless_allred_pressed = 0;$/;"	v	file:
+wireless_auto_pressed	CPLD.c	/^static int wireless_auto_pressed = 1;$/;"	v	file:
+wireless_flashing_pressed	CPLD.c	/^static int wireless_flashing_pressed = 0;$/;"	v	file:
+wireless_manual_pressed	CPLD.c	/^static int wireless_manual_pressed = 0;$/;"	v	file:
+wireless_step_by_step_pressed	CPLD.c	/^static int wireless_step_by_step_pressed = 0;$/;"	v	file:
+wr	lfq.h	/^	volatile UInt32 rd, wr;$/;"	m	struct:lfq_t
+write_running_log	NGSL_io.c	/^void write_running_log()$/;"	f

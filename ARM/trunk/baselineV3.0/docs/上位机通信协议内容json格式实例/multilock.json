@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"hour": 0,
+		"minute": 0,
+		"sec": 0,
+		"duration": 20,
+		"status": [1,2,0,0,0,0]
+	},
+	{
+		"id": 2,
+		"hour": 10,
+		"minute": 0,
+		"sec": 0,
+		"duration": 10,
+		"status": [1,2,0,0,0,0]
+	},
+	{
+		"id": 3,
+		"hour": 16,
+		"minute": 0,
+		"sec": 0,
+		"duration": 30,
+		"status": [1,2,0,0,0,0]
+	}
+]

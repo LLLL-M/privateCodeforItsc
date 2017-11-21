@@ -1,0 +1,1 @@
+arm-wrs-linux-gnueabi-armv6jel_vfp-uclibc_small-g++ -g -o test test.cpp -lpthread -lsnmp++ -ldl  -L ../lib/ -I ../include/

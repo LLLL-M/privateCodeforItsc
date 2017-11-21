@@ -1,0 +1,15 @@
+# This is pppd script, used Huawei EM770W 3G Module
+# Usage: root>pppd call gprs
+/dev/ttyUSB0
+115200
+crtscts
+modem
+debug
+nodetach
+usepeerdns
+noipdefault
+defaultroute
+user "uninet"
+0.0.0.0:0.0.0.0
+connect '/sbin/chat -s -v -f /etc/ppp/gprs-connect-chat'
+#disconnect '/sbin/chat -v -f /etc/ppp/gprs-disconnect-chat'

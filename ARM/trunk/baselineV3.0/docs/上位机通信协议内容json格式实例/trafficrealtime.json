@@ -1,0 +1,15 @@
+{
+	"ip": "10.13.2.110",
+	"lane": 1,
+	"speed": 40,
+	"laneState": 1,
+	"type": 1,
+	"queueLen": 10,
+	"jamLevel": 1,
+	"headway": 6,
+	"owntime": 1,
+	"vehLen": 5,
+	"arrive": "2017-05-10T16:26:00:335Z",
+	"leave": "2017-05-10T16:26:01:335Z",
+	"send": "2017-05-10T16:26:06:335Z"
+}

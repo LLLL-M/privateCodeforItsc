@@ -1,0 +1,39 @@
+总共4个串口，分别为"232" or "485-1" or "485-2" or "422"，分别对应id为1,2,3,4
+"baudRate"取值 2400 or 4800 or 9600 or 19200 or 38400 or 57600 or 115200
+"dataBits"取值 7 or 8
+"stopBits"取值 1 or 2
+"parity"取值 "O" or "E" or "N"
+[
+	{
+		"id": 1,
+		"desc": "RS232",
+		"baudRate": 9600,
+		"dataBits": 8,
+		"stopBits": 1,
+		"parity": "N"
+	},
+	{
+		"id": 2,
+		"desc": "RS485-1",
+		"baudRate": 9600,
+		"dataBits": 8,
+		"stopBits": 1,
+		"parity": "N"
+	},
+	{
+		"id": 3,
+		"desc": "RS485-2",
+		"baudRate": 9600,
+		"dataBits": 8,
+		"stopBits": 1,
+		"parity": "N"
+	},
+	{
+		"id": 4,
+		"desc": "RS422",
+		"baudRate": 9600,
+		"dataBits": 8,
+		"stopBits": 1,
+		"parity": "N"
+	}
+]

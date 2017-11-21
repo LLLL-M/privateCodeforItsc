@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Login>
+	<Resources lan='cn' name='中文'>
+	  <Page>
+		  <title>登录</title>
+		  <lausername>  用户名:</lausername>
+		  <lapassword>  密    码:</lapassword>
+		  <lalogin>登录</lalogin>
+		  <laCopyRight>©Hikvision Digital Technology Co., Ltd. All Rights Reserved.</laCopyRight>
+	  </Page>
+	  <js>
+		  <LoginTips1>请输入用户名</LoginTips1>
+		  <LoginTips2>用户名长度不能大于16</LoginTips2>
+		  <LoginTips3>密码长度不能大于16</LoginTips3>
+		  <LoginTips4>用户名或密码不正确</LoginTips4>
+		  <NetworkErrorTips>网络异常</NetworkErrorTips>
+		  <ConnectTimeoutTips>连接超时</ConnectTimeoutTips>
+		  <CookieTips>对不起，您的浏览器的Cookie功能被禁用，请开启</CookieTips>
+	  </js>
+	</Resources>
+	<Resources lan='en' name='English'>
+	  <Page>
+		  <title>Login</title>
+		  <lausername>User Name:</lausername>
+		  <lapassword>Password:</lapassword>
+		  <lalogin>Login</lalogin>
+		  <laCopyRight>©Hikvision Digital Technology Co., Ltd. All Rights Reserved.</laCopyRight>
+	  </Page>
+	  <js>
+		  <LoginTips1>Please enter the user name.</LoginTips1>
+		  <LoginTips2>User name cannot be longer than 16 characters.</LoginTips2>
+		  <LoginTips3>Password cannot be longer than 16 characters.</LoginTips3>
+		  <LoginTips4>User name or password is incorrect. Please enter again.</LoginTips4>
+		  <NetworkErrorTips>Network abnormal.</NetworkErrorTips>
+		  <ConnectTimeoutTips>Connection timeout.</ConnectTimeoutTips>
+		  <CookieTips>Please open cookie of the browser</CookieTips>
+	  </js>
+	</Resources>
+</Login>

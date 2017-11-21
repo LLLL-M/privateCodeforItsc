@@ -1,0 +1,156 @@
+//通道锁定过渡
+void Phasecontrol::ChannelLock::LockTransition(UInt8 *curChannels)
+{
+	UInt8 transitionLockChannelStatus[MAX_CHANNEL_NUM] = {INVALID};	//要锁定的通道过渡时的状态
+	int i;
+	UInt8 transitionStatus = INVALID;
+	bool transitionFlag = false;
+	
+	if (gGreenBlinkTransitionTime == GREEN_BLINK_TRANSITION_TIME && gYellowTransitionTime == YELLOW_TRANSITION_TIME)
+	{	//在进行过渡之前先把要锁定通道的当前状态保存一份
+		if (gChannelLockFlag == 1)
+		{	//单次通道锁定
+			for (i = 0; i < MAX_CHANNEL_NUM; i++)
+			{	//保存要锁定通道的当前状态
+                gChannelLockReserveStatus[i] = (gChannelLockParams.ucChannelStatus[i] != (UInt8)INVALID) ? curChannels[i] : (UInt8)INVALID;
+			}
+		}
+		else if (gChannelLockFlag >= 2)
+		{	//连续通道锁定
+			for (i = 0; i < MAX_CHANNEL_NUM; i++)
+			{	//保存除了上次锁定的通道之外的其他通道的当前状态
+				if (gChannelLockReserveStatus[i] == INVALID 
+					&& gChannelLockParams.ucChannelStatus[i] != INVALID)
+					gChannelLockReserveStatus[i] = curChannels[i];
+			}
+		}
+	}
+	//首先在过渡时间内进行判断是否需要进行过渡
+	if (gGreenBlinkTransitionTime + gYellowTransitionTime > 0)
+	{
+		if (gGreenBlinkTransitionTime > 0)
+		{
+			transitionStatus = GREEN_BLINK;
+			gGreenBlinkTransitionTime--;
+		}
+		else
+		{
+			transitionStatus = YELLOW;
+			gYellowTransitionTime--;
+		}
+		std::memcpy(transitionLockChannelStatus, gChannelLockReserveStatus, sizeof(transitionLockChannelStatus));
+		for (i = 0; i < MAX_CHANNEL_NUM; i++)
+		{
+			if (gChannelLockParams.ucChannelStatus[i] == RED && (transitionLockChannelStatus[i] == GREEN || transitionLockChannelStatus[i] == GREEN_BLINK))
+			{	//根据当前通道状态判断是否有通道是从绿或是绿闪直接锁定为红灯来决定是否需要进行过渡
+				transitionFlag = true;
+				transitionLockChannelStatus[i] = transitionStatus;
+			}
+		}
+	}
+	else	//说明锁定过渡完成，保存当前锁定的状态用以连续过渡使用
+		std::memcpy(gChannelLockReserveStatus, gChannelLockParams.ucChannelStatus, sizeof(gChannelLockParams.ucChannelStatus));
+	//根据过渡标志来决定当前需要锁定的通道状态
+	for (i = 0; i < MAX_CHANNEL_NUM; i++)
+	{
+		if (transitionFlag)
+		{	//需要过渡时按照过渡状态放行
+			if (transitionLockChannelStatus[i] != INVALID)
+				curChannels[i] = transitionLockChannelStatus[i];
+		}
+		else
+		{	//无需过渡时直接按照锁定状态放行
+			if (gChannelLockParams.ucChannelStatus[i] != INVALID)
+				curChannels[i] = gChannelLockParams.ucChannelStatus[i];
+		}
+	}
+}
+//是否可进行通道解锁
+bool Phasecontrol::ChannelLock::IsUnlockAvailable(UInt8 *curChannels)
+{
+	UInt8 transitionUnlockChannelStatus[MAX_CHANNEL_NUM] = {INVALID};	//要解锁的通道过渡时的状态
+	bool ret = true;
+	int i;
+	
+	if (gYellowTransitionTime > 0)
+	{
+		gYellowTransitionTime--;
+		std::memcpy(transitionUnlockChannelStatus, gChannelLockParams.ucChannelStatus, sizeof(transitionUnlockChannelStatus));
+		for (i = 0; i < MAX_CHANNEL_NUM; i++)
+		{
+			if (curChannels[i] == RED && (gChannelLockParams.ucChannelStatus[i] == GREEN || gChannelLockParams.ucChannelStatus[i] == GREEN_BLINK))
+			{	//根据当前通道状态判断是否有通道是从绿或是绿闪解锁为红灯来决定是否可进行通道解锁
+				ret = false;
+				transitionUnlockChannelStatus[i] = YELLOW;
+			}
+		}
+	}
+	
+	if (ret == false)
+	{	//表明不能直接解锁，需要过渡
+		for (i = 0; i < MAX_CHANNEL_NUM; i++)
+		{
+			if (transitionUnlockChannelStatus[i] != INVALID)
+			{
+				curChannels[i] = transitionUnlockChannelStatus[i];
+			}
+		}
+	}
+	return ret;
+}
+
+void Phasecontrol::ChannelLock::Lock(ChannelLockParams *lockparams)
+{
+	if (lockparams == NULL)
+		return;
+	gChannelLockMutex.lock();
+	gChannelLockFlag++;
+	if (lockparams->ucChannelLockStatus == CHANGEABLE_CHANNEL_LOCK)
+	{	//如果在进行可变车道锁定之前已经执行了通道锁定，则保持锁定状态不变
+		if (gChannelLockParams.ucChannelLockStatus == CHANNEL_LOCK)
+			lockparams->ucChannelLockStatus = CHANNEL_LOCK;
+	}
+	else
+	{
+		gGreenBlinkTransitionTime = GREEN_BLINK_TRANSITION_TIME;	//锁定时进行3s绿灯过渡
+		gYellowTransitionTime = YELLOW_TRANSITION_TIME;  		//锁定时进行3s黄灯过渡
+	}
+	std::memcpy(&gChannelLockParams, lockparams, sizeof(ChannelLockParams));
+	gChannelLockMutex.unlock();
+}
+
+inline void Phasecontrol::ChannelLock::Unlock()
+{
+	gChannelLockMutex.lock();
+	if (gChannelLockFlag > 0)
+	{
+		gChannelLockFlag = 0;
+		if (gChannelLockParams.ucChannelLockStatus == CHANNEL_LOCK)
+			gYellowTransitionTime = YELLOW_TRANSITION_TIME;  //通道锁定解锁时进行3s黄灯过渡
+	}
+	gChannelLockMutex.unlock();
+}
+
+//通道锁定处理
+inline void Phasecontrol::ChannelLock::Deal(LineQueueData *data)
+{
+	gChannelLockMutex.lock();
+	if (gChannelLockFlag > 0 && gChannelLockParams.ucChannelLockStatus > 0)
+		LockTransition(data->allChannels);
+	else if (gChannelLockFlag == 0 && gChannelLockParams.ucChannelLockStatus > 0)
+	{	//通道即将解锁
+		if (IsUnlockAvailable(data->allChannels))
+			gChannelLockParams.ucChannelLockStatus = 0;
+	}
+	//else	表明通道已经解锁或是未锁定
+	gChannelLockMutex.unlock();
+}
+
+inline Phasecontrol::ChannelLock::ChannelLock()
+{
+	std::memset(&gChannelLockParams, 0, sizeof(ChannelLockParams));
+	std::memset(gChannelLockReserveStatus, 0, sizeof(gChannelLockReserveStatus));
+	gChannelLockFlag = 0;
+	gGreenBlinkTransitionTime = 0;
+	gYellowTransitionTime = 0;
+}

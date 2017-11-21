@@ -1,0 +1,22 @@
+#CROSS_COMPILE ?= arm-none-linux-gnueabi-
+CC = gcc
+OPTIMIZER = -O3
+CFLAGS = $(OPTIMIZER) -Wall -Werror -g
+
+PROGOBJS = Main.o MyLinkList.o ThreadController.o Util.o LogSystem.o SqQueue.o MyDateTime.o TaskSchedule.o \
+	Action.o Channel.o GreenSignalRatio.o Phase.o Schemes.o TimeInterval.o Unit.o  LampController.o \
+	FollowPhase.o PhaseTurn.o
+
+PGM = SignalController
+
+all:	$(PGM)
+
+$(PGM):	$(PROGOBJS) Makefile
+	$(CC) -o $(PGM) $(PROGOBJS) -lpthread
+
+distclean: clean
+
+clean:
+	rm -f *.o $(PGM)
+
+

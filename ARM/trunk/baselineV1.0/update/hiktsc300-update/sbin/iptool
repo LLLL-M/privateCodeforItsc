@@ -1,0 +1,36 @@
+#!/bin/sh
+
+IpInfoSet()
+{
+#首先用ifconfig修改系统ip
+	ifconfig $1 $2 netmask $3
+#其次修改网络配置文件
+	#先找出要设置网卡的address配置位于/etc/network/interfaces哪一行
+	startline=`grep "iface $1" /etc/network/interfaces -A4 -n | grep address | cut -d "-" -f 1`
+	if [ -z "$startline" ]; then
+		echo "设置$1失败"
+		return
+	fi
+	endline=`expr $startline + 2`
+	#由于信号机sed版本过低不支持换行符，所以定义一个换行的变量newline
+newline='
+'
+	echo "startline = $startline, endline = $endline"
+	#使用sed命令进行行替换，替换掉之前的配置
+	sed -i "$startline,${endline}c address $2\\${newline}netmask $3\\${newline}gateway $4" /etc/network/interfaces
+}
+
+IpInfoGet()
+{
+	grep "iface $1" -A4 /etc/network/interfaces | sed -e '/iface/d' -e '/pre-up/d' -e '/^$/d'
+}
+
+if [ $# -eq 4 ]; then
+	IpInfoSet $@
+elif [ $# -eq 1 ]; then
+	IpInfoGet $1
+else
+	echo "please input like this:"
+	echo "iptool eth1 172.7.18.61 255.255.255.0 172.7.18.1"
+fi
+

@@ -1,0 +1,53 @@
+#/home/extconfig.db兼容处理时需要提供该文件，如有改变，建议在此文件的基础上在进行修改。
+
+#特殊参数
+#故障检测开关、电流检测开关、电压检测开关、电流检测并处理开关、电压检测并处理开关、看门狗开关、GPS开关、信号机类型、红灯信号监测开关、相位接管开关、是否为卡口相机
+config_sSpecialParams (id INTEGER PRIMARY KEY, iErrorDetectSwitch integer, iCurrentAlarmSwitch integer, iVoltageAlarmSwitch integer, iCurrentAlarmAndProcessSwitch integer, iVoltageAlarmAndProcessSwitch integer, iWatchdogSwitch integer, iGpsSwitch integer, iSignalMachineType integer, iRedSignalCheckSwitch integer, iPhaseTakeOverSwtich integer, isCameraKakou integer);
+#无线模块配置参数
+#无线模块开关、按键响应超时时间、控制模式、通道描述、通道号
+config_stWirelessController (id INTEGER PRIMARY KEY, iSwitch integer, iOvertime integer, iCtrlMode integer, description varchar(64), ucChan varchar);
+#前面板配置参数
+#前面板开关、通道描述、通道号
+config_sFrontBoardKeys (id INTEGER PRIMARY KEY, iSwitch integer, description varchar(64), ucChan varchar);
+#config配置参数
+#车检版开关、日志打印开关、错误序列号、红灯电流基准值、红灯电流差值
+config (id INTEGER PRIMARY KEY, cCarDetectSwitch integer, cPrintfLogSwitch integer, cFailureNumber integer, RedCurrentBase integer, RedCurrentDiff integer);
+#系统参数
+#wifi名称、wifi密钥、登录用户名、登录密码、设备id、设备描述、红绿信号监测开关、组播地址、组播端口、车检版类型、视频车检版ip地址、子网掩码、网关
+config_sys_infos (id INTEGER PRIMARY KEY, cSSID varchar(32), cPSK varchar(32), cName varchar(32), cPasswd varchar(32), uDevID integer, cDevDesc varchar(64), iRGSignalSwitch integer, cMcastAddr varchar(16), uMcastPort integer, cCarDetectorType integer, stVedioDetIP_address varchar(16), stVedioDetIP_subnetMask varchar(16),stVedioDetIP_gateway varchar(16));
+#倒计时参数
+#倒计时模式、感应检测时间、绿灯倒计时时间、红灯倒计时时间、通道对应相位、通道对应类型、黄灯时是否闪烁、红灯倒计时闪烁秒数、倒计时是否受感应检测时间的限制
+custom_sCountDownParams (id INTEGER PRIMARY KEY, iCountDownMode integer, iFreeGreenTime integer,  iPulseGreenTime integer, iPulseRedTime integer, iphase integer, iType integer, option integer, redFlashSec integer, cIsCountdownValueLimit integer);
+#串口参数
+#串口号、波特率、数据位、停止位、校验方式
+custom_sComparams (id INTEGER PRIMARY KEY, unExtraParamValue integer, unBaudRate integer, unDataBits integer, unStopBits integer, unParity integer);
+#通道锁定参数
+#通道状态、时间段控制起效标志、控制开始小时、分钟、秒、控制结束小时、分钟、秒、预留字段、通道锁定标志
+custom_sChannelLockedParams (id INTEGER PRIMARY KEY, ucChannelStatus varchar, ucWorkingTimeFlag integer, ucBeginTimeHour integer, ucBeginTimeMin integer, ucBeginTimeSec integer, ucEndTimeHour integer, ucEndTimeMin integer, ucEndTimeSec integer, ucReserved integer, cChannelLockFlag integer);
+#多时段通道锁定参数
+#锁定标志、通道状态、时间段控制起效标志、开始小时、分钟、秒、结束小时、分钟、秒
+custom_sMulPeriodsChanLockParams (id INTEGER PRIMARY KEY, cLockFlag integer, ucChannelStatus varchar, ucWorkingTimeFlag integer, ucBeginTimeHour integer, ucBeginTimeMin integer, ucBeginTimeSec integer, ucEndTimeHour integer, ucEndTimeMin integer, ucEndTimeSec integer);
+#相位描述参数
+#相位表号、相位号、相位描述
+desc_phaseDescText (id INTEGER PRIMARY KEY, phaseTableNo integer, phaseID integer, phaseDescText varchar(64));
+#通道描述参数
+#通道号、通道描述
+desc_sChannelDescParams (id INTEGER PRIMARY KEY, channelNo integer, stChannelDesc varchar(64));
+#方案描述参数
+#方案号、方案描述
+desc_sPatternNameParams (id INTEGER PRIMARY KEY, schemeNo integer, stPatternNameDesc varchar(64));
+#调度描述参数
+#时段号、调度描述
+desc_sPlanNameParams (id INTEGER PRIMARY KEY, timeIntervalNo integer, stPlanNameDesc varchar(64));
+#日期描述参数
+#调度号、日期类型、日期对应名称
+desc_sDateNameParams (id INTEGER PRIMARY KEY, scheduleNo integer, dateType integer, dateName varchar(64));
+#杂项参数
+#是否允许CAN线程重启信号机程序、时区差值、错误状态
+misc (id INTEGER PRIMARY KEY, cIsCanRestartHiktscAllowed integer, time_zone_gap integer, faultstatus blob);
+#网络参数
+#ip地址、子网掩码、网关、mac地址
+IpInfos (id INTEGER PRIMARY KEY, address varchar(16), subnetMask varchar(16), gateway varchar(16), mac varchar(24));
+#倒计时配置参数
+#倒计时器id、控制通道、控制通道类型、脉冲开关
+CountDownCfg (id INTEGER PRIMARY KEY, cDeviceId integer, cControllerID varchar(128), cControllerType integer, nChannelFlag integer);
