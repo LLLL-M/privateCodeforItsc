@@ -58,7 +58,7 @@ namespace hik
 			ReleaseMutex(handle);
 		#endif
 		}
-		bool trylock()
+		bool try_lock()
 		{
 			if (!succ)
 				return false;

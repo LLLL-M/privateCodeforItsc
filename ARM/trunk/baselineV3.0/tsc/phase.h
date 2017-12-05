@@ -1,11 +1,7 @@
 #pragma once
 
-#include <vector>
-#include <map>
-#include <atomic>
 #include <ctime>
 #include <bitset>
-#include <algorithm>
 #include "colorstep.h"
 
 /*
@@ -37,25 +33,25 @@
 struct Phase
 {
 //private:
-	/*const*/UInt8	phaseId = 0;								//相位号
-	/*const*/UInt8 	ring = 0;									//相位所在环号
-	/*const*/UInt8 	barrier = 0;								//相位所在屏障号
-	/*const*/UInt16	checkTime = 0;								//感应检测时间
-	/*const*/bitset<MAX_CHANNEL_NUM> channelBits;				//相位关联的通道
-	/*const*/bitset<MAX_VEHDETECTOR_NUM> vehDetectorBits = 0;	//相位关联的车辆检测器
-	/*const*/bitset<MAX_PEDDETECTOR_NUM> pedDetectorBits = 0;	//相位关联的行人检测器
-	/*const*/UInt16	unitExtendTime = 0;							//单位延长绿
-	/*const*/bool	pedPhase = false;							//是否是行人相位
-	/*const*/UInt16	maxExtendTime = 0;							//最大可以延长的绿灯时间
-	/*const*/TscStatus 	specifyStatus = INVALID;				//相位指定状态
-	/*const*/bool	autoReq = true;								//相位自动请求
-	/*const*/string desc;										//相位描述
+	/*需要填充*/UInt8	phaseId = 0;								//相位号
+	/*需要填充*/UInt8 	ring = 0;									//相位所在环号
+	/*需要填充*/UInt8 	barrier = 0;								//相位所在屏障号
+	/*需要填充*/UInt16	checkTime = 0;								//感应检测时间
+	/*需要填充*/bitset<MAX_CHANNEL_NUM> channelBits;				//相位关联的通道
+	/*需要填充*/bitset<MAX_VEHDETECTOR_NUM> vehDetectorBits = 0;	//相位关联的车辆检测器
+	/*需要填充*/bitset<MAX_PEDDETECTOR_NUM> pedDetectorBits = 0;	//相位关联的行人检测器
+	/*需要填充*/UInt16	unitExtendTime = 0;							//单位延长绿
+	/*需要填充*/bool	pedPhase = false;							//是否是行人相位
+	/*需要填充*/UInt16	maxExtendTime = 0;							//最大可以延长的绿灯时间
+	/*需要填充*/TscStatus 	specifyStatus = INVALID;				//相位指定状态
+	/*需要填充*/bool	autoReq = true;								//相位自动请求
+	/*需要填充*/string desc;										//相位描述
 
 	UInt16	extendTime = 0;										//延长的绿灯时间
 	time_t	beginTime = 0;										//相位开始运行时间
 	
-	/*const*/ColorStepVector motor;
-	/*const*/ColorStepVector pedestrian;
+	/*需要填充*/ColorStepVector motor;
+	/*需要填充*/ColorStepVector pedestrian;
 
 	/*相位移动1s*/
 	bool Move()
@@ -67,8 +63,8 @@ struct Phase
 		//motor.PrintCur();
 		return ret;
 	}
-	/*相位延长，返回未能延长的时间*/
-	UInt16 Extend(UInt16 sec)
+	/*相位延长绿灯或绿闪，返回未能延长的时间*/
+	UInt16 ExtendGreen(UInt16 sec)
 	{
 		if (sec == 0 || extendTime >= maxExtendTime)
 			return sec;
@@ -78,12 +74,18 @@ struct Phase
 			ret = extendTime + sec - maxExtendTime;
 			sec -= ret;
 		}
-		if (!motor.Extend(sec))
+		if (!motor.ExtendGreen(sec))
 			return sec + ret;
-		if (!pedestrian.Extend(sec))
+		if (!pedestrian.ExtendGreen(sec))
 			pedestrian.Add(sec, ALLRED, 0);
 		extendTime += sec;
 		return ret;
+	}
+	/*相位延长，延长相位第一个色步*/
+	void Extend(UInt16 sec)
+	{
+		motor.Extend(sec);
+		pedestrian.Extend(sec);
 	}
 	/*相位增加色步*/
 	void Add(const ColorStep &cs)
@@ -91,6 +93,7 @@ struct Phase
 		motor.Add(cs);
 		pedestrian.Add(cs);
 	}
+	/*相位是否结束*/
 	bool Over() const
 	{
 		return motor.Over();
@@ -134,10 +137,15 @@ struct Phase
 	{
 		return motor.Total();
 	}
-	/*相位非绿时间*/
+	/*相位绿时间包括绿闪*/
 	UInt16 Green() const
 	{
 		return motor.Green();
+	}
+	/*相位非全红时间，主要包括绿、绿闪以及黄灯*/
+	UInt16 NonAllRed() const
+	{
+		return motor.NonAllRed();
 	}
 	/*机动车相位当前的状态*/
 	TscStatus MotorStatus() const
@@ -185,109 +193,47 @@ struct Phase
 		motor.SetCurrentStatus(st);
 		pedestrian.SetCurrentStatus(st);
 	}
-	/*机动车相位是否处于过渡时期*/
-	bool TransitionPeriod() const
-	{
-		return MotorColorStep().TransitionPeriod();
-	}
-};
 
-class Ring
-{
-private:
-	UInt8 jumpPhase;
-	enum
+	bool GreenLastSec()	const//绿灯最后1秒
 	{
-		MOVEING = 0,
-		JUMPING = 1,
-		STAYING = 2,
-	};
-	std::atomic_uint runStatus;
-	volatile unsigned int pos;
-	std::map<UInt8, Phase> &mp;
+		const ColorStep &cur = motor.Current();
+		const ColorStep &next = motor.Next();
+		return (cur.status == GREEN && cur.stepTime == 1 && next.status != GREEN);
+	}
+
+	bool GreenEnd()	const //绿或者绿闪结束
+	{
+		const ColorStep &cur = motor.Current();
+		const ColorStep &next = motor.Next();
+		return ((cur.status == GREEN || cur.status == GREEN_BLINK) && cur.stepTime == 1
+				&& next.status != GREEN && next.status != GREEN_BLINK);
+	}
 	
-	UInt16 Sum(unsigned int first, unsigned int last) const
+	bool WindowPeriod()	const //是否是检测窗口期
 	{
-		UInt16 sum = 0;
-		for (unsigned int i = first; i < last; i++)
-		{
-			sum += mp[turn[i]].Total();
-		}
-		return sum;
+		const ColorStep &cur = motor.Current();
+		return ((cur.status == GREEN || cur.status == GREEN_BLINK)
+				&& (cur.countdown >= checkTime)
+				&& (cur.countdown < checkTime + unitExtendTime));
 	}
-
-public:
-	Ring(std::map<UInt8, Phase> &_mp, const std::vector<UInt8> &_turn) : mp(_mp), turn(_turn)
-	{
-		runStatus = MOVEING;
-		pos = 0;
-		barrierEnd = false;
-	}
-
-	Ring(const Ring &ring) : Ring(ring.mp, ring.turn) {}	//使用了委托构造函数
-	//~Ring() {}
 	
-	const std::vector<UInt8> turn;
-	volatile bool barrierEnd;
-
-	/*获取当前放行的相位号*/
-	UInt8 CurPhaseId() const
+	bool WindowPeriodEnd() const //是否是窗口期结束
 	{
-		return turn.empty() ? 0 : turn[pos];
+		const ColorStep &cur = motor.Current();
+		return ((cur.status == GREEN || cur.status == GREEN_BLINK)
+				&& (cur.countdown == checkTime));
 	}
-	/*设置环中相位移动*/
-	void SetMove()
+	
+	bool TransitionPeriod()	const //是否是过渡时期
 	{
-		runStatus = MOVEING;
+		const ColorStep &cur = motor.Current();
+		return cur.TransitionPeriod();
 	}
-	/*设置环中相位跳转*/
-	void SetJump(UInt8 phaseId)
+	
+	bool ReleasePeriod() const //是否是放行时期
 	{
-		if (find_if(turn.begin(), turn.end(), [&phaseId](const UInt8 id)->bool{return id == phaseId;}) == turn.end())
-			return;
-		runStatus = JUMPING;
-		jumpPhase = phaseId;
+		const ColorStep &cur = motor.Current();
+		return (cur.status == GREEN || cur.status == GREEN_BLINK || cur.status == YELLOW || cur.status == ALLRED);
 	}
-	/*设置环中相位驻留*/
-	void SetStay()
-	{
-		runStatus = STAYING;
-	}
-	/*环的总长度，也就是周期*/
-	UInt16 Total() const
-	{
-		return Sum(0, turn.size());
-	}
-	/*环中周期已经放行的时间，从0开始*/
-	UInt16 Used() const
-	{
-		if (turn.empty())
-			return 0;
-		return Sum(0, pos) + mp[turn[pos]].Used();
-	}
-	/*环中周期未放行的时间，从周期时间开始，最小为1*/
-	UInt16 Left() const
-	{
-		return Total() - Used();
-	}
-	/*延长环中具体屏障的时间*/
-	void Extend(UInt8 barrier, UInt16 sec)
-	{
-		for (unsigned int i = pos; i < turn.size(); i++)
-		{
-			if (sec == 0)
-				break;
-			Phase &phase = mp[turn[i]];
-			if (phase.barrier == barrier)
-				sec = phase.Extend(sec);
-		}
-		if (sec > 0 && !turn.empty())
-			mp[turn[pos]].Add({sec, ALLRED, 0});
-	}
-	//void Reduce();
-	/*执行环中的周期放行*/
-	void Excute();
-	/*计算环中各相位的倒计时*/
-	void CalPhaseCountdown(const UInt16 cycleTime);
 };
 

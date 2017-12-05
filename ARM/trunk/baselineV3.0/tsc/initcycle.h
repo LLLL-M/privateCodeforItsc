@@ -8,7 +8,7 @@ private:
 	ColorStepVector csv;
 	bool once;
 public:
-	InitCycle(const std::map<int, TscChannel> &channels) : Cycle({LOCAL_CONTROL, SYSTEM_MODE}, channels)
+	InitCycle() : Cycle({LOCAL_CONTROL, SYSTEM_MODE})
 	{
 		once = true;
 	}
@@ -21,7 +21,7 @@ public:
 		leftTime += time;
 	}
 
-	void Excute()
+	virtual void Excute()
 	{
 		if (leftTime > 0)
 			leftTime--;
@@ -34,7 +34,7 @@ public:
 		}
 	}
 
-	Cycle *Clone()
+	virtual Cycle *Clone()
 	{
 		if (!once)
 			return nullptr;

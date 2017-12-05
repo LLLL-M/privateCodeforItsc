@@ -9,7 +9,10 @@
 #include <linux/rtc.h>
 #include <ctime>
 #include <cstdlib>
-//#include <linux/pwm.h>
+#include <cstring>
+#include <sys/epoll.h>
+#include <functional>
+#include <map>
 
 namespace hik
 {
@@ -139,4 +142,73 @@ namespace hik
 			return false;
 		return S_ISDIR(st.st_mode) > 0;
 	}
+
+	class asio
+	{
+	private:
+		const int MAX_EVENTS;
+		int epfd;
+		std::map<int, std::function<void(int)>> dealers;
+
+	public:
+		asio(int maxevents = 48) : MAX_EVENTS(maxevents)
+		{
+			epfd = epoll_create1(0);
+		}
+		
+		~asio()
+		{
+			if (epfd != -1)
+				close(epfd);
+		}
+
+		bool add(int fd, std::function<void(int)> dealer)
+		{
+			if (epfd == -1 || fd < 3 || dealer == nullptr)
+				return false;
+			struct epoll_event ev;
+			ev.data.fd = fd;
+			ev.events = EPOLLIN;
+			if (epoll_ctl(epfd, EPOLL_CTL_ADD, fd, &ev) == -1)
+				return false;
+			dealers.emplace(fd, dealer);
+			return true;
+		}
+
+		void del(int fd)
+		{
+			if (fd < 3 || epfd == -1)	//0:stdin,1:stdout,2:stderr
+				return;
+			epoll_ctl(epfd, EPOLL_CTL_DEL, fd, NULL);
+			close(fd);
+			dealers.erase(fd);
+		}
+
+		void wait()
+		{
+			struct epoll_event events[MAX_EVENTS];
+			int i, nfds;
+
+			while (1)
+			{
+				memset(events, 0, sizeof(events));
+				nfds = epoll_wait(epfd, events, MAX_EVENTS, -1);
+				for (i = 0; i < nfds; i++)
+				{
+					int fd = events[i].data.fd;
+					if ((events[i].events & EPOLLRDHUP) || (!(events[i].events & EPOLLIN)))
+					{
+						//ERR("epoll delete fd %d, events: %#x", events[i].data.fd, events[i].events);
+						del(fd);
+						continue;
+					}
+					auto it = dealers.find(fd);
+					if (it == dealers.end())
+						del(fd);
+					else
+						it->second(fd);
+				}
+			}
+		}
+	};
 }

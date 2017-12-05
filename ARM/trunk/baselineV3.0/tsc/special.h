@@ -5,12 +5,19 @@
 class Special : public Cycle
 {
 public:
-	Special(UInt8 ctrlMode, const std::map<int, TscChannel> &channels) : Cycle({LOCAL_CONTROL, ctrlMode, 0, 0}, channels)
+	Special(const ControlRule &r) : Cycle(r)
 	{
 		cycleTime = 3;
 		leftTime = 3;
+	}
+	//~Special();
+
+	Special(const Special &) = default;
+
+	virtual void Excute()
+	{
 		TscStatus st;
-		switch (ctrlMode)
+		switch (rule.ctrlMode)
 		{
 			case TURNOFF_MODE: st = TURN_OFF; break;
 			case YELLOWBLINK_MODE: st = YELLOW_BLINK; break;
@@ -24,14 +31,7 @@ public:
 		}
 	}
 
-	Special(const Special &) = default;
-
-	void Excute()
-	{
-		/*此虚函数必须实现，以保证不会调用Cycle::Excute()，并且leftTime!=1也因此周期永不结束*/
-	}
-	//~Special();
-	Cycle *Clone()
+	virtual Cycle *Clone()
 	{
 		Special *cycle = new Special(*this);
 		return dynamic_cast<Cycle *>(cycle);

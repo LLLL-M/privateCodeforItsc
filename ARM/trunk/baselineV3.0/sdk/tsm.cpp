@@ -58,7 +58,14 @@ TscRetval TSM::Request(zsock_t *request, const TscHead &head, function<void(zmsg
 			return ret;
 		}
 		zmsg_prepend(sndmsg, &first);	//把信号机的公钥作为第一帧，因为信号机dealer要用此做为识别
-		sdk.Send(sndmsg);
+		size_t msglen = zmsg_content_size(sndmsg);
+		if (msglen > MAX_DATA_SIZE)
+		{	//发送消息内容过大，暂不支持
+			zmsg_destroy(&sndmsg);
+			ret.Err("the msg length[%lu] exceed %u which can't be support to send asynchrony, please set synchrony", msglen, MAX_DATA_SIZE);
+		}
+		else
+			sdk.Send(sndmsg);
 		return ret;
 	}
 	//发送消息并接收
@@ -277,7 +284,7 @@ TscRetval TSM::Login(const string &password)
 			return ret;
 		}
 		zsock_set_subscribe(sub, "");	//设置订阅消息第一帧的过滤
-		zsock_set_rcvtimeo(sub, timeout * timeoutcount + 1);	//设置订阅超时接受时间
+		zsock_set_rcvtimeo(sub, timeout * timeoutcount + 2);	//设置订阅超时接受时间
 	}
 
 	online = true;
@@ -308,7 +315,7 @@ TscRetval TSM::Set(TscConfigType type, const string &json, bool async/* = false*
 TscRetval TSM::Get(TscConfigType type, const unsigned short id/* = 0*/)
 {
 	TscHead head(type, true, id);
-	return Request(req_encrypt, head);
+	return Request(id == 0 ? req_noenrypt ? req_encrypt, head);	//id==0时使用非加密传输防止设备端上载数据长度过大导致加密时cpu占用过高
 }
 
 TscRetval TSM::WholeSet(const map<TscConfigType, string> &conf)

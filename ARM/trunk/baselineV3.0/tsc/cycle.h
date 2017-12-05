@@ -7,71 +7,43 @@
 #include "singleton.h"
 #include "config.h"
 #include "ctrl.h"
-#include "phase.h"
+#include "ring.h"
 #include "channel.h"
 #include "memory.h"
 
 class Cycle
 {
 private:
-	bool specialCtrl = false;
-	const std::vector<TscStage> stages;
-
 	void CalCountdown();
-
-	void InitChannelTable(const std::map<int, TscChannel> &channels)
-	{
-		for (int i = 0; i < MAX_CHANNEL_NUM; i++)
-		{
-			channelTable[i].id = i + 1;
-			auto it = channels.find(i + 1);
-			if (it != channels.end() && it->second.type != CHANNEL_TYPE_UNUSED)
-			{
-				channelTable[i].type = it->second.type;
-				channelTable[i].specifyStatus = (TscStatus)it->second.status;
-				channelTable[i].countdownId = it->second.countdown;
-				if (channelTable[i].specifyStatus != INVALID)
-					channelTable[i].status = channelTable[i].specifyStatus;
-			}
-		}
-	}
 
 public:
 	Cycle() = default;
-	Cycle(const ControlRule &r, const std::map<int, TscChannel> &channels) : rule(r)
+	Cycle(const ControlRule &r) : rule(r) {}
+	Cycle(const ControlRule &r, const std::vector<std::vector<UInt8>> &turn) : rule(r)
 	{
-		InitChannelTable(channels);
+		for (auto &i: turn)
+			ringTable.emplace_back(phaseTable, i);
 	}
-	Cycle(const ControlRule &r, const std::map<int, TscChannel> &channels, const std::vector<std::vector<UInt8>> &turn, const std::vector<TscStage> &_stages) : stages(_stages), rule(r)
-	{
-		InitChannelTable(channels);
-		InitRing(turn);
-	}
-	Cycle(const Cycle &cycle) : stages(cycle.stages), rule(cycle.rule), desc(cycle.desc), phaseTable(cycle.phaseTable), channelTable(cycle.channelTable)
-	{
+	Cycle(const Cycle &cycle) : rule(cycle.rule), desc(cycle.desc), phaseTable(cycle.phaseTable), channelTable(cycle.channelTable), stages(cycle.stages) 
+	{	/*成员列表初始化顺序最好与成员变量定义的顺序保持一致，不然编译器会报-Wreorder警告*/
 		for (auto &ring : cycle.ringTable)
 			ringTable.emplace_back(phaseTable, ring.turn);
 		cycleTime = cycle.cycleTime;
 		leftTime = cycle.leftTime;
 	}
-	virtual ~Cycle() {}
+	virtual ~Cycle() {}	//因为是基类，所以需要实现析构函数且最好为虚函数
 	
-	UInt16	cycleTime = 0;							//当前周期总时间
-	UInt16	leftTime = 0;							//当前周期还剩下多少时间
-	std::time_t	beginTime = 0;						//周期开始运行时间
-	const ControlRule rule;							//周期控制规则
-	/*const */std::string desc;							//方案描述
-	UInt8	curStage = 0;							//当前阶段号
+	const ControlRule 							rule;				//周期控制规则
+	UInt16										cycleTime = 0;		//当前周期总时间
+	UInt16										leftTime = 0;		//当前周期还剩下多少时间
+	std::time_t									beginTime = 0;		//周期开始运行时间
+	UInt8										curStage = 0;		//当前阶段号
+	std::vector<Ring> 							ringTable;			//环表
 
-	/*需要填充*/std::map<UInt8, Phase> phaseTable;					//相位表
-	/*需要填充*/std::array<Channel, MAX_CHANNEL_NUM> channelTable;	//通道表
-	std::vector<Ring> ringTable;							//环表
-
-	void InitRing(const std::vector<std::vector<UInt8>> &turn)
-	{
-		for (auto &i: turn)
-			ringTable.emplace_back(phaseTable, i);
-	}
+	/*需要填充*/std::string 					desc;				//方案描述
+	/*需要填充*/std::map<UInt8, Phase> 			phaseTable;			//相位表
+	/*需要填充*/ChannelArray 					channelTable;		//通道表
+	/*需要填充*/std::vector<std::vector<UInt8>> stages;				//阶段包含的相位信息
 
 	bool StepInvalid(const UInt8 stageNum) const//判断步进号是否无效
 	{
@@ -103,10 +75,10 @@ public:
 				ring.SetStay();
 			return;
 		}
-		if (stages[stageNum - 1].phase.size() != ringTable.size())
+		if (stages[stageNum - 1].size() != ringTable.size())
 			return;
 		for (unsigned int i = 0; i < ringTable.size(); i++)
-			ringTable[i].SetJump(stages[stageNum - 1].phase[i]);
+			ringTable[i].SetJump(stages[stageNum - 1][i]);
 	}
 
 	void CancelStep()
@@ -121,7 +93,7 @@ public:
 
 	bool Over() const
 	{
-		return (leftTime == 1);
+		return (leftTime <= 1);
 	}
 
 	virtual Cycle *Clone()
@@ -140,4 +112,7 @@ public:
 		hik::memory &memory = Singleton<hik::memory>::GetInstance();
 		return memory.free(p);
 	}
+
+protected:
+	bool specialCtrl = false;
 };

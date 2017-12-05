@@ -6,7 +6,7 @@
 #include "calculate.h"
 #include "hikmsg.h"
 
-static CalInfo gCalInfo;
+CalInfo gCalInfo;
 
 static inline Boolean IsPhaseIncludeStage(int phaseId, int stageNum)
 {

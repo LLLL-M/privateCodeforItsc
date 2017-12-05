@@ -21,6 +21,16 @@
  * 目前相机基线版本都为2.1，至于2.0只作为定制项目使用，因此我们只实现2.1协议
  * Hikvision 交通流量通讯协议V2.1  added by Jicky at 2016.09.05
  * note: 对于数据结构中的WORD, DWORD类型数据，需要转换为本地字节序后才能使用BYTE类型无需转换
+ *针对程序需要使用神捕系列，使用交通流量通信协议V2.2，对程序数据结构
+  *定义更新为V2.2的，保留V2.1数据格式，使用保留字段
+  *    ① 接收sizeof(NET_TPS_ALARM_HEAD)字节数据；
+  *  ② 解析dwLength和byType字段，当byType==0xB6时，
+  *dwLength的值应该为sizeof(NET_TPS_ALARM_REALTIME)，当byType==0xB7时，dwLength的值应该为sizeof(NET_TPS_ALARM_INTER_TIME)，
+  *byType为其他值时，数据无效，丢弃处理；
+  *  ③ 继续接收(dwLength-sizeof(NET_TPS_ALARM_HEAD))字节数据，根据byType的类型，
+  *分别参考NET_TPS_ALARM_REALTIME和NET_TPS_ALARM_INTER_TIME的定义解析。
+  *  ④ 数据传输过程中采用网络字节序，NET_TPS_ALARM_HEAD例外。
+
  */
 typedef struct
 {
@@ -58,7 +68,14 @@ typedef struct _NET_TPS_REALTIME_INFO_/*36 bytes*/
     BYTE bySpeed;               //对应车速
     BYTE byLaneState;           //车道状态；0-无状态，1-畅通，2-拥挤，3-堵塞
     BYTE byQueueLen;            //堵塞状态下排队长度
-    BYTE byRes1[24];            //保留
+    WORD wLoopState;            //线圈状态，第几位表示第几号虚拟线圈的状态，
+								//线圈编号从镜头视场由近到远依次增大；0：无车，1有车。
+	WORD wStateMask;            // 线圈状态掩码，掩码位为1对应wLoopState的状态位有效；
+								//掩码位为0对应的wLoopState状态位无效。
+	DWORD dwDownwardFlow;	    //当前车道从上到下车流量计数，溢出后重新从1计数。
+	DWORD dwUpwardFlow;         //当前车道从下到上车流量计数，溢出后重新从1计数。
+	BYTE byJamLevel;            //拥堵等级， byLaneState为3时有效；1-轻度，2-中度，3-重度。
+	BYTE byRes1[11];            // 保留
 } NET_TPS_REALTIME_INFO;
 typedef NET_TPS_REALTIME_INFO NET_DVR_TPS_REAL_TIME_INFO;
 
@@ -182,6 +199,62 @@ static int CreateTCPSocket(UInt16 port)
 	return sockfd;
 }
 
+static void VehDetRealtimeInfo_V2_1(NET_TPS_REALTIME_INFO *rtinfo, UINT8 lane)
+{
+	int count = 0;
+	DealVehPassData(lane, rtinfo->byCMD == 0x01);
+	if (rtinfo->byCMD == 0x01)	
+	{//表明有车辆进入
+		count = (rtinfo->byRes[0] << 8) | rtinfo->byRes[1];
+		OFTEN("^^^^^^^^^^^lane %d vehicle enter, count: %d ^^^^^^^^^^", lane, count);
+		//INFO("lane %d vehicle enter V2.1", lane);
+	} else if (rtinfo->byCMD == 0x02)//表明有车辆离开
+	{
+		OFTEN("$$$$$$$$$$$lane %d vehicle leave$$$$$$$$$$", lane);
+		//INFO("lane %d vehicle leave V2.1", lane);
+	}
+	else if (rtinfo->byCMD == 0x03)	//表明有车辆拥堵
+	{
+		OFTEN("$$$$$$$$$$$lane %d vehicle jam$$$$$$$$$$", lane);
+	}
+}
+
+static void VehDetRealtimeInfo_V2_2(NET_TPS_REALTIME_INFO *rtinfo, UINT8 lane)
+{
+	UINT8 isEnter = 0;
+	int count = 0;
+	WORD mask = 0;
+	WORD loop = 0;
+	
+	if (rtinfo->byCMD == 0x04)
+	{
+		mask = ntohs(rtinfo->wStateMask);
+		loop = ntohs(rtinfo->wLoopState);
+		//INFO("vehicle detector V2.2, lane=%d, statemask=%X, loopstate=%X", lane, mask, loop);
+		if (GET_BIT(mask, 0))//双线圈以线圈1 有效为过车信号
+		{
+			isEnter = GET_BIT(loop, 0);
+			DealVehPassData(lane, isEnter);
+			if (isEnter)	
+			{//表明有车辆进入
+				count = (rtinfo->byRes[0] << 8) | rtinfo->byRes[1];
+				OFTEN("^^^^^^^^^^^lane %d vehicle enter, count: %d ^^^^^^^^^^", lane, count);
+				OFTEN("lane %d vehicle enter loopA", lane);
+			} 
+			else//表明有车辆离开
+			{
+				//OFTEN("$$$$$$$$$$$lane %d vehicle leave$$$$$$$$$$", lane);
+				OFTEN("lane %d vehicle leave loopA", lane);
+			}
+		}
+	}
+	//else if (rtinfo->byCMD == 0x05)//定制状态表示有车等待
+	//{
+		//SET_BIT(vehdata_havecars, lane - 1);//设置对应车道有车等待标志位	
+		//INFO("lane %d vehicle waiting for passing", lane);
+	//}	
+}
+
 static void RecvCameraData(int fd)
 {
 	NET_TPS_ALARM_HEAD *head = NULL;			//相机头部
@@ -212,15 +285,10 @@ static void RecvCameraData(int fd)
 			StreamDelete(stream);
 			return;
 		}
-		DealVehPassData(lane, rtinfo->byCMD == 0x01);
-		if (rtinfo->byCMD == 0x01)	
-		{//表明有车辆进入
-			count = (rtinfo->byRes[0] << 8) | rtinfo->byRes[1];
-			OFTEN("^^^^^^^^^^^lane %d vehicle enter, count: %d ^^^^^^^^^^", lane, count);
-		} else if (rtinfo->byCMD == 0x02)//表明有车辆离开
-			OFTEN("$$$$$$$$$$$lane %d vehicle leave$$$$$$$$$$", lane);
-		else if (rtinfo->byCMD == 0x03)	//表明有车辆拥堵
-			OFTEN("$$$$$$$$$$$lane %d vehicle jam$$$$$$$$$$", lane);
+		if (rtinfo->byCMD == 0x04)//if (rtinfo->byCMD == 0x04 || rtinfo->byCMD == 0x05)
+			VehDetRealtimeInfo_V2_2(rtinfo, lane);
+		else
+			VehDetRealtimeInfo_V2_1(rtinfo, lane);
 		StreamReset(stream);
 	}
 	//else if (head->byType == 0xb7 && head->dwLength == sizeof(NET_TPS_ALARM_INTER_TIME))	//时段统计信息

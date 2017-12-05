@@ -4,48 +4,63 @@
 #include "singleton.h"
 #include "cycle.h"
 
+void Ctrl::UpdateRule(const ControlRule &newRule)
+{
+	auto now = std::chrono::steady_clock::now();
+	ControlRule oldRule = curRule;
+	bool update = (newRule != oldRule);
+
+	mtx.lock();
+	tp = newRule.duration ? (now + std::chrono::seconds(newRule.duration)) : std::chrono::steady_clock::time_point::max();
+	if (update)
+	{
+		oldRule.duration = (UInt32)(std::chrono::duration_cast<std::chrono::seconds>(now - start).count());
+		start = now;
+	}
+	mtx.unlock();
+	if (update)
+	{
+		curRule = newRule;
+		/*此处需要把oldRule存储到文件中方便上位机查看控制时长*/
+	}
+}
+
+bool Ctrl::TimeIsUp()
+{
+	hik::mutex_guard guard(mtx);
+	auto now = std::chrono::steady_clock::now();
+	return (now >= tp);
+}
+
 Ctrl::Ctrl() : its(Singleton<Its>::GetInstance()), tsc(Singleton<Tsc>::GetInstance())
 {
-	//last = std::chrono::steady_clock::now();
 	ControlRule cur(LOCAL_CONTROL, SYSTEM_MODE);
 	Cycle *cycle = tsc.GetInitCycle(cur);
 	if (cycle == nullptr)
-	{	//说明此时本地没有控制方案，则默认降级到黄闪控制
-		cur.Set(LOCAL_CONTROL, YELLOWBLINK_MODE, 0);
-		curRule = cur;
-		its.AlterCtrl(cur);
-		reset(1000);	//定时1s，即每秒都去检查本地是否有配置更新
+	{	//说明此时本地没有控制方案，则默认降级到黄闪控制, 定时1s，即每秒都去检查本地是否有配置更新
+		cur.Set(LOCAL_CONTROL, YELLOWBLINK_MODE, 0, 1);
 	}
-	else
-	{
-		curRule = cur;
-		its.AlterCtrl(cur, cycle);
-		reset(cur.duration * 1000);
-	}
+	UpdateRule(cur);
+	its.AlterCtrl(cur, cycle);
 }
 
 bool Ctrl::LocalCtrl()
 {
 	ControlRule rule(LOCAL_CONTROL, SYSTEM_MODE, 0);
 	Cycle *cycle = tsc.GetCycle(rule);
+	bool ret = true;
 	if (cycle == nullptr)
-	{	//说明此时本地没有控制方案，则默认降级到黄闪控制
-		rule.Set(LOCAL_CONTROL, YELLOWBLINK_MODE, 0);
-		curRule = rule;
-		its.AlterCtrl(rule);
-		reset(1000);	//定时1s，即每秒都去检查本地是否有配置更新
+	{	//说明此时本地没有控制方案，则默认降级到黄闪控制, 定时1s，即每秒都去检查本地是否有配置更新
+		rule.Set(LOCAL_CONTROL, YELLOWBLINK_MODE, 0, 1);
+		ret = false;
 		ERR("!!!!!!!!!!!!!! tsc.GetCycle error");
-		return false;
 	}
 	else
-	{
-		curRule = rule;
-		its.AlterCtrl(rule, cycle);
-		reset(rule.duration * 1000);
 		INFO("tsc.GetCycle successful! ctrlType: %d, ctrlMode: %d, ctrlId: %d, duration: %d", 
 			rule.ctrlType, rule.ctrlMode, rule.ctrlId, rule.duration);
-		return true;
-	}
+	UpdateRule(rule);
+	its.AlterCtrl(rule, cycle);
+	return ret;
 }
 
 bool Ctrl::SetRule(ControlRule &rule)
@@ -66,8 +81,6 @@ bool Ctrl::SetRule(ControlRule &rule)
 		|| (cur.ctrlType == LOCAL_CONTROL && rule.ctrlType == LOCAL_CONTROL && (rule.ctrlMode == STEP_MODE || rule.ctrlMode == CANCEL_STEP)))
 		return false;
 
-	//auto tp = std::chrono::steady_clock::now();
-	//UInt32 gap = (UInt32)((tp - last).count());
 	Cycle *cycle = nullptr;
 	if (!rule.SpecialMode() && rule.ctrlMode != STEP_MODE && rule.ctrlId != 0)
 	{	//说明是上位机执行某个具体的方案需要重新计算
@@ -76,25 +89,9 @@ bool Ctrl::SetRule(ControlRule &rule)
 			return false;
 	}
 
-	if (rule.duration == 0)	//说明要一直持续控制
-		halt();	//停止定时器
-	else	//说明只控制一段时间
-		reset(rule.duration * 1000);	//重新启动一个定时器
-	//oldRule = curRule;
-	curRule = rule;
+	UpdateRule(rule);
 	its.AlterCtrl(rule, cycle);
 	return true;
-}
-
-void Ctrl::RecoverRule(const ControlRule &rule)
-{
-	curRule = rule;
-	reset(rule.duration * 1000);
-}
-
-void Ctrl::Timeout()
-{
-	LocalCtrl();
 }
 
 void Ctrl::ConfigUpdate()
@@ -105,9 +102,7 @@ void Ctrl::ConfigUpdate()
 	Cycle *cycle = tsc.GetCycle(cur);
 	if (cycle != nullptr)
 	{
-		curRule = cur;
+		UpdateRule(cur);
 		its.AlterCtrl(cur, cycle);
-		if (cur.ctrlType == LOCAL_CONTROL)
-			reset(cur.duration * 1000);
 	}
 }

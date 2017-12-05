@@ -87,7 +87,7 @@ public:
 		return true;
 	}
 
-	ColorStep Current() const
+	const ColorStep & Current() const
 	{
 		return cur;
 	}
@@ -127,6 +127,21 @@ public:
 		{
 			if (i.status == GREEN || i.status == GREEN_BLINK)
 				sum += i.stepTime;
+			else
+				break;
+		}
+		return sum;
+	}
+
+	UInt16 NonAllRed() const
+	{
+		UInt16 sum = 0;
+		for (auto &i: vec)
+		{
+			if (i.status != ALLRED && i.status != RED)
+				sum += i.stepTime;
+			else
+				break;
 		}
 		return sum;
 	}
@@ -160,7 +175,7 @@ public:
 		cur.countdown = countdown;
 	}
 
-	bool Extend(int t)
+	bool ExtendGreen(int t)
 	{
 		if (t == 0)
 			return true;
@@ -173,6 +188,15 @@ public:
 		vec[pos].countdown += t;
 		total += t;
 		return true;
+	}
+
+	void Extend(UInt16 sec)
+	{
+		if (vec.empty())
+			return;
+		vec[0].stepTime += sec;
+		vec[0].countdown += sec;
+		total += sec;
 	}
 
 	template<typename...Args>

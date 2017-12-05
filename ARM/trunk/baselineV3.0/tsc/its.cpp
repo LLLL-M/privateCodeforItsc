@@ -2,11 +2,12 @@
 #include <cstring>
 #include "communication.h"
 #include "its.h"
-#include "light.h"
 #include "cycle.h"
 #include "log.h"
 #include "ctrl.h"
 #include "singleton.h"
+#include "device.h"
+#include "threadpool.h"
 
 Its::~Its()
 {
@@ -50,7 +51,7 @@ void Its::UpdateRule()
 		if (cur.SpecialMode() && cycle != nullptr)
 		{	//说明之前是处于特殊控制中
 			delete cycle;
-			cycle = nullptr;
+			GetNextCycle();
 			return;
 		}
 		if (cycle != nullptr && cur.ctrlMode == STEP_MODE)
@@ -138,40 +139,47 @@ void Its::RealtimeStat()
 	communication.SendRealtimeStat(data);
 }
 
+void Its::GetNextCycle()
+{
+	rwlock.r_lock();
+	cycle = (nextCycle != nullptr) ? nextCycle->Clone() : nullptr;
+	rwlock.r_unlock();
+	
+	if (cycle != nullptr)
+	{
+		curRule = cycle->rule;
+#ifdef TSC300_IMX6UL	//新版TSC300平台，发送接管信息
+		hik::device &dev = Singleton<hik::device>::GetInstance();
+		hik::threadpool &pool = Singleton<hik::threadpool>::GetInstance();
+		pool.addtask(std::bind(&hik::device::send_takeover, ref(dev)));
+#endif
+	}
+};
+
 void Its::Run()
 {
-	auto GetNextCycle = [this]{
-		rwlock.r_lock();
-		if (nextCycle != nullptr)
-			cycle = nextCycle->Clone();
-		rwlock.r_unlock();
-		if (cycle != nullptr)
-			curRule = cycle->rule;
-	};
-	Light light;
-	light.start();
+	hik::device &dev = Singleton<hik::device>::GetInstance();
 
-	while (true)
+	UpdateRule();
+	
+	if (cycle != nullptr)
 	{
-		UpdateRule();
-		
-		if (cycle != nullptr)
+		cycle->Excute();
+		dev.setlamps(cycle->channelTable);
+		dev.light();
+		RealtimeStat();
+		if (cycle->Over())
 		{
-			cycle->Excute();
-			light.LightChannel(cycle->channelTable);
-			RealtimeStat();
-			if (cycle->Over())
-			{
-				delete cycle;
-				GetNextCycle();
-			}
-		}
-		else
-		{
-			light.LightChannel(curRule.load().ctrlMode);
-			RealtimeStat();
+			delete cycle;
 			GetNextCycle();
 		}
+	}
+	else
+	{
+		dev.setlamps(curRule.load().ctrlMode);
+		dev.light();
+		RealtimeStat();
+		GetNextCycle();
 	}
 }
 
@@ -184,4 +192,44 @@ void Its::UpdateCycle(Cycle *next)
 		delete nextCycle;
 	nextCycle = next;
 	rwlock.w_unlock();
+	FillTakeOverInfo();
 }
+
+#ifdef TSC300_IMX6UL	//新版TSC300平台
+void Its::FillTakeOverInfo()
+{
+	Cycle *cyc = nextCycle->Clone();
+	if (cyc == nullptr || cyc->rule.SpecialMode() || cyc->rule.ctrlId == 0)
+		return;
+
+	ChannelArray lamps;
+	hik::device &dev = Singleton<hik::device>::GetInstance();
+	std::vector<hik::TakeOverInfo> & infoVec = dev.get_takeover_info();
+	hik::TakeOverInfo info = {{0}, 0};
+
+	infoVec.clear();
+	do {
+		cyc->Cycle::Excute();
+		if (std::equal(lamps.begin(), lamps.end(), cyc->channelTable.begin(), [](const Channel &c1, const Channel &c2){return c1.status == c2.status;}))
+			info.duration++;
+		else
+		{
+			lamps = cyc->channelTable;
+			if (!infoVec.empty())
+				infoVec.back().duration = info.duration;
+			
+			for (int i = 0; i < MAX_CHANNEL_NUM / 2; i++)
+			{
+				info.cmd[i] = (lamps[i * 2].status & 0xf) | ((lamps[i * 2 + 1].status << 4));
+			}
+			info.duration = 1;
+			infoVec.push_back(info);
+		}			
+	} while (!cyc->Over());
+	if (!infoVec.empty())
+		infoVec.back().duration = info.duration;
+	delete cyc;
+}
+#else
+void Its::FillTakeOverInfo() {}
+#endif

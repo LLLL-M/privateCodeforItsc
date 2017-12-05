@@ -437,6 +437,103 @@ void SaveIpInfosToInterface(struct STRU_N_IP_ADDRESS* ip_infos)
 	fdatasync(fd);
 	close(fd);
 }
+/*
+void SaveInterfacesNoMac()
+{
+	int fd = -1;
+	char buf[1024] = {0};
+	char line[128] = {0};
+	unsigned int offset = 0;
+
+	fd = open("/etc/network/interfaces", O_CREAT|O_WRONLY|O_TRUNC);
+	if (fd <= 0)
+		return;
+
+	while (!feof(fd))
+	{
+		memset(line, 0, 128);
+		fgets(line, 128, fd);
+		if (line == strstr(line, "pre-up"))//pre-up begin,need to delete this line
+		{
+			if (strlen(line)>=127)//line length < 127,read line end
+			{
+				while(fgetc(fd) != '\n')
+					;
+			}
+		}
+		else
+		{
+			memcpy(buf + offset, line, strlen(line));
+			offset += strlen(line);
+		}
+	}
+	write(fd, buf, strlen(buf));
+	fdatasync(fd);
+	close(fd);
+}
+*/
+
+void SaveIpInfosNoMacToInterface(struct STRU_N_IP_ADDRESS* ip_infos)
+{
+	UINT32 ip = 0, mask = 0, gateway = 0;
+	int fd = -1;
+	char *hv = HARDWARE_VERSION_INFO;
+	char hver[32] = {0};
+	char buf[1024] = {0};
+	
+	strcpy(hver, hv);
+	fd = open("/etc/network/interfaces", O_CREAT|O_WRONLY|O_TRUNC);
+	if (fd <= 0)
+		return;
+
+	memset(buf, 0, 1024);
+	sprintf(buf, "# Configure Loopback\n"
+		"auto lo\n"
+		"iface lo inet loopback\n"
+		"\n\n");
+	write(fd, buf, strlen(buf));
+
+	if (strcmp(hver, "DS-TSC500") == 0)
+	{
+		memset(buf, 0, 1024);
+		sprintf(buf, "auto eth0\n"
+				"iface eth0 inet static\n"
+				"address %s\n"
+				"netmask %s\n"
+				"gateway %s\n"
+				"\n\n"
+				, ip_infos[0].address, ip_infos[0].subnetMask, ip_infos[0].gateway);
+		write(fd, buf, strlen(buf));
+	}
+
+	memset(buf, 0, 1024);
+	sprintf(buf, "auto eth1\n"
+		"iface eth1 inet static\n"
+		"address %s\n"
+		"netmask %s\n"
+		"gateway %s\n"
+		"\n\n"
+		, ip_infos[1].address, ip_infos[1].subnetMask, ip_infos[1].gateway);
+	write(fd, buf, strlen(buf));
+
+	memset(buf, 0, 1024);
+	sprintf(buf, "auto wlan0\n"
+			"iface wlan0 inet static\n"
+			"address %s\n"
+			"netmask %s\n"
+			"#gateway %s\n"
+
+			, ip_infos[2].address, ip_infos[2].subnetMask, ip_infos[2].gateway);
+	write(fd, buf, strlen(buf));
+
+	memset(buf, 0, 1024);
+	sprintf(buf, "#pre-up wpa_supplicant -iwlan0 -c/etc/wpa_supplicant.conf&\n"
+						"#post-down killall -9 wpa_supplicant\n"
+						"\n");
+	write(fd, buf, strlen(buf));
+	fdatasync(fd);
+	close(fd);
+}
 
 void SetDefaultIp()
 {
@@ -507,6 +604,7 @@ typedef enum
 		SAVE_TO_DB = 1,
 		SAVE_TO_INTERFACE = 2,
 		SAVE_BOTH = 3,
+		SAVE_INTERFACE_NOMAC = 4,
 	}NetCardSaveFlag;
 //获取已运行网卡的网络字节序ip地址
 static  in_addr_t GetNetworkCardIp(const char *interface)
@@ -807,10 +905,10 @@ UINT8 ModifyDefaultMac(const char* net_dev, char* mac)
 	if (mac == NULL || net_dev_index > 1 || net_dev_index < 0)
 		return SAVE_NONE;
 	
-	if (strcmp(mac, ethmac[net_dev_index]) != 0 && 
-		strcmp(ip_infos[net_dev_index].mac, ethmac[net_dev_index]) != 0)//mac isn't default && db's mac isn't default, don't need to modify
+	if (strcmp(mac, ethmac[net_dev_index]) != 0)//mac isn't default 
 		return SAVE_NONE;
 
+	memset(mac, 0, 24);
 	time(&rseed);
 	srandom(rseed);
 	srandom(rseed + random());
@@ -818,10 +916,10 @@ UINT8 ModifyDefaultMac(const char* net_dev, char* mac)
 
 	macaddr[0] = 0x82;
 	macaddr[1] = 0x77;
+	macaddr[2] = 0x00;
 	macaddr[3] = ((char*)(&randval))[0];
 	macaddr[4] = ((char*)(&randval))[1];
 	macaddr[5] = ((char*)(&randval))[2];
-	macaddr[6] = ((char*)(&randval))[3];
 	//INFO("default mac=%s", mac);
 	//INFO("MAC=%02X:%02X:%02X:%02X:%02X:%02X", macaddr[0],macaddr[1],macaddr[2],macaddr[3],macaddr[4],macaddr[5]);
 	if (IfUpDown(net_dev, 0) == 0)
@@ -833,12 +931,13 @@ UINT8 ModifyDefaultMac(const char* net_dev, char* mac)
 		usleep(1000000);//1000ms
 		IfUpDown(net_dev, 1);
 	}
-	sqlite3_open_wrapper(DATABASE_EXTCONFIG, &pdb);
-	sqlite3_update_blob_column(pdb, TABLE_NAME_IPINFOS, "mac", net_dev_index + 1, strmac, 24, 0);
-	sqlite3_close_wrapper(pdb);
-	strncpy(ip_infos[net_dev_index].mac, strmac, 24);
-	strncpy(mac, strmac, 24);
-	return SAVE_TO_INTERFACE|SAVE_TO_DB;
+	//SaveInterfacesNoMac();
+	//sqlite3_open_wrapper(DATABASE_EXTCONFIG, &pdb);
+	//sqlite3_update_blob_column(pdb, TABLE_NAME_IPINFOS, "mac", net_dev_index + 1, strmac, 24, 0);
+	//sqlite3_close_wrapper(pdb);
+	//strncpy(ip_infos[net_dev_index].mac, strmac, 24);
+	//strncpy(mac, strmac, 24);
+	return SAVE_INTERFACE_NOMAC;//返回4表示mac是默认值，需要修改interfaces 文件把设置mac那行删除
 }
 
 UINT8 CompareIpInfos(const char* net_dev, struct STRU_N_IP_ADDRESS* ip_infos)
@@ -873,15 +972,14 @@ UINT8 CompareIpInfos(const char* net_dev, struct STRU_N_IP_ADDRESS* ip_infos)
 	addr.sin_addr.s_addr = GetNetworkCardIp(net_dev);
 	GetMac(net_dev, mac);
 	save_flag |= ModifyDefaultMac(net_dev, mac);
-	if (((UINT32)(addr.sin_addr.s_addr)) > 0 && ((UINT32)(addr.sin_addr.s_addr)) == ip && 
-		(strlen(mac) >= 17 && strcmp(mac, ip_infos[net_dev_index].mac) == 0))
+	if (((UINT32)(addr.sin_addr.s_addr)) > 0 && ((UINT32)(addr.sin_addr.s_addr)) == ip)
 	{
 		hostgateway.sin_addr = GetGateway(net_dev, gateway_addr);
 		if (((UINT32)hostgateway.sin_addr.s_addr) == 0 && net_dev_index != 2)//host gateway is 0.0.0.0,need to set gateway
 			SetGateway(net_dev, gateway);
 		
 		INFO("host == db , ip is ok.");
-		return save_flag;
+		save_flag |= SAVE_NONE;
 	}
 	else if (((UINT32)(addr.sin_addr.s_addr)) == 0)//net card don't have ipaddr
 	{
@@ -951,7 +1049,7 @@ UINT8 CompareIpInfos(const char* net_dev, struct STRU_N_IP_ADDRESS* ip_infos)
 			if (strlen(mac) >= 17)//host's Mac addr is ok, save to database.
 			{
 				memcpy(ip_infos[net_dev_index].mac, mac, 24);
-				save_flag |= SAVE_TO_DB;
+				save_flag |= SAVE_TO_DB | SAVE_TO_INTERFACE;
 			}
 		}
 			
@@ -985,11 +1083,15 @@ void TscIpCheck()
 	
 	save_flag |= CompareIpInfos("wlan0", ip_infos);
 
-	if (save_flag & SAVE_TO_INTERFACE)
+	
+	if (save_flag & SAVE_INTERFACE_NOMAC)
+		SaveIpInfosNoMacToInterface(ip_infos);
+	else 
 	{
-		SaveIpInfosToInterface(ip_infos);
-		//system("service network restart");
+		if (save_flag & SAVE_TO_INTERFACE)
+			SaveIpInfosToInterface(ip_infos);
 	}
+		//system("service network restart");
 	if (save_flag & SAVE_TO_DB)
 	{
 		sqlite3_open_wrapper(DATABASE_EXTCONFIG, &pdb);

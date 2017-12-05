@@ -1,33 +1,11 @@
 #if defined(__linux__) && defined(__arm__)  //这是arm交叉编译gcc内置的宏定义
 
-//#include <sys/ioctl.h>
-//#include <linux/watchdog.h>
 #include <unistd.h>
 #include "ctrl.h"
 #include "device.h"
 #include "singleton.h"
 #include "collect.h"
 #include "log.h"
-
-inline void Collect::GpsLedBlink()
-{
-	static bool gpsLedOn = true;
-	if (gpsLedOn)
-		dev.led_on(hik::GPS_LED);
-	else
-		dev.led_off(hik::GPS_LED);
-	gpsLedOn = !gpsLedOn;
-}
-
-inline void Collect::RunningLedBlink()
-{
-	static bool runLedOn = true;
-	if (runLedOn)
-		dev.led_on(hik::RUNNING_LED);
-	else
-		dev.led_off(hik::RUNNING_LED);
-	runLedOn = !runLedOn;
-}
 
 inline void Collect::SetPedKeyStatus()
 {
@@ -40,6 +18,7 @@ inline void Collect::SetPedKeyStatus()
 void Collect::ProcessCtrlKey(hik::KeyType old, hik::KeyType now)
 {
 	if ((old == hik::AUTO_KEY && now != hik::MANUAL_KEY)	//不是由自动到手动
+		|| (old != hik::AUTO_KEY && now == hik::MANUAL_KEY)	//不是由自动到手动
 		|| (old != hik::MANUAL_KEY && old != hik::STEP_KEY && now == hik::STEP_KEY)	//不是手动到步进或者步进到步进
 		|| (old == now && now != hik::STEP_KEY))	//新旧按键一样且不是步进
 	{	//以上都是无效的按键,反馈当前的按键状态
@@ -161,29 +140,27 @@ Collect::Collect() : dev(Singleton<hik::device>::GetInstance())
 	watchdogSwitch = false;	//默认关闭watchdog
 	pedKeyStatus = 0;
 	ctrlKeyStatus = hik::AUTO_KEY;
-	//展会使用默认让GPS、RF、4G、WIFI指示灯全亮
-	dev.led_on(hik::RUNNING_LED);
-	dev.led_on(hik::GPS_LED);
-	dev.led_on(hik::RF_LED);
+
+	dev.ledctrl(hik::RF_LED, true);
 	if (dev.sim_exist())
-		dev.led_on(hik::SIM_LED);
+		dev.ledctrl(hik::SIM_LED, true);
 	if (dev.wifi_exist())
-		dev.led_on(hik::WIFI_LED);
-	dev.feedback_keystatus(hik::AUTO_KEY);
+		dev.ledctrl(hik::WIFI_LED, true);
+	dev.enable_hard_yellowflash(false);
 }
 
-inline void Collect::SetGps(bool flag)
+void Collect::SetGps(bool flag)
 {
 	if (flag)
 		gpsSwitch = true;
 	else
 	{
 		gpsSwitch = false;
-		dev.led_off(hik::GPS_LED);
+		dev.ledctrl(hik::GPS_LED, false);
 	}
 }
 
-inline void Collect::SetWatchdog(bool flag)
+void Collect::SetWatchdog(bool flag)
 {
 	bool old = watchdogSwitch;
 	if (!old && flag)
@@ -196,33 +173,36 @@ inline void Collect::SetWatchdog(bool flag)
 		watchdogSwitch = false;
 		watchdog.sysctl();
 	}
-}
-
-inline const std::bitset<16> Collect::GetPedKeyStatus()
-{
-	std::bitset<16> value(pedKeyStatus);
-	pedKeyStatus = 0;
-	return value;
 }	
 
 void Collect::Run()
 {
-	int count = 0;
+	bool gpsLedOn = true;
+	bool runLedOn = true;
+	int count1 = 0, count2 = 0;
 	
 	while (true)
 	{
-		//SetPedKeyStatus();
-		if (++count >= 3)
-		{
-			//SetCtrlKeyStatus();
-			RunningLedBlink();
-			count = 0;
-#if 0
+		if (++count1 >= 3)
+		{	//每300ms轮询一次
+			count1 = 0;
+			SetPedKeyStatus();
+			SetCtrlKeyStatus();
+			dev.ledctrl(hik::RUNNING_LED, runLedOn);
+			runLedOn = !runLedOn;
+		}
+
+		if (++count2 >= 5)
+		{	//每500ms轮询一次
+			count2 = 0;
 			if (gpsSwitch && dev.get_gps())
-				GpsLedBlink();
-#endif
+			{
+				dev.ledctrl(hik::GPS_LED, gpsLedOn);
+				gpsLedOn = !gpsLedOn;
+			}
 			watchdog.feed();
 		}
+		dev.hard_yellowflash_heartbeat();
 		usleep(100000);
 	}
 }

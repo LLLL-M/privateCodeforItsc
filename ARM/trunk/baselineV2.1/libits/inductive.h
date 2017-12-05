@@ -216,7 +216,10 @@ static UInt8 CheckVehicleData(UInt8 *totalExtendTime, LineQueueData *data)
 				{	//表示在窗口期内有过车而且还可以继续延长绿灯时间
 					vehicleData &= (~phaseInfos[i].vehicleDetectorBits);
 					timeGap = phaseInfos[i].maxExtendGreen - totalExtendTime[i];
-					extendTime = min((UInt8)timeGap, phaseInfos[i].unitExtendGreen);
+					if (timeGap <= 0)
+						extendTime = 0;
+					else
+						extendTime = min((UInt8)timeGap, phaseInfos[i].unitExtendGreen);
 					totalExtendTime[i] += extendTime;
 					INFO("DEBUG extendTime = %d, totalExtendTime[%d] = %d", extendTime, i, totalExtendTime[i]);
 					break;

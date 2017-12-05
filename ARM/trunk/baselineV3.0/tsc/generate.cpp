@@ -6,14 +6,34 @@
 #include "initcycle.h"
 #include "ctrl.h"
 
+static void InitChannelTable(const std::map<int, TscChannel> &channelConf, ChannelArray &channelTable)
+{
+	for (int i = 0; i < MAX_CHANNEL_NUM; i++)
+	{
+		channelTable[i].id = i + 1;
+		auto it = channelConf.find(i + 1);
+		if (it != channelConf.end() && it->second.type != CHANNEL_TYPE_UNUSED)
+		{
+			channelTable[i].type = it->second.type;
+			channelTable[i].specifyStatus = (TscStatus)it->second.status;
+			channelTable[i].countdownId = it->second.countdown;
+			if (channelTable[i].specifyStatus != INVALID)
+				channelTable[i].status = channelTable[i].specifyStatus;
+		}
+	}
+}
+
 Cycle* Tsc::GetInitCycle(ControlRule &rule)
 {
 	hik::rlock_guard rlock(rwl);
-	InitCycle *boot = new InitCycle(channel.use);
+	InitCycle *boot = new InitCycle();
+	if (boot == nullptr)
+		return nullptr;
+	InitChannelTable(channel.use, boot->channelTable);
 	boot->Add(unit.conf.bootFlash, YELLOW_BLINK);
 	boot->Add(unit.conf.bootAllRed, ALLRED);
 	rule.duration = unit.conf.bootFlash + unit.conf.bootAllRed;
-	return dynamic_cast<InitCycle *>(boot);
+	return dynamic_cast<Cycle *>(boot);
 }
 
 Cycle* Tsc::GetCycle(ControlRule &rule)
@@ -47,7 +67,10 @@ Cycle* Tsc::GetCycle(ControlRule &rule)
 		|| rule.ctrlMode == YELLOWBLINK_MODE
 		|| rule.ctrlMode == ALLRED_MODE)
 	{
-		return dynamic_cast<Cycle *>(new Special(rule.ctrlMode, channel.use));
+		Special *spe = new Special(rule);
+		if (spe != nullptr)
+			InitChannelTable(channel.use, spe->channelTable);
+		return dynamic_cast<Cycle *>(spe);
 	}
 
 	return cycle;
@@ -57,7 +80,12 @@ Cycle* Tsc::FixedCycleInit(const ControlRule &rule)
 {
 	if (scheme.use.find(rule.ctrlId) == scheme.use.end())
 		return nullptr;
-	Cycle *cyc = new Cycle(rule, channel.use, scheme.use[rule.ctrlId].turn, scheme.use[rule.ctrlId].stage);
+	Cycle *cyc = new Cycle(rule, scheme.use[rule.ctrlId].turn);
+	if (cyc == nullptr)
+		return nullptr;
+	InitChannelTable(channel.use, cyc->channelTable);
+	for (auto &stage : scheme.use[rule.ctrlId].stage)
+		cyc->stages.emplace_back(stage.phase);
 	cyc->desc = scheme.use[rule.ctrlId].desc;
 	for(auto &i : scheme.use[rule.ctrlId].timing)
 	{

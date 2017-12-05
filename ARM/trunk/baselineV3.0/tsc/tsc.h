@@ -159,6 +159,7 @@ class Tsc
 	public:
 		friend class Communication;
 		Tsc();
+		const TscUnit & GetUnit() { return unit.conf; }
 		Cycle* GetInitCycle(ControlRule &rule);
 		Cycle* GetCycle(ControlRule &rule);
 

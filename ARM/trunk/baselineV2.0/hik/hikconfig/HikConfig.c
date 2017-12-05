@@ -947,7 +947,7 @@ static int IsFollowPhaseLegal(SignalControllerPara *pSignalControlpara,int nFoll
     int sTemp = 0;
     int j = 0;
 
-    if(nFollowPhaseTableNo <= 0 || nFollowPhaseTableNo >= MAX_PHASE_TABLE_COUNT)
+    if(nFollowPhaseTableNo <= 0 || nFollowPhaseTableNo > MAX_PHASE_TABLE_COUNT)
     {
         log_error_cn("跟随相位不合法，范围必须是[0,%d]\n",MAX_PHASE_TABLE_COUNT);
         return ERROR_ID_LEGAL_FOLLOW_PHASE;
@@ -1005,7 +1005,7 @@ static void GetPhaseArray(SignalControllerPara *pSignalControlpara,unsigned shor
 {
     int i = 0;    
 
-    if(nPhaseTableNo <= 0 || nPhaseTableNo >= MAX_PHASE_TABLE_COUNT)
+    if(nPhaseTableNo <= 0 || nPhaseTableNo > MAX_PHASE_TABLE_COUNT)
     {
         return;
     }
@@ -1020,7 +1020,7 @@ static void GetPhaseArray(SignalControllerPara *pSignalControlpara,unsigned shor
 static void GetFollowPhaseArray(SignalControllerPara *pSignalControlpara,unsigned short *nPhaseArray,int nPhaseTableNo)
 {
     int i = 0;    
-    if(nPhaseTableNo <= 0 || nPhaseTableNo >= MAX_FOLLOW_PHASE_TABLE_COUNT)
+    if(nPhaseTableNo <= 0 || nPhaseTableNo > MAX_FOLLOW_PHASE_TABLE_COUNT)
     {
         return;
     }
@@ -1040,7 +1040,7 @@ static int IsChannelLegal(SignalControllerPara *pSignalControlpara,int phase_tur
 
 //    INFO("### phase_turn_id = %d , nChannelNo = %d",phase_turn_id,nChannelNo);
 
-    if(nChannelNo <= 0 || nChannelNo >= MAX_CHANNEL_TABLE_COUNT)
+    if(nChannelNo <= 0 || nChannelNo > MAX_CHANNEL_TABLE_COUNT)
     {
         log_error_cn("nChannelNo 不合法，越界. \n",nChannelNo);
         return ERROR_ID_LEGAL_CHANNEL;
@@ -1216,7 +1216,7 @@ static int IsSchemeLegal(SignalControllerPara *pSignalControlpara,int nSchemeId,
 		return ERROR_ID_LEGAL_SCHEME;	
 	}
 
-	if(nPhaseTableNo <= 0 || nPhaseTableNo >= MAX_PHASE_TABLE_COUNT)
+	if(nPhaseTableNo <= 0 || nPhaseTableNo > MAX_PHASE_TABLE_COUNT)
 	{
 		log_error_cn("相位表%d ID不合法，范围必须为[0,%d]\n",nPhaseTableNo,MAX_PHASE_TABLE_COUNT);
         return ERROR_ID_LEGAL_PHASE;

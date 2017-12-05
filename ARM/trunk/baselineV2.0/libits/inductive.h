@@ -1,5 +1,6 @@
 static UInt64 gVehicleData = 0;	//车检数据,0-47bit分别对应1-48号车检器,0:无过车,1:有过车
 static UInt8 gNextCycleExtendTime[MAX_PHASE_NUM] = {0};	//自适应控制下一周期各相位最大绿应延长的时间
+extern CalInfo gCalInfo;
 
 static inline void ExtendMaxGreenTime(LineQueueData *data)
 {
@@ -74,7 +75,7 @@ static inline void AdjustInductiveLeftTime(LineQueueData *data, UInt16 extendTim
 static UInt8 CheckVehicleData(UInt8 *totalExtendTime, LineQueueData *data)
 {
 	PhaseInfo *phaseInfos = data->phaseInfos;
-	int i = 0, n = 0;
+	int i = 0, n = 0, j = 0;
 	UInt64 vehicleData = 0;	//过车数据
 	UInt8 extendTime = 0;	//延长时间
 	int timeGap = 0;
@@ -110,7 +111,10 @@ static UInt8 CheckVehicleData(UInt8 *totalExtendTime, LineQueueData *data)
 			if (vehicleData & phaseInfos[i].vehicleDetectorBits)
 			{	//表示在窗口期内有过车而且还可以继续延长绿灯时间
 				timeGap = phaseInfos[i].maxExtendGreen - totalExtendTime[i];
-				extendTime = min((UInt8)timeGap, phaseInfos[i].unitExtendGreen);
+				if (timeGap <= 0)
+					extendTime = 0;
+				else
+					extendTime = min((UInt8)timeGap, phaseInfos[i].unitExtendGreen);
 				totalExtendTime[i] += extendTime;
 				INFO("DEBUG extendTime = %d, totalExtendTime[%d] = %d", extendTime, i, totalExtendTime[i]);
 				break;
@@ -137,6 +141,13 @@ static UInt8 CheckVehicleData(UInt8 *totalExtendTime, LineQueueData *data)
 		block = (LineQueueData *)lfq_read_prefetch(gHandle, n);
 		block->cycleTime += extendTime;
 		block->phaseInfos[i].splitTime += extendTime;
+		for (j = 0; j < gCalInfo.stageInfos[data->stageNum - 1].includeNum; j++)
+		{
+			if (gCalInfo.stageInfos[data->stageNum - 1].includePhases[j] != (i + 1))
+			{
+				block->phaseInfos[gCalInfo.stageInfos[data->stageNum - 1].includePhases[j] - 1].splitTime += extendTime;
+			}
+		}
 	}
 	data->leftTime += extendTime;
 	data->cycleTime += extendTime;

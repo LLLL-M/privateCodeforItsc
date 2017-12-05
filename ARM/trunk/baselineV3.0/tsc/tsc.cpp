@@ -71,7 +71,7 @@ Tsc::Tsc() : log(Singleton<Log>::GetInstance()), db("tsc.db")
 	string timezone_store = db.fetch("timezone");
 	if (!timezone_store.empty())
 		timezone = stoi(timezone_store);
-	#if defined(__linux__) && defined(__arm__)   //Only execute in the arm linux mode
+	#if 0//defined(__linux__) && defined(__arm__)   //Only execute in the arm linux mode
 	if (network.Exist(1))
 	{
 		Network::SetNetwork("eth0", network.use[1].ip.data(), network.use[1].netmask.data(), network.use[1].gateway.data());
@@ -84,8 +84,8 @@ Tsc::Tsc() : log(Singleton<Log>::GetInstance()), db("tsc.db")
 	}
 	if (network.Exist(3))
 	{
-		Network::SetNetwork("wlan", network.use[3].ip.data(), network.use[3].netmask.data(), network.use[3].gateway.data());
-		INFO("set wlan succ");
+		Network::SetNetwork("wlan0", network.use[3].ip.data(), network.use[3].netmask.data(), network.use[3].gateway.data());
+		INFO("set wlan0 succ");
 	}	
 	#endif
 }

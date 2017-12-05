@@ -3,6 +3,7 @@
 
 #ifdef __linux__
 #include <semaphore.h>
+#include <time.h>
 typedef sem_t SemHandle;
 #else	//__WIN32__
 #include <windows.h>
@@ -58,6 +59,21 @@ namespace hik
 			return (0 == sem_wait(&handle));
 		#else	//__WIN32__
 			return (WAIT_OBJECT_0 == WaitForSingleObject(handle, INFINITE));
+		#endif
+		}
+		bool waitfor(unsigned int msec)
+		{
+			if (!succ || msec == 0)
+				return false;
+		#ifdef __linux__
+			struct timespec ts;
+			if (clock_gettime(CLOCK_REALTIME, &ts) == -1)
+				return false;
+			ts.tv_sec += msec / 1000;
+			ts.tv_nsec += (msec % 1000) * 1000000;
+			return (0 == sem_timedwait(&handle, &ts));
+		#else	//__WIN32__
+			return (WAIT_OBJECT_0 == WaitForSingleObject(handle, msec));
 		#endif
 		}
 		bool trywait()

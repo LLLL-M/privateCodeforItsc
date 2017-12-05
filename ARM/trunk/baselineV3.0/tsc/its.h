@@ -3,12 +3,11 @@
 #include <atomic>
 #include "ctrl.h"
 #include "rwlock.h"
-#include "thread.h"
 
 //前向声明
 class Cycle;
 
-class Its : public hik::thread
+class Its
 {
 private:
 	std::atomic_bool ruleUpdate;
@@ -20,6 +19,8 @@ private:
 
 	void UpdateRule();
 	void RealtimeStat();
+	void FillTakeOverInfo();
+	void GetNextCycle();
 	
 public:
 	Its()
@@ -40,7 +41,7 @@ public:
 		UpdateCycle(next);
 	}
 	
-	/*周期运行线程函数*/
+	/*周期执行函数，1s执行一次*/
 	void Run();
 
 	/*更新周期数据*/

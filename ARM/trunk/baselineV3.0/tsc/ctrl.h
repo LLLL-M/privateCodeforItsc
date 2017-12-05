@@ -1,10 +1,10 @@
 #pragma once
 
-//#include <chrono>
+#include <chrono>
 #include <atomic>
+#include "mutex.h"
 #include "hik.h"
 #include "common.h"
-#include "timer.h"
 
 //控制类型
 enum
@@ -20,8 +20,8 @@ enum
 struct ControlRule
 {
 	UInt8	ctrlType = LOCAL_CONTROL;		//控制类型
-	UInt8	ctrlMode = SYSTEM_MODE;			//控制模式
-	UInt8	ctrlId = 0;						//控制编号
+	UInt16	ctrlMode = SYSTEM_MODE;			//控制模式
+	UInt16	ctrlId = 0;						//控制编号
 	UInt32	duration = 0;					//控制持续时间
 
 	ControlRule() = default;
@@ -56,7 +56,7 @@ struct ControlRule
 		else
 			INFO("rule, ctrlType: %d, ctrlMode: %d, ctrlId: %d", ctrlType, ctrlMode, ctrlId);
 	}
-}__attribute__((packed)); 	//此处必须增加此语句，取消结构体对齐，将结构体大小压缩至64位以内。
+};//__attribute__((packed)); 	//此处必须增加此语句，取消结构体对齐，将结构体大小压缩至64位以内。
 							//因为64位的atomic结构体在ARM中需要配合kernel3.1以上，并且指令集至少要arm v7，并且交叉工具链支持hard float模式
 							//旧的开发板指令集只是armv5te，即使开启hard float模式依旧无法支持，并且linux kernel只为2.6.39。
 							//所以采取这种折中的办法去回避掉atomic大于等于64位的现象。
@@ -64,25 +64,29 @@ struct ControlRule
 class Its;
 class Tsc;
 
-class Ctrl : public hik::timer
+class Ctrl
 {
 private:
 	Its &its;
 	Tsc &tsc;
-	//std::chrono::steady_clock::time_point last;	//上一次更新控制规则的时间点
-	//ControlRule oldRule;							//旧的控制规则也就是上一次的控制规则
+	std::chrono::steady_clock::time_point start;	//控制规则生效的时间点
+	std::chrono::steady_clock::time_point tp;		//更新控制规则的时间点
+	hik::mutex mtx;
 	atomic<ControlRule> curRule;					//当前的控制规则
+
+	void UpdateRule(const ControlRule &newRule);
 	bool LocalCtrl();
 public:
 	Ctrl();
 	//~Ctrl();
 	
 	bool SetRule(ControlRule &rule);
-	void RecoverRule(const ControlRule &rule);
+	void RecoverRule(const ControlRule &rule) {UpdateRule(rule);}
 	//void Downgrade();
 	//void Downgrade(const ControlRule &rule);
 
-	void Timeout();
+	bool TimeIsUp();
+	void Timeout() {LocalCtrl();}
 
 	void ConfigUpdate();
 	
